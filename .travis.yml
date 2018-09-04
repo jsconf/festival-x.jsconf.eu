@@ -17,10 +17,6 @@ before_deploy:
 # - node tests/post-build.js
 
 deploy:
-  # Fix broken deployment due to
-  # https://github.com/travis-ci/travis-ci/issues/9312
-  edge:
-    branch: v1.8.47
   provider: pages
   skip_cleanup: true
   github_token: "$GITHUB_TOKEN"
