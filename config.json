@@ -1,0 +1,50 @@
+{
+  "locals": {
+    "url": "https://2019.jsconf.eu",
+    "name": "JSConf EU",
+    "owner": "JSConf EU Team",
+    "description": "",
+    "buyTicketsLink": "https://ti.to/jsconfeu/jsconf-eu-x-2019",
+    "fullConferenceDate": "June 1st &amp; 2nd 2019",
+    "venue": {
+      "mapLink": "https://www.google.de/maps/place/Arena+Berlin/@52.5014805,13.4399474,15z/data=!4m8!1m2!2m1!1sArena+berlin!3m4!1s0x47a84e55b04a4c0b:0x6852fd9350063186!8m2!3d52.4966473!4d13.4530078",
+      "name": "Arena",
+      "address": "Eichenstraße 4"
+    }
+  },
+  "plugins": [
+    "./plugins/postcss.js",
+    "./plugins/nunjucks.js",
+    "./plugins/svg.js"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "nunjucks": {
+    "filterdir": "./templates/filters",
+    "filters": ["log", "dumpsafe", "sortObjects", "filterObjects",
+        "contentUrls", "simplifiedUrl"],
+    "filtermodules": ["nunjucks-markdown-filter"]
+  },
+  "svgo": {
+    "plugins": ["removeDoctype", "removeComments", "removeTitle", "removeDesc"]
+  },
+  "postcss": {
+    "from": "contents/css/main.css",
+    "plugins": [
+      "postcss-import",
+      {
+        "path": "postcss-cssnext",
+        "params": {"warnForDuplicates": false}
+      },
+      {"path": "css-mqpacker", "params": {"sort": true}},
+      "cssnano"
+    ]
+  }
+}

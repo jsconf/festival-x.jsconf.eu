@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% if page.title %}{{ page.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel=stylesheet href="{{ contents.css["main.css"].url }}">
+    <link rel=preconnect href="https://use.typekit.net">
+    <style id="typekit" data-tracking-url="{{ typekitTracking }}">
+      {{ typekitCss }}
+    </style>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest-json.txt">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#303f62">
+    {% block extraMetaData %}
+      {% set description = page.metadata.description or page.description or page.html | striptags | truncate(255) %}
+      {% set image = '/android-chrome-512x512.png' %}
+      {% if page.metadata.image %}
+        {% set image = page.metadata.image | contentUrls(contents) %}
+      {% endif %}
+      {% if page.metadata.image and contents.images[page.metadata.image] and contents.images[page.metadata.image].url %}
+        {% set image = contents.images[page.metadata.image].url %}
+      {% endif %}
+      {% if image and not image.startsWith('http') %}
+        {% set image = url + image %}
+      {% endif %}
+
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@jsconfeu">
+      <meta name="twitter:creator" content="@jsconfeu">
+      <meta name="twitter:title" content="{{ page.title }}">
+      <meta property="og:title" content="{{ page.title }}">
+      {% if description %}
+        <meta name="description" content="{{ description }}">
+        <meta name="twitter:description" content="{{ description }}">
+      {% endif %}
+      <meta name="twitter:image" content="{{ image }}">
+      <meta property="og:image" content="{{ image }}">
+    {% endblock %}
+  </head>
+  <body class="{% block bodyclass %}{% endblock %}">
+    <div class="layout-wrapper">
+
+      {% block topbar %}
+        {% include "../partials/topbar.html.njk" %}
+      {% endblock %}
+
+      <main class="main-wrapper main-wrapper-padded main-wrapper-shadowed bg-white page-{{ page.metadata.pageId }}">
+        {% block header %}
+          {% if page.metadata.title  %}
+            <section class="grid">
+              <div class="grid-item-center">
+                <h1>
+                  {% if page.metadata.bodyTitle %}
+                    {{ page.metadata.bodyTitle }}
+                  {% else %}
+                    {{ page.metadata.title }}
+                  {% endif %}
+                </h1>
+              </div>
+            </section>
+          {% endif %}
+        {% endblock %}
+
+        {% block content %}
+          Sorry, nothing to see here 😗
+        {% endblock %}
+      </main>
+
+      {% block footer %}
+        {% include "../partials/footer-small.html.njk" %}
+      {% endblock %}
+
+    </div>
+  <script src="{{ contents.js['main.js'].url }}" async></script>
+  <link rel=preload href="{{ contents.images["pattern.svg"].url }}" as=image>
+  </body>
+</html>

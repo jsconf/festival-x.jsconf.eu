@@ -1,0 +1,15 @@
+node_modules/
+/contents/images/speaker/*
+/contents/images/sponsor/*
+/contents/artists/*
+/contents/mcs/*
+/contents/talks/*
+/contents/team/*
+/contents/speakers/*
+/contents/sponsors/*
+/build
+.\#*
+.DS_Store
+/.wwwtfrc
+/service-account-credentials.json
+/secrets.tar

@@ -1,0 +1,54 @@
+.footer-links {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-pattern {
+  @media (--xsmall) {
+    background-image: url('contents:svg/pattern-sponsorfooter.svg');
+    background-size: 100%;
+    background-position: top center;
+  }
+}
+
+.footer-sponsors h2 {
+  border-color: var(--promiselinen);
+  color: var(--promiselinen);
+}
+
+.footer-copy {
+  background-color: var(--promiselinen);
+  padding: 2rem 0;
+}
+
+.footer-copy .svg-jsconf-heart {
+  height: 1.666rem;
+  float: right;
+  width: 1.666rem;
+}
+
+.footer-short {
+  padding-bottom: 1rem;
+}
+
+.footer-zigzag,
+.footer-copy-zigzag {
+  position: relative;
+  &::before {
+    background: transparent repeat-x;
+    content: '';
+    height: 1rem;
+    position: absolute;
+    top: calc(-1rem + 1px);
+    width: 100%;
+  }
+}
+
+.footer-zigzag::before {
+  background-image: url(contents:svg/zigzag-border.svg);
+  transform: rotateX(180deg);
+}
+
+.footer-copy-zigzag::before {
+  background-image: url(contents:svg/zigzag-border-beige.svg);
+}

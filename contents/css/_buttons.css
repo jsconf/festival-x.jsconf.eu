@@ -1,0 +1,69 @@
+.btn,
+.main-wrapper .btn {
+  --button-color: var(--callbackpink);
+  --button-color-inverse: #fff;
+  line-height: 1;
+  white-space: nowrap;
+  background-color: var(--button-color);
+  color: var(--button-color-inverse);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: .75rem 3rem;
+  box-sizing: border-box;
+  border: 4px solid var(--button-color);
+  border-radius: .25rem;
+  position: relative;
+  cursor: pointer;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--button-color-inverse);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: transform .25s ease-out;
+    z-index: -1;
+    cursor: pointer;
+  }
+  &:hover, &:focus {
+    color: var(--button-color);
+    background-color: transparent;
+    z-index: 1;
+    &:before {
+      transform: scale(1);
+    }
+  }
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--button-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+}
+
+/* color versions */
+
+.btn--timeoutblue {
+  --button-color: var(--timeoutblue);
+}
+
+.btn--evalblack {
+  --button-color: var(--evalblack);
+}
+
+/* this one works on dark backgrounds only */
+.btn--undefinedpurple {
+  --button-color: var(--undefinedpurple);
+  &:hover, &:focus {
+    color: var(--returnrose);
+  }
+  &:before {
+    background-color: var(--evalblack);
+  }
+}

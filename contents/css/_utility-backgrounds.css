@@ -1,0 +1,35 @@
+.bg--callbackpink {
+  background-color: var(--callbackpink);
+}
+
+.bg--timeoutblue {
+  background-color: var(--timeoutblue);
+}
+
+.bg--undefinedpurple {
+  background-color: var(--undefinedpurple);
+}
+
+.bg--evalblack {
+  background-color: var(--evalblack);
+}
+
+.bg--returnrose {
+  background-color: var(--returnrose);
+}
+
+.bg--getdaycloud {
+  background-color: var(--getdaycloud);
+}
+
+.bg--promiselinen {
+  background-color: var(--promiselinen);
+}
+
+.bg--evalblacklight {
+  background-color: var(--evalblacklight);
+}
+
+.bg--clearwhite {
+  background-color: var(--clearwhite);
+}

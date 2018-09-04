@@ -1,0 +1,6 @@
+{
+  "pageId": "index",
+  "template": "pages/splash.html.njk",
+  "title": "JSConf EU 2019",
+  "description": "June 1st & 2nd 2019 — Berlin, Germany. JSConf EU is the labour-of-love conference for the JavaScript community in Europe."
+}

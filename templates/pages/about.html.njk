@@ -1,0 +1,42 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% block content %}
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+
+      <blockquote>
+        <p>“This was probably one of the best weekends of my life, meeting great people, listening to talented developers share their experiences with us and getting inspired by a lot of them.”</p>
+      </blockquote>
+
+      <p>
+        JSConf EU is a professional, not-for-profit, labour-of-love conference for the
+        JavaScript community. It’s a two day affair, with many related side events in the
+        days surrounding it. JSConf EU is an invitation for the community to come together
+        and for new people to get to know and join the community.
+      </p>
+
+      <img src="{{ contents.images['jsconfeu-group-2014.jpg'].url }}">
+
+      <h2 id="location">Location</h2>
+      <p>
+        <a href="{{ venue.mapLink }}">
+          {{ venue.name }}. {{ venue.address }}, 12435 Berlin, Germany
+        </a>
+      </p>
+
+      <h2 id="videos">Videos</h2>
+      <p>
+        {% set youtubeId = '-mxPPmQs2G8' %}
+        {% include '../partials/youtube.html.njk' %}
+      </p>
+      <p>
+        {% set youtubeId = 'VHbnuNng0M8' %}
+        {% include '../partials/youtube.html.njk' %}
+      </p>
+    </div>
+  </section>
+
+{% endblock %}
+
+

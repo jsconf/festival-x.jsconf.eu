@@ -1,0 +1,45 @@
+/* Media Queries and Breakpoints */
+
+/* Use Like this:
+
+@media (--medium) {
+  p {
+    background: red;
+  }
+}
+this resolves to:
+@media (min-width: 64rem) {
+  p {
+    background:red;
+  }
+}
+*/
+
+/* mobile first media queries, use these whenever possible */
+
+@custom-media --xsmall (width >= 30rem); /* 480px */
+@custom-media --small (width >= 40rem); /* 640px */
+@custom-media --medium (width >= 60rem); /* 960px */
+@custom-media --large (width >= 75rem); /* 1200px */
+@custom-media --xlarge (width >= 87.5rem); /* 1400px */
+@custom-media --xxlarge (width >= 110rem); /* 1600px */
+@custom-media --xxxlarge (width >= 120rem); /* 1920px */
+
+/* Current Tachyons media queries:
+-ns @media screen and (min-width: 30em) {
+-m @media screen and (min-width: 30em) and (max-width:60em) {
+-l @media screen and (min-width: 60em) {
+
+/* Not sure what's going on here, but it appears that only keeping this block of calling each media query in the right order will also cause them to compile in the correct order. Probably a bug with the custom media query plugin? – kriesse */
+.break-test {
+  background: red;
+  @media (--small) {
+    background: blue;
+  }
+  @media (--medium) {
+    background: yellow;
+  }
+  @media (--xlarge) {
+    background: pink;
+  }
+}

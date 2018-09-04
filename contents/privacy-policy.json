@@ -1,0 +1,6 @@
+{
+  "pageId": "privacy-policy",
+  "template": "pages/privacy-policy.html.njk",
+  "filename": ":file/index.html",
+  "title": "Privacy Policy / Data Protection Declaration"
+}

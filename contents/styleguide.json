@@ -1,0 +1,4 @@
+{
+  "template": "pages/styleguide.html.njk",
+  "filename": ":file/index.html"
+}

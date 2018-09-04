@@ -1,0 +1,19 @@
+{% from "../_macros.njk" import svgIcon %}
+
+<footer>
+  <div class="footer-short footer-zigzag bg--evalblack">
+    <div class="footer-links tc">
+      <a class="link--white link--footer" href="https://twitter.com/jsconfeu">Twitter</a>
+      <a class="link--white link--footer" href="https://www.youtube.com/jsconfeu">YouTube</a>
+      <a class="link--white link--footer" href="http://eepurl.com/dvQxb5">Newsletter</a>
+      <a class="link--white link--footer" href="{{ contents['code-of-conduct.json'].url }}">Code of Conduct</a>
+      <a class="link--white link--footer" href="{{ contents['imprint.json'].url }}">Imprint</a>
+    </div>
+  </div>
+  <div class="footer-copy footer-copy-zigzag">
+    <div class="main-wrapper main-wrapper-compact">
+      JSConf 2019
+      {{ svgIcon(contents, 'jsconf-heart', width = 40, height = 40, alt = 'JSConf EU') }}
+    </div>
+  </div>
+</footer>

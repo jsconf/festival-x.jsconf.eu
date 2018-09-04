@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-718.000000, -16.000000)" fill="#FFFFFF">
+            <g transform="translate(-448.000000, -274.000000)">
+                <g transform="translate(1165.000000, 289.000000)">
+                    <rect transform="translate(9.000000, 8.500000) rotate(-315.000000) translate(-9.000000, -8.500000) " x="-1" y="7" width="20" height="3" rx="1.5"></rect>
+                    <rect transform="translate(9.000000, 8.500000) rotate(-45.000000) translate(-9.000000, -8.500000) " x="-1" y="7" width="20" height="3" rx="1.5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

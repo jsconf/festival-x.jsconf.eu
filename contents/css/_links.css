@@ -1,0 +1,70 @@
+/* Default Links */
+a {
+  color: var(--evalblack);
+  text-decoration: none;
+  transition: all .25s ease-out;
+  &:hover, &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+/* Default links on main content area */
+.md-content a:not(.link--nounderline),
+.speaker-detail .talk-description a:not(.link--nounderline),
+.link--underline {
+  border-bottom: 4px solid var(--returnrose);
+
+  background: linear-gradient(var(--returnrose), var(--returnrose) 100%) bottom no-repeat;
+  background-size: 100% 0;
+  transition: background-size 0.1s;
+
+  &:hover, &:focus {
+    background-size: 100% 100%;
+  }
+}
+
+
+/* Links on dark background */
+.link--white {
+  color: var(--clearwhite);
+  &:hover, &:focus {
+    color: var(--returnrose);
+  }
+}
+
+.link--promiselinen {
+  color: var(--promiselinen);
+  &:hover, &:focus {
+    color: var(--returnrose);
+  }
+}
+
+.link--tertiary {
+  color: var(--evalblacklight);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  &:hover, &:focus {
+    border-top: 4px solid var(--getdaycloud);
+    border-bottom: 4px solid var(--getdaycloud);
+    background-color: var(--getdaycloud);
+  }
+}
+
+.link--nav {
+  padding: .5rem 1rem;
+  @media (--xlarge) {
+    display: inline-block;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.link--footer {
+  display: block;
+  padding: 1rem;
+  @media (--small) {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+  }
+}

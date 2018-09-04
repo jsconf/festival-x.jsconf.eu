@@ -1,0 +1,11 @@
+{% macro svgIcon(contents, id, svgClass, width = 16, height = 16, title = '') %}
+  <svg viewbox="0 0 {{ width }} {{ height }}" class="svg svg-{{ id }} {{ svgClass }}">
+    {% if title %}
+      <title id='title-{{ id }}'>{{ title }}</title>
+    {% endif %}
+    <image xlink:href="{{ contents.svg[id + '.svg'].url }}"
+        height="{{ height }}px"
+        width="{{ width }}px"/>
+  </svg>
+  <link rel=preload as=image href="{{ contents.svg[id + '.svg'].url }}">
+{% endmacro %}

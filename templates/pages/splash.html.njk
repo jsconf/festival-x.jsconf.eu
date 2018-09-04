@@ -1,0 +1,98 @@
+{% from "../_macros.njk" import svgIcon %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% if page.title %}{{ page.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel=stylesheet href="{{ contents.css["splash.css"].url }}">
+    <link rel=preconnect href="https://use.typekit.net">
+    <style id="typekit" data-tracking-url="{{ typekitTracking }}">
+      {{ typekitCss }}
+    </style>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest-json.txt">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#303f62">
+    {% block extraMetaData %}
+      {% set description = page.metadata.description or page.description or page.html | striptags | truncate(255) %}
+      {% set image = '/android-chrome-512x512.png' %}
+      {% if page.metadata.image %}
+        {% set image = page.metadata.image | contentUrls(contents) %}
+      {% endif %}
+      {% if page.metadata.image and contents.images[page.metadata.image] and contents.images[page.metadata.image].url %}
+        {% set image = contents.images[page.metadata.image].url %}
+      {% endif %}
+      {% if image and not image.startsWith('http') %}
+        {% set image = url + image %}
+      {% endif %}
+
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@jsconfeu">
+      <meta name="twitter:creator" content="@jsconfeu">
+      <meta name="twitter:title" content="{{ page.title }}">
+      <meta property="og:title" content="{{ page.title }}">
+      {% if description %}
+        <meta name="description" content="{{ description }}">
+        <meta name="twitter:description" content="{{ description }}">
+      {% endif %}
+      <meta name="twitter:image" content="{{ image }}">
+      <meta property="og:image" content="{{ image }}">
+    {% endblock %}
+  </head>
+  <body>
+    <main class="c-info">
+      <div class="c-info__event">
+        <div class="c-info__logo">
+          {{ svgIcon(contents, 'jsconf-logo-full', width = 564, height = 84, alt = 'JSConf EU') }}
+        </div>
+        {{ fullConferenceDate }}
+        <div class="c-info__location">
+          Berlin, Germany<br>
+          <a href="{{ venue.mapLink }}"
+             target="_blank">
+            {{ venue.name }}, {{ venue.address }}
+          </a>
+        </div>
+        <a href="{{ buyTicketsLink }}"
+           class="c-btn"
+           target="_blank">
+          Buy Ticket
+        </a>
+        <a href="mailto:contact@jsconf.eu"
+           class="c-btn c-btn--inverted">
+          Become a sponsor
+        </a>
+      </div>
+      <nav class="c-info__nav">
+        <a href="https://2018.jsconf.eu/speakers/"
+           class="c-info__link">
+          JSConf EU 2018
+        </a>
+        <a href="{{ contents['code-of-conduct.json'].url }}"
+           class="c-info__link">
+          Code of Conduct
+        </a>
+        <a href="{{ contents['imprint.json'].url }}"
+           class="c-info__link">
+          Imprint
+        </a>
+        <a href="{{ contents['privacy-policy.json'].url }}"
+           class="c-info__link">
+          Privacy Policy
+        </a>
+        <a href="https://www.youtube.com/jsconfeu"
+           class="c-info__link">
+          Videos
+        </a>
+      </nav>
+    </main>
+
+    <script src="{{ contents.js['main.js'].url }}" async></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+.page--speakers .grid-item-left{
+  grid-column: 4/span 8;;
+  @media (--large) {
+    grid-column: 2/span 8;
+  }
+}
+
+.speaker {
+  display: block;
+  text-align: center;
+}
+
+.speaker h2 {
+  margin: .25rem 0 0;
+  padding: 0;
+  @media (--small) {
+    margin-top: .75rem;
+  }
+}
+
+.grid-item-speaker.phantom {
+  opacity: 0.6;
+}
+
+.speaker .speaker-picture img {
+  margin: auto;
+}
+
+.speaker-picture {
+  --image-width: 50%;
+
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 0;
+  padding-top: var(--image-width);
+  width: var(--image-width);
+
+  left: calc((100% - var(--image-width)) / 2);
+
+  @media (--small) { --image-width: 100%; }
+  @media (--medium) { --image-width: 75%; }
+  @media (--large) { --image-width: 100%; }
+}
+
+.speaker-picture img {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+}
+
+
+.speaker-picture:after{
+  content: "";
+  background-color: var(--promiselinen);
+  opacity: .7;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode:  color;
+}
+
+.grid-item-speaker:nth-child(3n+1) .speaker-picture:after{
+  background-color: var(--returnrose);
+}
+.grid-item-speaker:nth-child(3n+2) .speaker-picture:after{
+  background-color: var(--getdaycloud);
+}
+
+.speaker-talk {
+  padding-bottom: .5rem;
+  border-bottom: 4px solid var(--evalblack);
+  text-align: center;
+  @media (--xsmall) {
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.45rem;
+  }
+}
+
+
+/* Typography special rules for speaker page:( */
+
+.page--speakers h2, .page--speakers p, .page--speakers ul, .page--speakers ol, .page--speakers blockquote{
+  @media (--xsmall) { font-size: 1rem; } 
+  @media (--medium) { font-size: 1.375rem; }
+}
+
+.speaker-detail h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+.speaker-detail h2 {
+  padding-bottom: 0.35rem;
+}
+.speaker-detail .speaker-picture {
+  @media (--small) { --image-width: 50%; }
+}
+
+.speaker-links {
+  list-style: none;
+  padding: 0;
+}
+.speaker-link { margin: 1em 0; }
+.speaker-link a { display: block; }
+
+.speaker-link .svg {
+  height: 1.4em;
+  margin-right: 0.2em;
+}
+.speaker-link .svg, .speaker-link span {
+  display: inline-block;
+  vertical-align: middle;
+}

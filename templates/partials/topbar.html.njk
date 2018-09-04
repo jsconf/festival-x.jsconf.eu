@@ -1,0 +1,29 @@
+{% from "../_macros.njk" import svgIcon %}
+
+<div class="topbar bg--evalblack">
+  <a href="{{ env.config.baseUrl }}" class="topbar-logo flex-auto flex items-center" title="Home">
+    {{ svgIcon(contents, 'jsconf-heart', svgClass='w2 h2') }}
+    <span class="nowrap ml3">
+      <span class="topbar-logo-text">JSConf EU</span>
+      <span class="topbar-logo-date">{{ fullConferenceDate }}</span>
+    </span>
+  </a>
+  <div class="flex items-center">
+    <nav id="topbar-nav" class="topbar-nav items-center">
+      <a href="{{ contents['about.json'].url }}" class="link--promiselinen link--nav">About</a>
+      <div class="social-links flex items-center">
+        <a href="https://www.youtube.com/jsconfeu" class="link--promiselinen link--nav-icon" title="YouTube">
+          {{ svgIcon(contents, 'icon-yt')}}
+        </a>
+        <a href="https://twitter.com/jsconfeu" class="link--promiselinen link--nav-icon" title="Twitter">
+          {{ svgIcon(contents, 'icon-twitter')}}
+        </a>
+      </div>
+    </nav>
+    <a href="{{ buyTicketsLink }}" class="btn btn--undefinedpurple topbar-cta buy-ticket">Buy ticket</a>
+    <button id="topbar-toggle" type="button" class="topbar-toggle"
+        title="Toggle Navigation"
+        onclick="document.getElementById('topbar-nav').classList.toggle('topbar-nav--is-visible')">
+    </button>
+  </div>
+</div>
