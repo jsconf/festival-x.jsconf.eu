@@ -1,0 +1,6 @@
+{
+  "pageId": "sponsors",
+  "template": "pages/sponsors.html.njk",
+  "filename": ":file/index.html",
+  "title": "Become a sponsor"
+}

@@ -1,0 +1,25 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% block header %}
+  {% if page.metadata.title  %}
+    <section class="grid">
+      <div class="grid-item-sponsor">
+        <h1 class="tl">
+          {{ page.metadata.title }}
+        </h1>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <section class="grid">
+    <div class="grid-item-sponsor md-content">
+      {{ contents.copy.sponsors['sponsors.md'].html }}
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  {% include "../partials/footer-small.html.njk" %}
+{% endblock %}
