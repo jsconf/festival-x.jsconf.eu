@@ -7,6 +7,7 @@ function executeEarlyish() {
   }
   ranOnce = true;
   pingTypekit();
+  prefetch();
 }
 
 window.addEventListener('load', () => {
