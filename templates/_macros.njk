@@ -9,3 +9,14 @@
   </svg>
   <link rel=preload as=image href="{{ contents.svg[id + '.svg'].url }}">
 {% endmacro %}
+
+
+{% macro callForSpeakersButton(link, additionalClasses = '') %}
+  <section class="tc grid mv4 {{ additionalClasses }}">
+    <p class="grid-item-center">
+      <a href="{{ link }}" class="btn">
+        Submit a Proposal Now
+      </a>
+    </p>
+  </section>
+{% endmacro %}

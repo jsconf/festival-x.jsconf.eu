@@ -1,0 +1,6 @@
+{
+  "pageId": "cfs",
+  "template": "pages/call-for-speakers.html.njk",
+  "filename": ":file/index.html",
+  "title": "Call() for Speakers"
+}

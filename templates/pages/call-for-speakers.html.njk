@@ -1,0 +1,68 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import svgIcon, callForSpeakersButton %}
+
+{% block content %}
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['open-until.md'].html }}
+    </div>
+  </section>
+
+  {{ callForSpeakersButton(callForSpeakersLink) }}
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['topics.md'].html }}
+    </div>
+  </section>
+
+  <section class="grid grid-call-out-cfs">
+    <div class="heading--massive grid-c">
+       Pick the topic you feel most passionate about. This is your conference.
+    </div>
+    <img src="https://2017.jsconf.eu/img/what-next.jpg" alt="" class="grid-media">
+  </section>
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['we-can-help.md'].html }}
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['perks.md'].html }}
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['selection-process.md'].html }}
+    </div>
+  </section>
+
+  {{ callForSpeakersButton(callForSpeakersLink) }}
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['guidelines.md'].html }}
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['video-recordings.md'].html }}
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.cfs['coc.md'].html }}
+    </div>
+  </section>
+
+  {{ callForSpeakersButton(callForSpeakersLink, 'mt6-l') }}
+
+{% endblock %}
