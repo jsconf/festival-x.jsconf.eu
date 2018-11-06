@@ -17,6 +17,7 @@ find.file(/main\.css$/, 'build/', files => {
     // rejected: true,
     minify: true,
     info: true,
+    whitelist: ['*md-content*'],
   }, css => {
     // Change in-place
     console.log('Done purifying');
