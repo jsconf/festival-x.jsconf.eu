@@ -242,7 +242,8 @@
 
 /* Background Ornaments via background-image */
 
-.page-cfs {
+.page-cfs,
+.page-scholarships {
   @media (--medium) {
     background-image: url('contents:svg/form-cfs-01.svg');
     background-size: 125%;

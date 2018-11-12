@@ -1,0 +1,27 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import scholarshipApplyButton %}
+
+{% block content %}
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.scholarships['introduction.md'].html }}
+    </div>
+  </section>
+
+  {{ scholarshipApplyButton(scholarshipApplyLink) }}
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.scholarships['voting.md'].html }}
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      {{ contents.copy.scholarships['faq.md'].html }}
+    </div>
+  </section>
+
+{% endblock %}
