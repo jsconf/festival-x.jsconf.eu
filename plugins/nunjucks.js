@@ -13,7 +13,7 @@ module.exports = function(env, callback) {
     extensions: {}
   };
   Object.assign(env.config.locals, require('../locals-generated.json'));
-  env.config.locals.schedule = require('../schedule.json');
+  // env.config.locals.schedule = require('../schedule.json');
   env.config.locals.Date = Date;
 
   // Load the new nunjucks environment.
@@ -47,14 +47,18 @@ module.exports = function(env, callback) {
   nenv.opts.autoescape = options.autoescape;
 
   class NunjucksTemplate extends env.TemplatePlugin {
-    constructor(template) {
+    constructor(template, filename) {
       super();
       this.template = template;
+      this.filename = filename;
     }
 
     render(locals, callback) {
       try {
         let html = this.template.render(locals);
+        if (!html) {
+          throw new Error('Template render failed' + this.filename);
+        }
         html = minify(html, {
           removeAttributeQuotes: true,
           collapseWhitespace: true,
@@ -69,7 +73,7 @@ module.exports = function(env, callback) {
     }
 
     static fromFile(filepath, callback) {
-      callback(null, new NunjucksTemplate(nenv.getTemplate(filepath.relative)));
+      callback(null, new NunjucksTemplate(nenv.getTemplate(filepath.relative), filepath.relative));
     }
   }
 

@@ -13,3 +13,5 @@ node_modules/
 /.wwwtfrc
 /service-account-credentials.json
 /secrets.tar
+/schedule.json
+/contents/schedule-json.txt

@@ -7,17 +7,17 @@ node_js:
 
 script:
   - npm run-script generate-locals
-  # - npm run-script generate-redirects
+  - npm run-script generate-redirects
   - npm run-script build
   # Because we build again, move the non-deploy build out of the way.
-  # - mv build test-build
+   - mv build test-build
 
 before_deploy:
-# - openssl aes-256-cbc -K $encrypted_92a5b1b18fab_key -iv $encrypted_92a5b1b18fab_iv -in secrets.tar.enc -out secrets.tar -d
-# - tar xvf secrets.tar
-# - npm run-script ci:import
-# - npm run-script build
-# - node tests/post-build.js
+  - openssl aes-256-cbc -in secrets.tar.enc -out secrets.tar.out -d -pass "env:encrypted_client_secrets_password"
+  - tar xvf secrets.tar
+  - npm run-script ci:import
+  - npm run-script build
+  - node tests/post-build.js
 
 deploy:
   provider: pages

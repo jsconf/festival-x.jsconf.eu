@@ -37,6 +37,56 @@
     </div>
   </section>
 
+  {% macro teamMember(contents, speaker) %}
+    <section class="grid-item-speaker">
+      {% if speaker.links.twitter %}
+        <a class="speaker" href="{{ speaker.links.twitter }}">
+      {% endif %}
+        {% include '../partials/speaker-picture.html.njk' %}
+        <h2 class="heading--spaced heading--no-border">
+          {{ speaker.firstname }} {{ speaker.lastname }}
+        </h2>
+        <p class="ma0">
+          {% if speaker.twitterHandle %}
+            {{ speaker.twitterHandle }}<br>
+          {% endif %}
+        </p>
+      {% if speaker.links.twitter %}
+        </a>
+      {% endif %}
+    </section>
+  {% endmacro %}
+
+  {% set team = contents.team._.pages %}
+
+  <section class="grid">
+    <div class="grid-item-center">
+      <h1 id="team">Organizing team</h1>
+    </div>
+  </section>
+
+  <div class="grid">
+    {% for page in team %}
+      {% set speaker = page.metadata.speaker %}
+      {% if speaker.core %}
+        {{ teamMember(contents, speaker) }}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <section class="grid">
+    <div class="grid-item-center">
+      <h1 id="volunteer-team">Volunteer team</h1>
+    </div>
+  </section>
+
+  <div class="grid">
+    {% for page in team %}
+      {% set speaker = page.metadata.speaker %}
+      {% if not speaker.core %}
+        {{ teamMember(contents, speaker) }}
+      {% endif %}
+    {% endfor %}
+  </div>
+
 {% endblock %}
-
-
