@@ -8,8 +8,7 @@ const mkdirp = require('mkdirp');
 const {promisify} = require('util');
 const {getSheetData} = require('./spreadsheet-api');
 const {processSheet, simplifySpreadsheetData} = require('./spreadsheet-utils');
-const {downloadSpeakerImage, getLocalSpeakerImage} = require('./image-utils/speaker-image');
-const {downloadSponsorImage, getLocalSponsorImage} = require('./image-utils/sponsor-image');
+const {downloadImage} = require('./image-utils/image-download');
 const {processSchedule} = require('./process-schedule');
 const rimraf = promisify(require('rimraf'));
 const timeout = promisify(setTimeout);
@@ -193,7 +192,6 @@ async function main(params) {
         const filename = path.join(contentRoot, contentPath, `${record.id}.md`);
 
         let {content, ...data} = record;
-        let title = '';
 
         if (!content) {
           content = ' ';
@@ -203,25 +201,16 @@ async function main(params) {
           data.name = data.firstname + ' ' + data.lastname;
         }
 
+        let imageExtension = null;
         if (sheetId === 'sponsors') {
-          data.image = getLocalSponsorImage(params.imagePath, data);
-          title = data.name;
-          if (!data.image) {
-            try {
-              data.image = await downloadSponsorImage(data);
-            } catch (err) {
-              console.error('this is bad: ', err);
-            }
-          }
-          delete data.logoUrl;
-        } else {
-          data.image = getLocalSpeakerImage(params.imagePath, data);
-          title = `${data.name}: ${data.talkTitle}`;
-          if (!data.image) {
-            data.image = await downloadSpeakerImage(data);
-          }
+          imageExtension = 'svg';
+        }
+        const imageUrl = data.potraitImageUrl || data.logoUrl;
+        data.image = await downloadImage(imageUrl, data.name, imageExtension);
 
-          delete data.potraitImageUrl;
+        let title = data.name;
+        if (data.talkTitle) {
+          title += `: ${data.talkTitle}`;
         }
 
         const frontmatter = yaml.safeDump({
