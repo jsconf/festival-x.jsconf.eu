@@ -75,7 +75,7 @@ async function downloadImage(url, name, opt_extension) {
 
       const path = fullPath(filename);
       console.info(' --> image downloaded ', chalk.green(path));
-      fs.writeFileSync(path, buffer);
+      fs.writeFile(path, buffer, () => {/*fire and forget*/});
     }
     let size = {};
     try {

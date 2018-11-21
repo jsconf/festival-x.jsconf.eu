@@ -232,7 +232,7 @@ async function main(params) {
           '\n\n----\n\n' +
           wordwrap(content);
 
-        fs.writeFileSync(filename, markdownContent);
+        fs.writeFile(filename, markdownContent, () => {/*fire and forget*/});
       });
   });
 }
