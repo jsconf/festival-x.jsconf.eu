@@ -10,7 +10,7 @@ script:
   - npm run-script generate-redirects
   - npm run-script build
   # Because we build again, move the non-deploy build out of the way.
-   - mv build test-build
+  - mv build test-build
 
 before_deploy:
   - openssl aes-256-cbc -in secrets.tar.enc -out secrets.tar.out -d -pass "env:encrypted_client_secrets_password"
