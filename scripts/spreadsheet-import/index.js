@@ -50,21 +50,21 @@ const sheetParams = {
   },
   mcs: {
     templateGlobals: {
-      template: 'pages/person.html.njk'
+      template: 'pages/placeholder.html.njk'
     },
     dataFieldName: 'speaker',
     contentPath: 'mcs'
   },
   artists: {
     templateGlobals: {
-      template: 'pages/person.html.njk'
+      template: 'pages/placeholder.html.njk'
     },
     dataFieldName: 'speaker',
     contentPath: 'artists'
   },*/
   team: {
     templateGlobals: {
-      template: 'pages/person.html.njk'
+      template: 'pages/placeholder.html.njk'
     },
     dataFieldName: 'speaker',
     contentPath: 'team'
