@@ -13,7 +13,7 @@ script:
   - mv build test-build
 
 before_deploy:
-  - openssl aes-256-cbc -in secrets.tar.enc -out secrets.tar.out -d -pass "env:encrypted_client_secrets_password"
+  - openssl aes-256-cbc -in secrets.tar.enc -out secrets.tar -d -pass "env:spreadsheet_read"
   - tar xvf secrets.tar
   - npm run-script ci:import
   - npm run-script build
