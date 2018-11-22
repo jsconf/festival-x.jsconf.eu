@@ -42,7 +42,7 @@ function fullPath(filename) {
 }
 
 function sizedName(filename, width) {
-  return filename.replace(/\.(\w+)$/, ext => '-' + width + ext);
+  return filename.replace(/\.(\w+)$/, ext => '-' + width + '.jpg');
 }
 
 // Downloads an image from a url unless a local copy is available.
@@ -114,6 +114,7 @@ async function resize(width, buffer, filename) {
   }
   sharp(buffer)
       .resize(width)
+      .jpeg()
       .toFile(path, function(err) {
         if (err) {
           console.error(chalk.red.bold(' !!! Resize failed', name, path));
