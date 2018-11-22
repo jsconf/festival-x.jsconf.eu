@@ -1,6 +1,6 @@
 {% if speaker.image.filename %}
   <figure class="ma0 speaker-picture">
-    <img src="{{ contents.images.cms[speaker.image.filename].url }}"
+    <img src="{{ contents.images.cms[speaker.image.filename_500].url }}"
         alt="Portrait photo of {{ speaker.firstname }} {{ speaker.lastname }}"
         data-aspect-ratio="{{ (speaker.image.height / speaker.image.width) * 100 }}%">
   </figure>
