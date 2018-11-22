@@ -40,6 +40,7 @@
     "purify-css": "^1.2.6",
     "replace-in-file": "^3.4.0",
     "rimraf": "^2.6.2",
+    "sharp": "^0.21.0",
     "svgo": "^1.0.5",
     "svgstore": "^2.0.3",
     "tachyons": "^4.9.1",

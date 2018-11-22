@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 const chalk = require('chalk');
 const imageType = require('image-type');
 const imageSize = require('image-size');
+const sharp = require('sharp');
 const {promisify} = require('util');
 
 function getImageFilename(originalUrl, name, ext) {
@@ -38,6 +39,10 @@ async function existingImage(url, name, opt_extension) {
 
 function fullPath(filename) {
   return 'contents/images/cms/' + filename;
+}
+
+function sizedName(filename, width) {
+  return filename.replace(/\.(\w+)$/, ext => '-' + width + ext);
 }
 
 // Downloads an image from a url unless a local copy is available.
@@ -76,7 +81,10 @@ async function downloadImage(url, name, opt_extension) {
       const path = fullPath(filename);
       console.info(' --> image downloaded ', chalk.green(path));
       fs.writeFile(path, buffer, () => {/*fire and forget*/});
+
     }
+    resize(500, info.buffer, info.filename);
+    resize(1000, info.buffer, info.filename);
     let size = {};
     try {
       size = imageSize(info.buffer) || {};
@@ -85,6 +93,8 @@ async function downloadImage(url, name, opt_extension) {
     }
     return {
       filename: info.filename,
+      filename_500: sizedName(info.filename, 500),
+      filename_1000: sizedName(info.filename, 1000),
       width: size.width,
       height: size.height
     };
@@ -93,6 +103,23 @@ async function downloadImage(url, name, opt_extension) {
     console.error(err);
     return {};
   }
+}
+
+async function resize(width, buffer, filename) {
+  const path = fullPath(sizedName(filename, width));
+
+  if (await promisify(fs.exists)(path)) {
+    console.info('Resize exists', path);
+    return;
+  }
+  sharp(buffer)
+      .resize(width)
+      .toFile(path, function(err) {
+        if (err) {
+          console.error(chalk.red.bold(' !!! Resize failed', name, path));
+        }
+        console.info('Resized', width, path);
+      });
 }
 
 module.exports = {downloadImage};
