@@ -46,7 +46,7 @@ function fullPath(filename) {
 async function downloadImage(url, name, opt_extension) {
   console.log('Downloading', url);
   if (!url) {
-    console.error(chalk.yellow('Skipping empty image url'));
+    console.error(chalk.yellow('Skipping empty image url', name));
     return {};
   }
 
@@ -57,7 +57,7 @@ async function downloadImage(url, name, opt_extension) {
       const res = await fetch(url);
       const contentType = res.headers.get('content-type');
       if (!contentType || !contentType.startsWith('image')) {
-        console.error(chalk.red.bold(' !!! url is not an image', url));
+        console.error(chalk.red.bold(' !!! url is not an image', name, url));
         return {};
       }
 
@@ -66,7 +66,7 @@ async function downloadImage(url, name, opt_extension) {
 
       const type = opt_extension == 'svg' ? {ext: 'svg'} : imageType(buffer);
       if (!type) {
-        console.error(chalk.red.bold(' !!! no type-information for image', url));
+        console.error(chalk.red.bold(' !!! no type-information for image', name, url));
         return {};
       }
       info.ext = type.ext;
