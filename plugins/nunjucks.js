@@ -15,6 +15,9 @@ module.exports = function(env, callback) {
   Object.assign(env.config.locals, require('../locals-generated.json'));
   // env.config.locals.schedule = require('../schedule.json');
   env.config.locals.Date = Date;
+  env.config.locals.effectiveUrl = env.mode === 'preview'
+      ? 'http://localhost:8080'
+      : 'https://2019.jsconf.eu';
 
   // Load the new nunjucks environment.
   const loaderOpts = {
