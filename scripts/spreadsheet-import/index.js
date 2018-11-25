@@ -69,6 +69,13 @@ const sheetParams = {
     dataFieldName: 'speaker',
     contentPath: 'team'
   },
+  articles: {
+    templateGlobals: {
+      template: 'pages/placeholder.html.njk'
+    },
+    dataFieldName: 'article',
+    contentPath: 'news'
+  },
   /*sponsors: {
     templateGlobals: {
       template: 'pages/sponsor.html.njk'
@@ -117,21 +124,15 @@ if (!hasRcFile) {
 
 main(params).catch(err => console.error(err));
 
-async function main(params) {
-  // ---- ensure the directories exist...
-  const requiredDirectories = ['team', 'speakers', 'talks', 'sponsors', 'images/speaker', 'images/sponsor'];
-  const requiredDirectoryPaths = requiredDirectories.map(
-    dir => `${__dirname}/../../contents/${dir}`
-  );
-  const missingDirectories = requiredDirectoryPaths.filter(
-    dir => !fs.existsSync(dir)
-  );
-
-  if (!!missingDirectories.length) {
-    console.log(chalk.gray('creating missing directories...'));
-    missingDirectories.forEach(dir => mkdirp(dir));
+function ensureDirExists(dir) {
+  const fullDir = `${__dirname}/../../contents/${dir}`;
+  if (fs.existsSync(fullDir)) {
+    return;
   }
+  mkdirp(fullDir)
+}
 
+async function main(params) {
   // ---- cleanup...
   if (params.doCleanup) {
     console.log(chalk.gray('cleaning up...'));
@@ -176,6 +177,7 @@ async function main(params) {
       return;
     }
     const {templateGlobals, dataFieldName, contentPath, parseSchedule} = sheetParams[sheetId];
+    ensureDirExists(contentPath);
     if (parseSchedule) {
       processSchedule(sheets[sheetId]);
       return;
@@ -189,8 +191,6 @@ async function main(params) {
 
       // render md-files
       .forEach(async function(record) {
-        const filename = path.join(contentRoot, contentPath, `${record.id}.md`);
-
         let {content, ...data} = record;
 
         if (!content) {
@@ -213,12 +213,27 @@ async function main(params) {
           title += `: ${data.talkTitle}`;
         }
 
-        const frontmatter = yaml.safeDump({
+        const extracted = extractFrontmatter(data, content);
+        let frontmatterFromContent = {};
+        if (extracted) {
+          content = extracted.content;
+          frontmatterFromContent = extracted.frontmatter;
+        }
+
+        const metadata = {
           ...templateGlobals,
           title,
+          ...frontmatterFromContent,
           [dataFieldName]: data
-        });
+        };
+        const frontmatter = yaml.safeDump(metadata);
+        let cpath = contentPath;
+        if (metadata.standalone) {
+          cpath = 'cms';
+          ensureDirExists(cpath);
+        }
 
+        const filename = path.join(contentRoot, cpath, `${getFilename(title)}.md`);
         console.log(
           ' --> write markdown %s',
           chalk.green(path.relative(process.cwd(), filename))
@@ -235,4 +250,45 @@ async function main(params) {
         fs.writeFile(filename, markdownContent, () => {/*fire and forget*/});
       });
   });
+}
+
+function extractFrontmatter(data, content) {
+  let frontmatterFromContent;
+  if (!content.startsWith('----\n')) {
+    return;
+  }
+  let sepCount = 0;
+  let yamlString = '';
+  let rest = ''
+  content.split('\n').forEach(line => {
+    if (line == '----') {
+      sepCount++;
+      return;
+    }
+    if (sepCount >= 2) {
+      rest += line + '\n';
+      return;
+    }
+    yamlString += line + '\n';
+  });
+  if (sepCount != 2) {
+    console.log(chalk.red('Incomplete frontmatter in'), data.name);
+    return;
+  }
+  try {
+    return {
+      frontmatter: yaml.safeLoad(yamlString),
+      content: rest,
+    };
+  } catch (e) {
+    console.log(chalk.red('Invalid frontmatter in'), data.name, e.message);
+    return;
+  }
+}
+
+function getFilename(name) {
+  let filename = name || 'image';
+  filename = filename.replace(/[^\w]/g, '-');
+  filename = filename.replace(/--/g, '-');
+  return filename.toLowerCase();
 }
