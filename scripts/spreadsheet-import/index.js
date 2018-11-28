@@ -13,6 +13,8 @@ const {processSchedule} = require('./process-schedule');
 const rimraf = promisify(require('rimraf'));
 const timeout = promisify(setTimeout);
 
+const secret = process.env.preview_filename_component || 'secret';
+
 // spreadsheet-format is illustrated here:
 //   https://docs.google.com/spreadsheets/d/14TQHTYePS0SAaXGRNF3zYXvvk8xz25CXW-uekQy4HAs/edit
 
@@ -167,7 +169,9 @@ async function main(params) {
 
   // ---- parse and generate markdown-files
   console.log(chalk.gray('awesome, that worked.'));
-  Object.keys(sheets).forEach(sheetId => {
+  const previewFiles = [];
+  const processedRecords = [];
+  Object.keys(sheets).map(async function(sheetId) {
     if (!sheetId) {
       // Published pages create unnamed sheets.
       return;
@@ -185,12 +189,10 @@ async function main(params) {
     const records = processSheet(sheets[sheetId]);
 
     console.log(chalk.white('processing sheet %s'), chalk.yellow(sheetId));
-    records
-      // filter unpublished records when not in dev-mode.
-      .filter(r => r.published || !params.publishedOnly)
+    processedRecords.push.apply(processedRecords, records
 
       // render md-files
-      .forEach(async function(record) {
+      .map(async function(record) {
         let {content, ...data} = record;
 
         if (!content) {
@@ -226,19 +228,32 @@ async function main(params) {
           ...frontmatterFromContent,
           [dataFieldName]: data
         };
-        const frontmatter = yaml.safeDump(metadata);
+
         let cpath = contentPath;
         if (metadata.standalone) {
           cpath = 'cms';
           ensureDirExists(cpath);
         }
 
-        const filename = path.join(contentRoot, cpath, `${getFilename(title)}.md`);
+        let filename = getFilename(title);
+        if (!data.published && params.publishedOnly) {
+          metadata.filename = ':file.html';
+          cpath = 'preview';
+          ensureDirExists(cpath);
+          filename = `${filename}-${secret}`;
+          previewFiles.push({
+            url: `/${cpath}/${filename}.html`,
+            name: data.name,
+          });
+        }
+
+        const fullpath = path.join(contentRoot, cpath, `${filename}.md`);
         console.log(
           ' --> write markdown %s',
-          chalk.green(path.relative(process.cwd(), filename))
+          chalk.green(path.relative(process.cwd(), fullpath.replace(secret, '...')))
         );
 
+        const frontmatter = yaml.safeDump(metadata);
         const markdownContent =
           '----\n\n' +
           '# THIS FILE WAS GENERATED AUTOMATICALLY.\n' +
@@ -247,9 +262,16 @@ async function main(params) {
           '\n\n----\n\n' +
           wordwrap(content);
 
-        fs.writeFile(filename, markdownContent, () => {/*fire and forget*/});
-      });
+        fs.writeFile(fullpath, markdownContent, () => {/*fire and forget*/});
+      }));
   });
+  await Promise.all(processedRecords);
+  fs.writeFileSync(`${contentRoot}/preview/${secret}.md`,
+      '----\n\ntemplate: pages/simple.html.njk\n' +
+      'filename: :file.html\n\n----\n\n' +
+      previewFiles.map(file => {
+        return `<a href="${file.url}">${file.name}</a>`;
+      }).join('<br>\n'));
 }
 
 function extractFrontmatter(data, content) {
@@ -287,7 +309,7 @@ function extractFrontmatter(data, content) {
 }
 
 function getFilename(name) {
-  let filename = name || 'image';
+  let filename = name;
   filename = filename.replace(/[^\w]/g, '-');
   filename = filename.replace(/--/g, '-');
   return filename.toLowerCase();

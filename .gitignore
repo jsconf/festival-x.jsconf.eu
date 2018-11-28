@@ -9,6 +9,7 @@ node_modules/
 /contents/sponsors/*
 /contents/cms/*
 /contents/news/*
+/contents/preview/*
 /build
 .\#*
 .DS_Store
