@@ -1,0 +1,45 @@
+.section-intro {
+  background-color: var(--x-salmon-300);
+  color: var(--x-white);
+  padding: 2rem 0;
+  text-align: center;
+  @media (--medium) {
+    text-align: left;
+  }
+}
+
+.section-intro-background {
+  @media (--medium) {
+    background-image: url('contents:svg/pattern-intro.svg');
+    background-position: 25% 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 9rem;
+  }
+  @media (--large) {
+    background-position: 40% 0;
+  }
+}
+
+.section-intro-festival {
+  margin: 0 auto 1rem;
+  max-width: 12.8125rem;
+  max-height: 3.125rem;
+  @media (--medium) {
+    margin: inherit;
+    margin-bottom: 2rem;
+    max-width: 32.5rem;
+    max-height: 7.75rem;
+  }
+}
+
+.section-intro-logo {
+  margin: 0 auto;
+  max-width: 6.5rem;
+  max-height: 1rem;
+  @media (--medium) {
+    margin: inherit;
+    max-width: 16.125rem;
+    max-height: 2.4375rem;
+  }
+}

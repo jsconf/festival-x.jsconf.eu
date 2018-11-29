@@ -51,27 +51,29 @@
         {% include "../partials/topbar.html.njk" %}
       {% endblock %}
 
-      <main class="main-wrapper main-wrapper-padded main-wrapper-shadowed bg-white page-{{ page.metadata.pageId }}">
-        {% block header %}
-          {% if page.metadata.title  %}
-            <section class="grid">
-              <div class="grid-item-center">
-                <h1>
-                  {% if page.metadata.bodyTitle %}
-                    {{ page.metadata.bodyTitle }}
-                  {% else %}
-                    {{ page.metadata.title }}
-                  {% endif %}
-                </h1>
-              </div>
-            </section>
-          {% endif %}
-        {% endblock %}
+      {% block main %}
+        <main class="main-wrapper main-wrapper-padded main-wrapper-shadowed bg-white page-{{ page.metadata.pageId }}">
+          {% block header %}
+            {% if page.metadata.title  %}
+              <section class="grid">
+                <div class="grid-item-center">
+                  <h1>
+                    {% if page.metadata.bodyTitle %}
+                      {{ page.metadata.bodyTitle }}
+                    {% else %}
+                      {{ page.metadata.title }}
+                    {% endif %}
+                  </h1>
+                </div>
+              </section>
+            {% endif %}
+          {% endblock %}
 
-        {% block content %}
-          Sorry, nothing to see here 😗
-        {% endblock %}
-      </main>
+          {% block content %}
+            Sorry, nothing to see here 😗
+          {% endblock %}
+        </main>
+      {% endblock %}
 
       {% block footer %}
         {% include "../partials/footer-small.html.njk" %}

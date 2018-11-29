@@ -4,22 +4,29 @@
 
 {% block header %}{% endblock %}
 
-{% block content %}
-  <section class="tc grid mb6 mb7-l">
-    <div class="grid-item-center">
-      {{ svgIcon(contents, 'jsconf-logo-full', width = 564, height = 84, alt = 'JSConf EU') }}
+{% block main %}
+  <div class="section-intro">
+    <div class="section-intro-background">
+      <section class="grid">
+        <div class="grid-item-center">
+          <div class="section-intro-festival">
+            {{ svgIcon(contents, 'festival', width = 520, height = 124, alt = 'festival') }}
+          </div>
+          <div class="section-intro-logo">
+            {{ svgIcon(contents, 'jsconf-logo-white-full', width = 258, height = 39, alt = 'JSConf EU') }}
+          </div>
+        </div>
+        <p class="grid-item-center">
+          {{ fullConferenceDate }} &mdash; Berlin, Germany
+          <br>
+          JSConf EU is the labour-of-love conference for the JavaScript community in Europe.
+        </p>
+        <p class="grid-item-center">
+          <a href="{{ buyTicketsLink }}" class="btn btn--white btn--center">
+            Buy ticket
+          </a>
+        </p>
+      </section>
     </div>
-    <p class="grid-item-center">
-      {{ fullConferenceDate }} &mdash; Berlin, Germany
-      <br>
-      JSConf EU is the labour-of-love conference for the JavaScript community in Europe.
-      <br>
-      Our 2019 homepage is currently under construction. Please check back soon.
-    </p>
-    <p class="grid-item-center">
-      <a href="{{ buyTicketsLink }}" class="btn buy-ticket">
-        Buy ticket
-      </a>
-    </p>
-  </section>
+  </div>
 {% endblock %}
