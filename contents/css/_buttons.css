@@ -14,6 +14,7 @@
   border-radius: .25rem;
   position: relative;
   cursor: pointer;
+  font-size: 1.375rem;
   &:before {
     content: '';
     width: 100%;
@@ -55,6 +56,11 @@
 
 .btn--evalblack {
   --button-color: var(--evalblack);
+}
+
+.btn--white {
+  --button-color: var(--x-white);
+  --button-color-inverse: var(--x-slateblack-700);
 }
 
 /* this one works on dark backgrounds only */

@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .main-wrapper {
@@ -84,6 +85,10 @@
   @media (--small) {
     grid-column: 3 / span 10;
   }
+}
+
+.grid-item-full {
+  grid-column: 2 / span 12;
 }
 
 @media (--small) {

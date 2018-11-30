@@ -4,22 +4,56 @@
 
 {% block header %}{% endblock %}
 
-{% block content %}
-  <section class="tc grid mb6 mb7-l">
-    <div class="grid-item-center">
-      {{ svgIcon(contents, 'jsconf-logo-full', width = 564, height = 84, alt = 'JSConf EU') }}
+{% block main %}
+  <section class="section-intro">
+    <div class="section-intro-background">
+      <div class="grid">
+        <div class="grid-item-full relative-l">
+          <div id="intro"
+               data-src="{{ contents.js['lottie.js'].url }}"
+               class="section-intro-lottie">
+            <link rel="preload" href="{{ contents.js['lottie.js'].url }}" as="script">
+          </div>
+          <div class="section-intro-festival">
+            {{ svgIcon(contents, 'festival', width = 520, height = 124, alt = 'festival') }}
+          </div>
+          <div class="section-intro-logo">
+            {{ svgIcon(contents, 'jsconf-logo-white-full', width = 258, height = 39, alt = 'JSConf EU') }}
+          </div>
+          <p class="mt4 mb4">
+            {{ fullConferenceDate }} &mdash; Berlin, Germany
+            <br>
+            JSConf EU is the labour-of-love conference for the JavaScript community in Europe.
+          </p>
+          <p>
+            <a href="{{ buyTicketsLink }}" class="dib btn btn--white btn--center">
+              Buy ticket
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
-    <p class="grid-item-center">
-      {{ fullConferenceDate }} &mdash; Berlin, Germany
-      <br>
-      JSConf EU is the labour-of-love conference for the JavaScript community in Europe.
-      <br>
-      Our 2019 homepage is currently under construction. Please check back soon.
-    </p>
-    <p class="grid-item-center">
-      <a href="{{ buyTicketsLink }}" class="btn buy-ticket">
-        Buy ticket
-      </a>
-    </p>
+  </section>
+  <a class="section-video inline-video-link"
+      href="https://www.youtube.com/watch?v=zNk28iHdoFk"
+      target="_blank">
+    <div class="section-video-icon">
+      {{ svgIcon(contents, 'play', width = 86, height = 86, alt = 'Play') }}
+    </div>
+    <div class="section-video-text ttu mb4 tc">Impressions of JSConf EU 2018</div>
+  </a>
+  <section class="section-cfs section-last">
+    <div class="grid">
+      <div class="grid-item-full">
+        <div class="section-ornament section-ornament--right">
+          <h2 class="heading--massive heading--section">Call() for Speakers</h2>
+          <p class="mr6-l">
+            We are inviting the JavaScript community to submit talks for the upcoming JSConf EU (June 1 – 2 2019,
+            Berlin). Submit until December 23rd!
+            <a href="{{ contents['call-for-speakers.json'].url }}" class="link--slateblack">Read more</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 {% endblock %}

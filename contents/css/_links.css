@@ -51,6 +51,16 @@ a {
   }
 }
 
+.link--slateblack {
+  border-bottom: 4px solid var(--x-slateblack-700);
+
+  &:hover {
+    background-color: var(--x-slateblack-700);
+    border-top-color: var(--x-slateblack-700);
+    color: var(--x-white);
+  }
+}
+
 .link--nav {
   padding: .5rem 1rem;
   @media (--xlarge) {

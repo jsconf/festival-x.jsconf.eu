@@ -1,0 +1,70 @@
+.section-intro {
+  background-color: var(--x-salmon-300);
+  color: var(--x-white);
+  padding: 2rem 0;
+  text-align: center;
+  @media (--medium) {
+    text-align: left;
+  }
+}
+
+.section-intro p {
+  @media (--medium) {
+    width: 50%;
+  }
+}
+
+.section-intro-lottie {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 26.25rem;
+  @media (--medium) {
+    position: absolute;
+    right: 0;
+    top: -30%;
+  }
+}
+
+.section-intro-background {
+  @media (--medium) {
+    position: relative;
+    padding-top: 9rem;
+
+    &::before {
+      content: "";
+      background-image: url('contents:svg/pattern-intro.svg');
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin-left: -37.5rem;
+    }
+  }
+}
+
+.section-intro-festival {
+  margin: 0 auto 1rem;
+  max-width: 12.8125rem;
+  max-height: 3.125rem;
+  @media (--medium) {
+    margin: inherit;
+    margin-bottom: 2rem;
+    max-width: 32.5rem;
+    max-height: 7.75rem;
+  }
+}
+
+.section-intro-logo {
+  margin: 0 auto;
+  max-width: 6.5rem;
+  max-height: 1rem;
+  @media (--medium) {
+    margin: inherit;
+    max-width: 16.125rem;
+    max-height: 2.4375rem;
+  }
+}
