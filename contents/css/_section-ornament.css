@@ -1,0 +1,40 @@
+.section-ornament {
+  --ornament-spacing: 3rem;
+  padding: var(--ornament-spacing) 0;
+  @media (--medium) {
+    --ornament-spacing: 11.4375rem;
+  }
+}
+
+.section-ornament--right {
+  @media (--medium) {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+    &::before {
+      background-image: url('contents:svg/ornament-a-small.svg');
+      top: -4.4375rem;
+      right: 7.4375rem;
+      width: 8.875rem;
+      height: 8.875rem;
+    }
+    &::after {
+      background-image: url('contents:svg/ornament-a-big.svg');
+      top: -11.4375rem;
+      right: -15.4375rem;
+      width: 22.875rem;
+      height: 22.875rem;
+    }
+  }
+  @media (--large) {
+    &::before {
+      right: 0;
+    }
+    &::after {
+      right: -22.875rem;
+    }
+  }
+}

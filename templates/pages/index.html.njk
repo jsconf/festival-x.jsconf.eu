@@ -5,10 +5,10 @@
 {% block header %}{% endblock %}
 
 {% block main %}
-  <div class="section-intro">
+  <section class="section-intro">
     <div class="section-intro-background">
-      <section class="grid">
-        <div class="grid-item-center">
+      <div class="grid">
+        <div class="grid-item-full">
           <div class="section-intro-festival">
             {{ svgIcon(contents, 'festival', width = 520, height = 124, alt = 'festival') }}
           </div>
@@ -16,23 +16,41 @@
             {{ svgIcon(contents, 'jsconf-logo-white-full', width = 258, height = 39, alt = 'JSConf EU') }}
           </div>
         </div>
-        <p class="grid-item-center">
+        <p class="grid-item-full">
           {{ fullConferenceDate }} &mdash; Berlin, Germany
           <br>
           JSConf EU is the labour-of-love conference for the JavaScript community in Europe.
         </p>
-        <p class="grid-item-center">
+        <p class="grid-item-full">
           <a href="{{ buyTicketsLink }}" class="btn btn--white btn--center">
             Buy ticket
           </a>
         </p>
-      </section>
+      </div>
     </div>
-  </div>
+  </section>
   <a class="section-video" href="#" target="_blank">
     <div class="section-video-icon">
       {{ svgIcon(contents, 'play', width = 86, height = 86, alt = 'Play') }}
     </div>
     <div class="section-video-text ttu mb4 tc">Impressions of JSConf EU 2018</div>
   </a>
+  <section class="section-cfs">
+    <div class="grid">
+      <div class="grid-item-full">
+        <div class="section-ornament section-ornament--right">
+          <h2 class="heading--massive heading--section">Call() for Speakers</h2>
+          <p class="md-content mr6-l">
+            Our call for speakers is open until December 23, 2018. lorem ipsum dolor sit lalala orem ipsum dolor sit
+            lalala orem ipsum dolor sit lalala orem ipsum dolor sit lalala orem ipsum dolor sit lalalaorem ipsum dolor
+            sit lalala.
+            <a href="{{ contents['call-for-speakers.json'].url }}">Read more</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="section-news section-ornament">
+    News
+  </div>
 {% endblock %}
