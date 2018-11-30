@@ -1,8 +1,7 @@
 .section-ornament {
-  --ornament-spacing: 3rem;
-  padding: var(--ornament-spacing) 0;
+  padding: 3rem 0;
   @media (--medium) {
-    --ornament-spacing: 11.4375rem;
+    padding: 7rem 0 9.4375rem;
   }
 }
 
@@ -35,6 +34,39 @@
     }
     &::after {
       right: -22.875rem;
+    }
+  }
+}
+
+.section-ornament--left {
+  @media (--medium) {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+    &::before {
+      background-image: url('contents:svg/ornament-b-small.svg');
+      top: -3.6875rem;
+      left: 7.09375rem;
+      width: 7.375rem;
+      height: 7.375rem;
+    }
+    &::after {
+      background-image: url('contents:svg/ornament-b-big.svg');
+      top: -11.09375rem;
+      left: -15.09375rem;
+      width: 22.1875rem;
+      height: 22.1875rem;
+    }
+  }
+  @media (--large) {
+    &::before {
+      left: 0;
+    }
+    &::after {
+      left: -22.1875rem;
     }
   }
 }

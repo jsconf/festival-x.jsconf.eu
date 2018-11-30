@@ -11,13 +11,13 @@
 .section-intro-background {
   @media (--medium) {
     background-image: url('contents:svg/pattern-intro.svg');
-    background-position: 25% 0;
+    background-position: 15% 0;
     background-repeat: no-repeat;
     background-size: contain;
     padding-top: 9rem;
   }
   @media (--large) {
-    background-position: 40% 0;
+    background-position: 25% 0;
   }
 }
 

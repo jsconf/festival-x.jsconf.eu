@@ -3,3 +3,22 @@
   margin-bottom: -1rem;
   padding-bottom: 1rem;
 }
+
+.news-grid {
+  @media (--small) {
+    --news-grid-count: 2;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(var(--news-grid-count), 1fr);
+  }
+  @media (--medium) {
+    --news-grid-count: 3;
+  }
+}
+
+.news-title {
+  font-size: 2rem;
+  line-height: 1.125;
+  margin-bottom: 0;
+  margin-top: 0;
+}
