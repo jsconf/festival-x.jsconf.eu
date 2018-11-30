@@ -8,16 +8,41 @@
   }
 }
 
+.section-intro p {
+  @media (--medium) {
+    width: 50%;
+  }
+}
+
+.section-intro-lottie {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 26.25rem;
+  @media (--medium) {
+    position: absolute;
+    right: 0;
+    top: -30%;
+  }
+}
+
 .section-intro-background {
   @media (--medium) {
-    background-image: url('contents:svg/pattern-intro.svg');
-    background-position: 15% 0;
-    background-repeat: no-repeat;
-    background-size: contain;
+    position: relative;
     padding-top: 9rem;
-  }
-  @media (--large) {
-    background-position: 25% 0;
+
+    &::before {
+      content: "";
+      background-image: url('contents:svg/pattern-intro.svg');
+      background-position: 50% 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin-left: -37.5rem;
+    }
   }
 }
 
