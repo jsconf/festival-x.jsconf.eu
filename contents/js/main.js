@@ -40,3 +40,17 @@ function addLink(rel, href) {
   link.href = href;
   document.head.appendChild(link);
 }
+
+Array.from(document.querySelectorAll('.inline-video-link')).forEach(function(link) {
+  link.onclick = function(e) {
+    e.preventDefault();
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/zNk28iHdoFk?autoplay=1'
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', 'true');
+    iframe.setAttribute('allow', 'autoplay https://www.youtube-nocookie.com/');
+    iframe.className = 'section-video';
+    iframe.style.padding = 0;
+    link.parentElement.replaceChild(iframe, link);
+  };
+});
