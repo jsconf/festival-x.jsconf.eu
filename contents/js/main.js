@@ -54,3 +54,31 @@ Array.from(document.querySelectorAll('.inline-video-link')).forEach(function(lin
     link.parentElement.replaceChild(iframe, link);
   };
 });
+
+function introAnimation(intro) {
+  var anim1 = bodymovin.loadAnimation({
+    container: intro,
+    renderer: "svg",
+    loop: false,
+    autoplay: true,
+    animationData: window.festivalXIntroAnimationJson
+  });
+
+  anim1.addEventListener("DOMLoaded", el => {
+    anim1.addEventListener("complete", el => {
+      anim1.playSegments([259, 396], true);
+    });
+  });
+}
+var intro = document.getElementById("intro");
+if (intro) {
+  // The script contains both the lottie framework and the
+  // window.festivalXIntroAnimationJson variable that contains
+  // the actual animation.
+  var script = document.createElement('script');
+  script.src = intro.getAttribute('data-src');
+  script.onload = function() {
+    introAnimation(intro);
+  };
+  document.head.appendChild(script);
+}

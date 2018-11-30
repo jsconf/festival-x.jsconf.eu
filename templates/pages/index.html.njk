@@ -9,6 +9,11 @@
     <div class="section-intro-background">
       <div class="grid">
         <div class="grid-item-full">
+          <div id=intro
+              data-src="{{ contents.js['lottie.js'].url }}"
+              style="position:absolute;width:413px;right:50px;">
+            <link rel="preload" href="{{ contents.js['lottie.js'].url }}" as="script">
+          </div>
           <div class="section-intro-festival">
             {{ svgIcon(contents, 'festival', width = 520, height = 124, alt = 'festival') }}
           </div>
