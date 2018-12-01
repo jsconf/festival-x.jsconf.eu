@@ -13,6 +13,8 @@ const {processSchedule} = require('./process-schedule');
 const rimraf = promisify(require('rimraf'));
 const timeout = promisify(setTimeout);
 
+const secret = process.env.preview_filename_component || 'secret';
+
 // spreadsheet-format is illustrated here:
 //   https://docs.google.com/spreadsheets/d/14TQHTYePS0SAaXGRNF3zYXvvk8xz25CXW-uekQy4HAs/edit
 
@@ -69,6 +71,13 @@ const sheetParams = {
     dataFieldName: 'speaker',
     contentPath: 'team'
   },
+  articles: {
+    templateGlobals: {
+      template: 'pages/placeholder.html.njk'
+    },
+    dataFieldName: 'article',
+    contentPath: 'news'
+  },
   /*sponsors: {
     templateGlobals: {
       template: 'pages/sponsor.html.njk'
@@ -117,21 +126,15 @@ if (!hasRcFile) {
 
 main(params).catch(err => console.error(err));
 
-async function main(params) {
-  // ---- ensure the directories exist...
-  const requiredDirectories = ['team', 'speakers', 'talks', 'sponsors', 'images/speaker', 'images/sponsor'];
-  const requiredDirectoryPaths = requiredDirectories.map(
-    dir => `${__dirname}/../../contents/${dir}`
-  );
-  const missingDirectories = requiredDirectoryPaths.filter(
-    dir => !fs.existsSync(dir)
-  );
-
-  if (!!missingDirectories.length) {
-    console.log(chalk.gray('creating missing directories...'));
-    missingDirectories.forEach(dir => mkdirp(dir));
+function ensureDirExists(dir) {
+  const fullDir = `${__dirname}/../../contents/${dir}`;
+  if (fs.existsSync(fullDir)) {
+    return;
   }
+  mkdirp(fullDir)
+}
 
+async function main(params) {
   // ---- cleanup...
   if (params.doCleanup) {
     console.log(chalk.gray('cleaning up...'));
@@ -166,7 +169,9 @@ async function main(params) {
 
   // ---- parse and generate markdown-files
   console.log(chalk.gray('awesome, that worked.'));
-  Object.keys(sheets).forEach(sheetId => {
+  const previewFiles = [];
+  const processedRecords = [];
+  Object.keys(sheets).map(async function(sheetId) {
     if (!sheetId) {
       // Published pages create unnamed sheets.
       return;
@@ -176,6 +181,7 @@ async function main(params) {
       return;
     }
     const {templateGlobals, dataFieldName, contentPath, parseSchedule} = sheetParams[sheetId];
+    ensureDirExists(contentPath);
     if (parseSchedule) {
       processSchedule(sheets[sheetId]);
       return;
@@ -183,14 +189,10 @@ async function main(params) {
     const records = processSheet(sheets[sheetId]);
 
     console.log(chalk.white('processing sheet %s'), chalk.yellow(sheetId));
-    records
-      // filter unpublished records when not in dev-mode.
-      .filter(r => r.published || !params.publishedOnly)
+    processedRecords.push.apply(processedRecords, records
 
       // render md-files
-      .forEach(async function(record) {
-        const filename = path.join(contentRoot, contentPath, `${record.id}.md`);
-
+      .map(async function(record) {
         let {content, ...data} = record;
 
         if (!content) {
@@ -213,17 +215,45 @@ async function main(params) {
           title += `: ${data.talkTitle}`;
         }
 
-        const frontmatter = yaml.safeDump({
+        const extracted = extractFrontmatter(data, content);
+        let frontmatterFromContent = {};
+        if (extracted) {
+          content = extracted.content;
+          frontmatterFromContent = extracted.frontmatter;
+        }
+
+        const metadata = {
           ...templateGlobals,
           title,
+          ...frontmatterFromContent,
           [dataFieldName]: data
-        });
+        };
 
+        let cpath = contentPath;
+        if (metadata.standalone) {
+          cpath = 'cms';
+          ensureDirExists(cpath);
+        }
+
+        let filename = getFilename(title);
+        if (!data.published && params.publishedOnly) {
+          metadata.filename = ':file.html';
+          cpath = 'preview';
+          ensureDirExists(cpath);
+          filename = `${filename}-${secret}`;
+          previewFiles.push({
+            url: `/${cpath}/${filename}.html`,
+            name: data.name,
+          });
+        }
+
+        const fullpath = path.join(contentRoot, cpath, `${filename}.md`);
         console.log(
           ' --> write markdown %s',
-          chalk.green(path.relative(process.cwd(), filename))
+          chalk.green(path.relative(process.cwd(), fullpath.replace(secret, '...')))
         );
 
+        const frontmatter = yaml.safeDump(metadata);
         const markdownContent =
           '----\n\n' +
           '# THIS FILE WAS GENERATED AUTOMATICALLY.\n' +
@@ -232,7 +262,57 @@ async function main(params) {
           '\n\n----\n\n' +
           wordwrap(content);
 
-        fs.writeFile(filename, markdownContent, () => {/*fire and forget*/});
-      });
+        fs.writeFile(fullpath, markdownContent, () => {/*fire and forget*/});
+      }));
   });
+  await Promise.all(processedRecords);
+  fs.writeFileSync(`${contentRoot}/preview/${secret}.md`,
+      '----\n\ntemplate: pages/simple.html.njk\n' +
+      'filename: :file.html\n\n----\n\n' +
+      previewFiles.map(file => {
+        return `<a href="${file.url}">${file.name}</a>`;
+      }).join('<br>\n'));
+}
+
+function extractFrontmatter(data, content) {
+  let frontmatterFromContent;
+  if (!content.startsWith('----\n')) {
+    return;
+  }
+  let sepCount = 0;
+  let yamlString = '';
+  let rest = ''
+  content.split('\n').forEach(line => {
+    if (line == '----') {
+      sepCount++;
+      return;
+    }
+    if (sepCount >= 2) {
+      rest += line + '\n';
+      return;
+    }
+    yamlString += line + '\n';
+  });
+  if (sepCount != 2) {
+    console.log(chalk.red('Incomplete frontmatter in'), data.name);
+    return;
+  }
+  try {
+    return {
+      frontmatter: yaml.safeLoad(yamlString),
+      content: rest,
+    };
+  } catch (e) {
+    console.log(chalk.red('Invalid frontmatter in'), data.name, e.message);
+    return;
+  }
+}
+
+function getFilename(name) {
+  let filename = name.trim();
+  filename = filename.replace(/[^\w]/g, '-');
+  filename = filename.replace(/--/g, '-');
+  filename = filename.replace(/-$/g, '');
+  filename = filename.replace(/^-/g, '');
+  return filename.toLowerCase();
 }

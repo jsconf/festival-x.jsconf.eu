@@ -58,4 +58,35 @@
       </div>
     </div>
   </section>
+
+  {% set newsList = contents.news._.pages |
+      notRedirect |
+      notDraft |
+      sortObjects('metadata.date', '2017-01-01', 'date') |
+      reverse %}
+
+
+  <div class="section-news">
+    <div class="grid">
+      <div class="grid-item-full">
+        <div class="section-ornament section-ornament--left">
+          <h2 class="heading--massive heading--section">News</h2>
+          <div class="news-grid mt4">
+          {% for news in newsList %}
+            <div class="news-grid-item">
+              <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
+              <h3 class="news-title">{{ news.title }}</h3>
+              <p>
+                {{ news.html | striptags | truncate('150') }}
+              </p>
+              <p>
+                <a href="{{ news.url }}" class="link--slateblack">Read more</a>
+              </p>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
