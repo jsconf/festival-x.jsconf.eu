@@ -25,6 +25,10 @@
   }
 }
 
+.section-intro-lottie #intro-heart {
+  visibility: hidden;
+}
+
 .section-intro-background {
   @media (--medium) {
     position: relative;
