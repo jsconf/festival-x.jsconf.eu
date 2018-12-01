@@ -32,6 +32,13 @@ function prefetch() {
   addLink('prefetch', 'https://assets.beta.tito.io/assets/event/mcdonagh-f6f1b3c7a80e57c984a0f9d9c4b8b85028edc3ea3fc9a6526da63316cb314e3c.css');
   addLink('prefetch', 'https://js.stripe.com/v2/');
   addLink('prefetch', 'https://eepurl.com/dvQxb5');
+  if (/localhost/.test(location.href)) {
+    return;
+  }
+  addLink('prefetch', '/');
+  document.querySelectorAll('.link--nav').forEach(function(a) {
+    addLink('prefetch', a.href);
+  })
 }
 
 function addLink(rel, href) {
