@@ -67,7 +67,7 @@
 
   <div class="grid">
     {% for page in team %}
-      {% set speaker = page.metadata.speaker %}
+      {% set speaker = page.metadata.data %}
       {% if speaker.core %}
         {{ teamMember(contents, speaker) }}
       {% endif %}
@@ -82,7 +82,7 @@
 
   <div class="grid">
     {% for page in team %}
-      {% set speaker = page.metadata.speaker %}
+      {% set speaker = page.metadata.data %}
       {% if not speaker.core %}
         {{ teamMember(contents, speaker) }}
       {% endif %}
