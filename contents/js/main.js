@@ -59,6 +59,7 @@ Array.from(document.querySelectorAll('.inline-video-link')).forEach(function(lin
     iframe.className = 'section-video';
     iframe.style.padding = 0;
     link.parentElement.replaceChild(iframe, link);
+    document.getElementById('csf-homepage').classList.remove('section-ornament--right');
   };
 });
 
