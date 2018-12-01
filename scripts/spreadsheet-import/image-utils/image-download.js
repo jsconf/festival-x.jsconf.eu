@@ -8,9 +8,11 @@ const sharp = require('sharp');
 const {promisify} = require('util');
 
 function getImageFilename(originalUrl, name, ext) {
-  let filename = name || 'image';
+  let filename = name.trim();
   filename = filename.replace(/[^\w]/g, '-');
   filename = filename.replace(/--/g, '-');
+  filename = filename.replace(/-$/g, '');
+  filename = filename.replace(/^-/g, '');
   // Filename changes if underlying URL changes.
   const hash = require('crypto').createHash('sha1')
       .update(originalUrl).digest('hex');

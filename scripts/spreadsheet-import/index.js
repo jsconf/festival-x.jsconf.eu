@@ -309,8 +309,10 @@ function extractFrontmatter(data, content) {
 }
 
 function getFilename(name) {
-  let filename = name;
+  let filename = name.trim();
   filename = filename.replace(/[^\w]/g, '-');
   filename = filename.replace(/--/g, '-');
+  filename = filename.replace(/-$/g, '');
+  filename = filename.replace(/^-/g, '');
   return filename.toLowerCase();
 }
