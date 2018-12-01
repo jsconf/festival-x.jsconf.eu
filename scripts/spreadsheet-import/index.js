@@ -47,42 +47,36 @@ const sheetParams = {
     templateGlobals: {
       template: 'pages/speaker.html.njk'
     },
-    dataFieldName: 'speaker',
     contentPath: 'speakers'
   },
   mcs: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
-    dataFieldName: 'speaker',
     contentPath: 'mcs'
   },
   artists: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
-    dataFieldName: 'speaker',
     contentPath: 'artists'
   },*/
   team: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
-    dataFieldName: 'speaker',
     contentPath: 'team'
   },
   articles: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
-    dataFieldName: 'article',
     contentPath: 'news'
   },
   /*sponsors: {
     templateGlobals: {
       template: 'pages/sponsor.html.njk'
     },
-    dataFieldName: 'sponsor',
     contentPath: 'sponsors'
   },
   schedule: {
@@ -226,7 +220,7 @@ async function main(params) {
           ...templateGlobals,
           title,
           ...frontmatterFromContent,
-          [dataFieldName]: data
+          data,
         };
 
         let cpath = contentPath;
