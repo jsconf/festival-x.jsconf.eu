@@ -78,6 +78,7 @@ if (intro) {
   var script = document.createElement('script');
   script.src = intro.getAttribute('data-src');
   script.onload = function() {
+    intro.removeChild(intro.querySelector('svg'));
     introAnimation(intro);
   };
   document.head.appendChild(script);
