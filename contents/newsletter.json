@@ -1,0 +1,6 @@
+{
+  "pageId": "newsletter",
+  "template": "pages/newsletter.html.njk",
+  "filename": ":file/index.html",
+  "title": "Newsletter"
+}
