@@ -16,6 +16,10 @@ body {
   background-size: cover;
 }
 
+body.design-2019 {
+  background-image: none;
+}
+
 input, button, textarea {
   font-family: "jaf-domus", Helvetica, Arial, sans-serif;
 }
