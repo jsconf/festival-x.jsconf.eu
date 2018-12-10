@@ -201,7 +201,7 @@ async function main(params) {
         if (sheetId === 'sponsors') {
           imageExtension = 'svg';
         }
-        const imageUrl = data.potraitImageUrl || data.logoUrl;
+        const imageUrl = data.potraitImageUrl || data.logoUrl || data.image;
         data.image = await downloadImage(imageUrl, data.name, imageExtension);
 
         let title = data.name;
