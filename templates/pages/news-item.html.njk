@@ -3,13 +3,7 @@
 {% block content %}
   <article class="grid">
     <div class="grid-item-center md-content">
-      {% if page.metadata.data.image.filename %}
-      <div style="padding-top:{{ contents.images.cms[page.metadata.data.image.filename].getImageInfo().aspectPercentage }}%;overflow:hidden;position:relative">
-        <img src="{{ contents.images.cms[page.metadata.data.image.filename].url }}"
-          style="position:absolute;top:0;left:0;right:0;bottom:0">
-      </div>
-      {% endif %}
-      {{ page.html }}
+      {{ page.html | contentUrls(contents) }}
     </div>
 
     {% if not page.metadata.nobuy %}
