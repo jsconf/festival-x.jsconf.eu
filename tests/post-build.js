@@ -19,6 +19,7 @@ function checkDir(name, minCount) {
 // checkDir('contents/sponsors/', 0);
 // checkDir('contents/mcs/', 0);
 checkDir('contents/team/', 3);
-checkDir('contents/news/', 4);
 checkDir('build/team/', 3);
+checkDir('contents/news/', 4);
+checkDir('build/news/', 4);
 checkDir('contents/images/cms/', 3);
