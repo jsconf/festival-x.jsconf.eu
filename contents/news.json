@@ -1,0 +1,6 @@
+{
+  "pageId": "news",
+  "template": "pages/news.html.njk",
+  "filename": ":file/index.html",
+  "title": "News"
+}
