@@ -219,7 +219,7 @@ async function main(params) {
         }
 
         const imagesInContent = [];
-        content = await downloadContentUrls(content, title, imagesInContent);
+        content = await downloadContentUrls(content, imagesInContent);
         if (!data.image.filename && imagesInContent.length) {
           data.image = imagesInContent[0];
         }
@@ -323,11 +323,11 @@ function getFilename(name) {
 // Turn the text pattern DOWNLOAD(https://some.com/url)
 // into a contents:images/cms/filename.jpg URL that is later
 // resolved when rendering to the actual URL.
-async function downloadContentUrls(text, nameBase, imagesOut) {
+async function downloadContentUrls(text, imagesOut) {
   const imagePromises = [];
   const re = /DOWNLOAD\(([^\)]+)\)/g;
   text.replace(re, (match, url) => {
-    imagePromises.push(downloadImage(url, nameBase));
+    imagePromises.push(downloadImage(url, 'image'));
   });
   const images = await Promise.all(imagePromises);
   let i = 0;

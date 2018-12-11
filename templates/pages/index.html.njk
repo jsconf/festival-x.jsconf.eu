@@ -74,7 +74,7 @@
           <h2 class="heading--massive heading--section">News</h2>
           <div class="news-grid mt4">
           {% for news in newsList %}
-            <div class="news-grid-item">
+            <article class="news-grid-item" onclick="location=this.querySelector('a').href">
               <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
               <h3 class="news-title">{{ news.title }}</h3>
               <p>
@@ -83,7 +83,7 @@
               <p>
                 <a href="{{ news.url }}" class="link--slateblack">Read more</a>
               </p>
-            </div>
+            </article>
           {% endfor %}
           </div>
         </div>

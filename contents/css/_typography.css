@@ -16,6 +16,10 @@ body {
   background-size: cover;
 }
 
+[onclick] {
+  cursor: pointer;
+}
+
 body.design-2019 {
   background-image: none;
 }
