@@ -201,13 +201,6 @@ async function main(params) {
         if (sheetId === 'sponsors') {
           imageExtension = 'svg';
         }
-        const imageUrl = data.potraitImageUrl || data.logoUrl || data.image;
-        data.image = await downloadImage(imageUrl, data.name, imageExtension);
-
-        let title = data.name;
-        if (data.talkTitle) {
-          title += `: ${data.talkTitle}`;
-        }
 
         const extracted = extractFrontmatter(data, content);
         let frontmatterFromContent = {};
@@ -216,12 +209,28 @@ async function main(params) {
           frontmatterFromContent = extracted.frontmatter;
         }
 
+        const imageUrl = data.potraitImageUrl || data.logoUrl || data.image || frontmatterFromContent.image;
+        delete frontmatterFromContent.image;
+        data.image = await downloadImage(imageUrl, data.name, imageExtension);
+
+        let title = data.name;
+        if (data.talkTitle) {
+          title += `: ${data.talkTitle}`;
+        }
+
+        const imagesInContent = [];
+        content = await downloadContentUrls(content, title, imagesInContent);
+        if (!data.image.filename && imagesInContent.length) {
+          data.image = imagesInContent[0];
+        }
+
         const metadata = {
           ...templateGlobals,
           title,
           ...frontmatterFromContent,
           data,
         };
+
 
         let cpath = contentPath;
         if (metadata.standalone) {
@@ -309,4 +318,23 @@ function getFilename(name) {
   filename = filename.replace(/-$/g, '');
   filename = filename.replace(/^-/g, '');
   return filename.toLowerCase();
+}
+
+// Turn the text pattern DOWNLOAD(https://some.com/url)
+// into a contents:images/cms/filename.jpg URL that is later
+// resolved when rendering to the actual URL.
+async function downloadContentUrls(text, nameBase, imagesOut) {
+  const imagePromises = [];
+  const re = /DOWNLOAD\(([^\)]+)\)/g;
+  text.replace(re, (match, url) => {
+    imagePromises.push(downloadImage(url, nameBase));
+  });
+  const images = await Promise.all(imagePromises);
+  let i = 0;
+  text = text.replace(re, () => {
+    const image = images[i++];
+    return 'contents:images/cms/' + image.filename_1000;
+  });
+  imagesOut.push.apply(imagesOut, images);
+  return text;
 }

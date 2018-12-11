@@ -28,8 +28,8 @@
       {% if page.metadata.image and contents.images[page.metadata.image] and contents.images[page.metadata.image].url %}
         {% set image = contents.images[page.metadata.image].url %}
       {% endif %}
-      {% if page.metadata.data.image and contents.images.cms[page.metadata.data.image.filename] and contents.images.cms[page.metadata.data.image.filename].url %}
-        {% set image = contents.images.cms[page.metadata.data.image.filename].url %}
+      {% if page.metadata.data.image and contents.images.cms[page.metadata.data.image.filename_1000] and contents.images.cms[page.metadata.data.image.filename].url %}
+        {% set image = contents.images.cms[page.metadata.data.image.filename_1000].url %}
       {% endif %}
       {% if image and not image.startsWith('http') %}
         {% set image = url + image %}
