@@ -173,7 +173,7 @@ You will be asked to consent to the use of your personal data to receive our new
 
 #### JSConf EU
 
-"By entering your e-mail address and clicking the button below, you confirm that you are 16 years or older. You agree that the JSConf EU (represented by SinnerSchrader Deutschland GmbH, Völckersstraße 38, 22765 Hamburg) will use the data and information provided by you in connection with the use of the newsletter to regularly send you information about the JSConf EU by e-mail. By clicking below, you agree that JSCconf EU may process your information in accordance with these terms. You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at contact@jsconf.eu. JSConf EU will treat your information with respect. For further information, please see our privacy policy on our website."
+"By entering your e-mail address and clicking the button below, you confirm that you are 16 years or older. You agree that the JSConf EU (represented by SinnerSchrader Deutschland GmbH, Völckersstraße 38, 22765 Hamburg) will use the data and information provided by you in connection with the use of the newsletter to regularly send you information about the JSConf EU by e-mail. By clicking below, you agree that JSConf EU may process your information in accordance with these terms. You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at contact@jsconf.eu. JSConf EU will treat your information with respect. For further information, please see our privacy policy on our website."
 
 ### Statistical survey and analysis
 
