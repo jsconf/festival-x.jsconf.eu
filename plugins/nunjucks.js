@@ -92,6 +92,10 @@ module.exports = function(env, callback) {
     })
   });
 
+  nenv.addFilter('json', function(object) {
+    return JSON.stringify(object);
+  });
+
   env.registerTemplatePlugin('**/*.*(html|nunjucks|njk)', NunjucksTemplate);
   // Transform static URLs into the form:
   // /immutable/$fileHash/filename
