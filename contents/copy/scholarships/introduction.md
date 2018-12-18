@@ -6,4 +6,4 @@ Anyone from an underrepresented group in tech is invited to apply for a scholars
 
 If you’ve always wanted to visit JSConf and/or CSSconf EU, but haven’t had the money or resources to, this is your chance! The Scholarship Program was made for you.
 
-❤️ Granting these scholarships is made possible thanks to the wonderful people that buy Diversity Support Tickets, as well as the generous contributions made by our sponsors. More help is needed – talk to us if you’d like to get involved: [contact@jsconf.eu](mailto:contact@jsconf.eu?subject=Scholarship%20Program).
+❤️ Granting these scholarships is made possible thanks to the wonderful people that buy Diversity Support Tickets, as well as the generous contributions made by our sponsors. More help is needed – talk to us if you’d like to get involved: [scholarship@jsconf.eu](mailto:scholarship@jsconf.eu?subject=Scholarship%20Program).
