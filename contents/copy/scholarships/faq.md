@@ -19,8 +19,8 @@ This depends on whether you need a [_visa to enter Germany_](https://www.auswaer
 - __If you need a visa__: From 15th of November, 2018 until 30th of January, 2019.
 - __If you do not need a Visa__: From 15th of November, 2018 until 10th of March, 2019.
 
-__Why are only applicants without a visa and travel being charged 20 EUR per day?__
+__Why are scholarship holders without a travel grant being charged 20 EUR per conference day?__
 
-This is a good and valid question. In the past we unfortunately experienced a small number of „Just a ticket” scholarship holders that neither informed us beforehand nor showed up at the conference. Therefore we had tickets left which we were not able to give to another scholarship applicant from the waiting list. That’s why we decided to take a small fee per conference day, just to make sure that people who are not able to attend inform us in time. The fee is refunded once you attend the conference or inform us on time if you can not make it at all.
+This is a good and valid question. In the past we unfortunately experienced a small number of scholarship holders that neither informed us beforehand nor showed up at the conference. Therefore we had tickets left which we were not able to give to another scholarship applicant from the waiting list. Applicants who needed a visa and travel were not among this group since we are in contact with them the weeks before the conference to book travel and hotel. That's why we decided to take a small fee per conference day for the scholarships without travel grants, just to make sure that people who are not able to attend inform us on time. 
 
-Applicants who need a visa and travel are not among this group since we are in contact with them in the time before the conference, in order to book travel and hotel.
+The fee is refunded once you attend the conference or inform us on time (**until 2019, 29th May**) if you can not make it at all.
