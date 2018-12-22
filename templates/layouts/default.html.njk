@@ -47,7 +47,7 @@
       <meta name="twitter:image" content="{{ image }}">
       <meta property="og:image" content="{{ image }}">
     {% endblock %}
-    <link rel=stylesheet href="{{ contents.css["main.css"].url }}">
+    <link rel=stylesheet href="{{ contents.css['main.css'].url }}">
   </head>
   <body class="{% block bodyclass %}{% endblock %}">
     <div class="layout-wrapper">
@@ -81,11 +81,11 @@
       {% endblock %}
 
       {% block footer %}
-        {% include "../partials/footer-small.html.njk" %}
+        {% include "../partials/footer.html.njk" %}
       {% endblock %}
 
     </div>
   <script src="{{ contents.js['main.js'].url }}" async></script>
-  <link rel=preload href="{{ contents.images["pattern.svg"].url }}" as=image>
+  <link rel=preload href="{{ contents.images['pattern.svg'].url }}" as=image>
   </body>
 </html>
