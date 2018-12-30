@@ -47,6 +47,8 @@
       <meta name="twitter:image" content="{{ image }}">
       <meta property="og:image" content="{{ image }}">
     {% endblock %}
+    {% block extraExtraMetaData %}
+    {% endblock %}
     <link rel=stylesheet href="{{ contents.css["main.css"].url }}">
   </head>
   <body class="{% block bodyclass %}{% endblock %}">
