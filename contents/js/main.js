@@ -61,8 +61,13 @@ Array.from(document.querySelectorAll('.inline-video-link')).forEach(function(lin
     iframe.setAttribute('allow', 'autoplay https://www.youtube-nocookie.com/');
     iframe.className = 'section-video';
     iframe.style.padding = 0;
+    var nextSection = link.nextElementSibling;
     link.parentElement.replaceChild(iframe, link);
-    document.getElementById('csf-homepage').classList.remove('section-ornament--right');
+    var ornamentOnTopOfVideo = nextSection.querySelector('.section-ornament--right,.section-ornament--left');
+    if (ornamentOnTopOfVideo) {
+      ornamentOnTopOfVideo.classList.remove('section-ornament--right');
+      ornamentOnTopOfVideo.classList.remove('section-ornament--left');
+    }
   };
 });
 

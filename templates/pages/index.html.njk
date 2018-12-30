@@ -46,6 +46,7 @@
     </div>
     <div class="section-video-text ttu mb4 tc">Impressions of JSConf EU 2018</div>
   </a>
+  <!--
   <section class="section-cfs">
     <div class="grid">
       <div class="grid-item-full">
@@ -60,6 +61,7 @@
       </div>
     </div>
   </section>
+  -->
 
   {% set newsList = contents.news._.pages |
       notRedirect |
@@ -70,7 +72,7 @@
   <div class="section-news section-last">
     <div class="grid">
       <div class="grid-item-full">
-        <div class="section-ornament section-ornament--left">
+        <div class="section-ornament section-ornament--right">
           <h2 class="heading--massive heading--section">News</h2>
           <div class="news-grid mt4">
           {% for news in newsList %}
