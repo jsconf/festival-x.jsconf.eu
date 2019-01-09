@@ -27,8 +27,8 @@ function pingTypekit() {
 }
 
 function prefetch() {
-  addLink('prefetch', 'https://ti.to/jsconfeu/jsconf-eu-x-2019');
   addLink('prefetch', 'https://use.typekit.com/zjo8qhc.js');
+  addLink('prefetch', 'https://ti.to/jsconfeu/jsconf-eu-x-2019');
   addLink('prefetch', 'https://assets.beta.tito.io/assets/event/mcdonagh-f6f1b3c7a80e57c984a0f9d9c4b8b85028edc3ea3fc9a6526da63316cb314e3c.css');
   addLink('prefetch', 'https://assets.beta.tito.io/assets/event_homepage-b7a2789ecc2ff9232a349177f083d8af30902d2c0663ccda688c1168a7351dbc.js');
   addLink('prefetch', 'https://assets.beta.tito.io/assets/tito-94b42e9b7efe734702e80e6139aa86a3e604f32872a83c5f6ca9e564e254aafd.js');
