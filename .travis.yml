@@ -26,6 +26,7 @@ deploy:
   local_dir: build
   keep-history: true
   repo: cramforce/ghpages.2009.jsconf.eu
+  verbose: true
   on:
     branch: master
 
