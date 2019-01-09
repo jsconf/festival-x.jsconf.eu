@@ -17,6 +17,7 @@ before_deploy:
   - tar xvf secrets.tar
   - npm run-script ci:import
   - npm run-script build
+  - cp contents/README.md build/
   - node tests/post-build.js
 
 deploy:
