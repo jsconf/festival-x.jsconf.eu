@@ -25,6 +25,7 @@ deploy:
   github_token: "$GITHUB_TOKEN"
   local_dir: build
   keep-history: true
+  repo: cramforce/ghpages.2009.jsconf.eu
   on:
     branch: master
 
