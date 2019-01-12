@@ -8,9 +8,10 @@ node_js:
 script:
   - npm run-script generate-locals
   - npm run-script generate-redirects
-  - npm run-script build
-  # Because we build again, move the non-deploy build out of the way.
-  - mv build test-build
+  - if [ "$TRAVIS_PULL_REQUEST_BRANCH" ]; then npm run-script build; fi
+
+stages:
+  - name:
 
 before_deploy:
   - openssl aes-256-cbc -in secrets.tar.enc -out secrets.tar -d -pass "env:spreadsheet_read"
