@@ -333,6 +333,10 @@ async function downloadContentUrls(text, imagesOut) {
   let i = 0;
   text = text.replace(re, () => {
     const image = images[i++];
+    let filename = image.filename_1000;
+    if (image.originalExt == 'png') {
+      filename = image.filename;
+    }
     return 'contents:images/cms/' + image.filename_1000;
   });
   imagesOut.push.apply(imagesOut, images);
