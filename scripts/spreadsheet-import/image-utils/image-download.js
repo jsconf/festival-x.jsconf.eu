@@ -99,7 +99,7 @@ async function downloadImage(url, name, opt_extension) {
       filename_1000: sizedName(info.filename, 1000),
       width: size.width,
       height: size.height,
-      originalExt: info.ext.toLowerCase(),
+      originalType: info.ext.toLowerCase(),
     };
   } catch (err) {
     console.error(chalk.red.bold(' !!! failed to download', url));
