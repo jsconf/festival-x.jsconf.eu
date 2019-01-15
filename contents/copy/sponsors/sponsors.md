@@ -2,3 +2,4 @@ We are currently offering sponsorship packages for JSConf EU 2019 (Our 10th anni
 
 [contact@jsconf.eu](mailto:contact@jsconf.eu)
 
+# A heartfelt thanks to our 2018 sponsors:

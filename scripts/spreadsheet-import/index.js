@@ -73,13 +73,13 @@ const sheetParams = {
     },
     contentPath: 'news'
   },
-  /*sponsors: {
+  sponsors: {
     templateGlobals: {
-      template: 'pages/sponsor.html.njk'
+      template: 'pages/placeholder.html.njk'
     },
     contentPath: 'sponsors'
   },
-  schedule: {
+  /*schedule: {
     parseSchedule: true,
   },*/
 };
