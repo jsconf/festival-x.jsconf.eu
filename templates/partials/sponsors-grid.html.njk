@@ -1,0 +1,38 @@
+
+{% set sponsorTypes = ['legacy'] %}
+
+{% for sponsorType in sponsorTypes %}
+  {% set sponsors = contents.sponsors._.pages %}
+  {% if page.metadata.showOnlyReviewedSponsors %}
+    {% set sponsors = sponsors |
+      filterObjects('metadata.data.reviewed', true) %}
+  {% endif %}
+  {% set sponsors = sponsors |
+    filterObjects('metadata.data.type', sponsorType) |
+    sortObjects('metadata.data.order', 100, 'number') %}
+  {% set firstSponsor = sponsors | first %}
+  {% set sponsorsTitle = firstSponsor.metadata.data.title %}
+  {% set sponsorsType = sponsorType | replace(' ', '-') %}
+
+  {% if sponsors.length > 0 %}
+    <section class="grid">
+      <div class="grid-item-sponsor" id="sponsors-{{ sponsorsType }}">
+        {% if sponsorsTitle %}<h2>{{ sponsorsTitle }}</h2>{% endif %}
+        <div class="sponsors sponsors-{{ sponsorsType }}">
+          {% for page in sponsors %}
+            {% set sponsor = page.metadata.data %}
+
+            <div class="sponsor sponsor-{{ sponsorsType }}"
+                id="{{ sponsor.id }}">
+              <a href="{{ page.url if page.html else sponsor.link }}"
+                  {% if not page.html %}rel="nofollow" target="_blank"{% endif %}>
+                <img src="{{ contents.images.cms[sponsor.image.filename].url }}"
+                    alt="{{ sponsor.name }}">
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
