@@ -3,7 +3,7 @@
 # THIS FILE WAS GENERATED AUTOMATICALLY.
 # CHANGES MADE HERE WILL BE OVERWRITTEN.
 
-template: pages/sponsor.html.njk
+template: pages/placeholder.html.njk
 title: Google
 data:
   published: true
@@ -25,4 +25,3 @@ data:
 
 ----
 
- 

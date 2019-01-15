@@ -75,7 +75,7 @@ const sheetParams = {
   },
   sponsors: {
     templateGlobals: {
-      template: 'pages/sponsor.html.njk'
+      template: 'pages/placeholder.html.njk'
     },
     contentPath: 'sponsors'
   },
