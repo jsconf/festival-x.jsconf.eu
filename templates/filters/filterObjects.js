@@ -5,7 +5,6 @@ module.exports = function (
   keyPath,
   filterBy
 ) {
-  console.log('Filter', arr.length, keyPath, filterBy);
   if (!arr || arr.length < 1) {
     return [];
   }
