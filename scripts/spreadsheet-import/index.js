@@ -208,6 +208,9 @@ async function main(params) {
           content = extracted.content;
           frontmatterFromContent = extracted.frontmatter;
         }
+        else if (sheetId === 'articles') {
+          throw new Error('Missing frontmatter in article ' + data.name);
+        }
 
         const imageUrl = data.potraitImageUrl || data.logoUrl || data.image || frontmatterFromContent.image;
         delete frontmatterFromContent.image;
