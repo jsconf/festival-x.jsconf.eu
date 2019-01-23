@@ -8,20 +8,11 @@ body {
   line-height: 1.666;
   letter-spacing: 0.025em;
   color: var(--evalblack);
-  background-color: var(--promiselinen);
-  background-image: url('contents:images/pattern.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: var(--x-slateblack-700);
 }
 
 [onclick] {
   cursor: pointer;
-}
-
-body.design-2019 {
-  background-image: none;
 }
 
 input, button, textarea {
@@ -99,9 +90,13 @@ h2, .heading--spaced {
   margin-bottom: 0;
   margin-top: 1.5rem;
   @media (--xsmall) {
-    margin-bottom: 0.25rem;
-    padding-bottom: 0.45rem;
+    padding-bottom: .45rem;
+    margin-top: 3rem;
   }
+}
+
+h3 {
+  font-weight: 700;
 }
 
 .page--newslist h2 {

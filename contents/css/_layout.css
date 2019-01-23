@@ -245,33 +245,8 @@
   }
 }
 
-/* Background Ornaments via background-image */
 
-.page-cfs,
-.page-scholarships {
-  @media (--medium) {
-    background-image: url('contents:svg/form-cfs-01.svg');
-    background-size: 125%;
-    background-position: -13rem -2rem;
-  }
-}
 
-.page-speakers {
-  @media (--xsmall) {
-    background-image: url('contents:svg/form-speakers.svg');
-    background-size: 100%;
-    background-position: top center;
-  }
-}
-
-.page-sponsors,
-.page-sponsors-list {
-  @media (--xsmall) {
-    background-image: url('contents:svg/form-sponsors.svg');
-    background-size: 100%;
-    background-position: top center;
-  }
-}
 
 .responsive-image-wrapper {
   display: block;
