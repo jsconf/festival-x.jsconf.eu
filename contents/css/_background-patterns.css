@@ -1,0 +1,31 @@
+
+body {
+  background-image: url('contents:images/background-pattern-cross.svg');
+  background-position: 50% 40%;
+  background-size: 250%;
+  background-attachment: fixed;
+  background-repeat-x: no-repeat;
+}
+
+body.page-index{
+
+}
+
+body.page-scholarships{
+  background-position: 50% 10%;
+}
+
+body.page-about{
+  background-position: 50% 60%;
+}
+
+body.page-news{
+  background-position: 50% 40%;
+}
+
+body.page-sponsors{
+  background-position: 50% 70%;
+}
+body.page-newsletter{
+  background-position: 50% 20%;
+}

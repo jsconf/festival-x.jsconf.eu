@@ -4,7 +4,7 @@
 
 {% block header %}{% endblock %}
 
-{% block bodyclass %}design-2019{% endblock %}
+{% block bodyclass %}page-index{% endblock %}
 
 {% block main %}
   <section class="section-intro">
@@ -64,31 +64,11 @@
   </section>
   -->
 
-  {% set newsList = contents.news._.pages |
-      notRedirect |
-      notDraft |
-      sortObjects('metadata.date', '2017-01-01', 'date') |
-      reverse %}
-
   <div class="section-news section-last">
     <div class="grid">
       <div class="grid-item-full">
         <div class="section-ornament section-ornament--right">
-          <h2 class="heading--massive heading--section">News</h2>
-          <div class="news-grid mt4">
-          {% for news in newsList %}
-            <article class="news-grid-item" onclick="location=this.querySelector('a').href">
-              <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
-              <h3 class="news-title">{{ news.title }}</h3>
-              <p>
-                {{ news.html | striptags | truncate('150') }}
-              </p>
-              <p>
-                <a href="{{ news.url }}" class="link--slateblack">Read more</a>
-              </p>
-            </article>
-          {% endfor %}
-          </div>
+          {% include "../partials/news-grid.html.njk" %}
         </div>
       </div>
     </div>
