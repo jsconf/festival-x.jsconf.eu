@@ -11,7 +11,7 @@
     <article class="news-grid-item" onclick="location=this.querySelector('a').href">
       {% if news.metadata.data.image.filename %}
         <div class="news-image">
-          <img src="{{ contents.images.cms[ news.metadata.data.image.filename ].url }}" alt="{{ news.title}}">
+          <img src="{{ contents.images.cms[ news.metadata.data.image.filename_500 ].url }}" alt="{{ news.title}}">
         </div>
       {% endif %}
       <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
