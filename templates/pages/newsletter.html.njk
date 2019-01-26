@@ -3,12 +3,22 @@
 {% block bodyclass %}page-newsletter{% endblock %}
 
 {% block content %}
+  <script>
+  function newsletterLoaded() {
+    let c = document.getElementById('nl-container');
+    c.removeChild(document.getElementById('nl-loading'));
+    document.getElementById('nl-frame').style.opacity = 1;
+  }
+  </script>
   <section class="grid">
-    <div class="grid-item-center md-content">
-      <iframe src="https://jsconf.us11.list-manage.com/subscribe?u=7a8adcde0f3c219f61b12a94c&id=e13530917b"
+    <div class="grid-item-center" id="nl-container">
+      <div id="nl-loading" style="position: absolute;">Loading…</div>
+      <iframe id="nl-frame"
+          style="opacity: 0"
+          src="https://jsconf.us11.list-manage.com/subscribe?u=7a8adcde0f3c219f61b12a94c&id=e13530917b"
           width="100%"
           frameborder="0"
-          height="2000">
+          height="2000" onload="newsletterLoaded()">
       </iframe>
     </div>
   </section>
