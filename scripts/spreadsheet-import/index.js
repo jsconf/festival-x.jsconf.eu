@@ -118,7 +118,10 @@ if (!hasRcFile) {
   );
 }
 
-main(params).catch(err => console.error(err));
+main(params).catch(err => {
+  console.error(chalk.red(err))
+  process.exit(1);
+});
 
 function ensureDirExists(dir) {
   const fullDir = `${__dirname}/../../contents/${dir}`;
