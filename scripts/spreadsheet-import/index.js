@@ -285,14 +285,14 @@ async function main(params) {
 
 function extractFrontmatter(data, content) {
   let frontmatterFromContent;
-  if (!content.startsWith('----\n')) {
+  if (!/^----*\n/.test(content.trim())) {
     return;
   }
   let sepCount = 0;
   let yamlString = '';
   let rest = ''
   content.split('\n').forEach(line => {
-    if (line == '----') {
+    if (/^----*$/.test(line)) {
       sepCount++;
       return;
     }
