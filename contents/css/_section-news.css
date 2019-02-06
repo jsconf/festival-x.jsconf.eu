@@ -51,7 +51,8 @@ time{
   }
 }
 
-.news-grid-item p, a{
+.news-grid-item p,
+.news-grid-item a {
   font-size:1.2rem;
   margin-top:0;
   margin-bottom:0;

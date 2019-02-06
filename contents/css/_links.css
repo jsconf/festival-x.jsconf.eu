@@ -9,6 +9,11 @@ a {
   }
 }
 
+/* Inherit the font-size if nested inside of a paragraph */
+p > a {
+  font-size: inherit;
+}
+
 /* Default links on main content area */
 .md-content a:not(.link--nounderline),
 .speaker-detail .talk-description a:not(.link--nounderline),
