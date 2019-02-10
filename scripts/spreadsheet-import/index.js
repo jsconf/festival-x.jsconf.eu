@@ -43,13 +43,13 @@ program
 
 const contentRoot = path.resolve(__dirname, '../../contents');
 const sheetParams = {
-  /*speakers: {
+  speakers: {
     templateGlobals: {
       template: 'pages/speaker.html.njk'
     },
     contentPath: 'speakers'
   },
-  mcs: {
+  /*mcs: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
@@ -237,6 +237,9 @@ async function main(params) {
           data,
         };
 
+        if (sheetId === 'speakers') {
+          prepPersonMetadata(metadata)
+        }
 
         let cpath = contentPath;
         if (metadata.standalone) {
@@ -249,10 +252,12 @@ async function main(params) {
           metadata.filename = ':file.html';
           cpath = 'preview';
           ensureDirExists(cpath);
-          filename = `${filename}-${secret}`;
+          const hash = require('crypto').createHash('sha1')
+              .update(filename).digest('hex');
+          filename = `${hash}-${secret}`;
           previewFiles.push({
             url: `/${cpath}/${filename}.html`,
-            name: data.name,
+            name: `${sheetId}: ${data.name}`,
           });
         }
 
@@ -278,7 +283,15 @@ async function main(params) {
   fs.writeFileSync(`${contentRoot}/preview/${secret}.md`,
       '----\n\ntemplate: pages/simple.html.njk\n' +
       'filename: :file.html\n\n----\n\n' +
-      previewFiles.map(file => {
+      previewFiles.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      }).map(file => {
         return `<a href="${file.url}">${file.name}</a>`;
       }).join('<br>\n'));
 }
@@ -347,4 +360,39 @@ async function downloadContentUrls(text, imagesOut) {
   });
   imagesOut.push.apply(imagesOut, images);
   return text;
+}
+
+function prepPersonMetadata(metadata) {
+  const data = metadata.data;
+  metadata.filename = `/${getFilename(data.name)}/${getFilename(data.talkTitle || 'talk')}.html`;
+
+  data.web = {
+    twitter: {},
+    github: {},
+    homepage: {},
+  };
+  if (data.twitterHandle) {
+    let twitter = data.twitterHandle
+        .replace(/@/, '')
+        .replace(/https?:\/\/twitter.com\//i, '')
+        .trim();
+    data.web.twitter.handle = twitter;
+    data.web.twitter.url = 'https://twitter.com/' + twitter;
+  }
+  if (data.githubHandle) {
+    let github = data.githubHandle
+        .replace(/@/, '')
+        .replace(/https?:\/\/github.com\//i, '')
+        .trim();
+    data.web.github.handle = github;
+    data.web.github.url = 'https://github.com/' + github;
+  }
+  if (data.homepage) {
+    let home = data.homepage
+        .replace(/https?:\/\//i, '')
+        .trim();
+    data.web.homepage.handle = home;
+    data.web.homepage.url = data.homepage;
+  }
+
 }

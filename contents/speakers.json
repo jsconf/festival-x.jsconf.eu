@@ -1,0 +1,6 @@
+{
+  "pageId": "scholarships",
+  "template": "pages/speakers.html.njk",
+  "filename": "/speakers/index.html",
+  "title": "Speakers at JSConf EU 2019"
+}

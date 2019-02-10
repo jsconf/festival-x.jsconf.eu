@@ -1,0 +1,49 @@
+{% from "../_macros.njk" import svgIcon %}
+
+<div class="grid mt3 speaker-detail">
+  <div class="grid-item-center">
+    {% include './speaker-picture.html.njk' %}
+
+    <h1>{{ data.name }}</h1>
+
+    <header class="speaker-talk">
+      <h2 class="heading--no-border">{{ data.talkTitle }}</h2>
+    </header>
+
+    <section class="talk-description">
+      {{ page.html }}
+    </section>
+
+    <ul class="speaker-links">
+      {% if data.web.twitter.handle %}
+        <li class="speaker-link speaker-link--twitter">
+          <a href="{{ data.web.twitter.url }}">
+            {{ svgIcon(contents, 'icon-twitter-dark')}}
+            <span>@{{ data.web.twitter.handle }}</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if data.web.github.handle %}
+        <li class="speaker-link speaker-link--github">
+          <a href="{{ data.web.github.url }}">
+            {{ svgIcon(contents, 'icon-github')}}
+            <span>@{{ data.web.github.handle }}</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if data.web.homepage.handle %}
+        <li class="speaker-link speaker-link--website">
+          <a href="{{ data.web.homepage.url }}">
+            {{ svgIcon(contents, 'icon-website') }}
+            <span>{{ data.web.homepage.handle }}</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+  <div class="grid-item-center">
+    <a href="https://ti.to/jsconfeu/jsconf-eu-x-2019" class="btn buy-ticket">Buy Ticket</a></p>
+  </div>
+</div>
