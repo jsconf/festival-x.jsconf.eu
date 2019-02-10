@@ -1,8 +1,11 @@
-{% if speaker.image.filename %}
+{% if data.image.filename %}
   <figure class="ma0 speaker-picture">
-    <img src="{{ contents.images.cms[speaker.image.filename_500].url }}"
-        alt="Portrait photo of {{ speaker.firstname }} {{ speaker.lastname }}"
-        data-aspect-ratio="{{ (speaker.image.height / speaker.image.width) * 100 }}%">
+    <img
+        src="{{ contents.images.cms[data.image.filename_1000].url }}"
+        srcset="{{ contents.images.cms[data.image.filename_500].url }} 500w, {{ contents.images.cms[data.image.filename_1000].url }} 1000w, "
+        sizes="50vw"
+        alt="Portrait photo of {{ data.firstname }} {{ data.lastname }}"
+        data-aspect-ratio="{{ (data.image.height / data.image.width) * 100 }}%">
   </figure>
 {% else %}
   <figure class="ma0 speaker-picture">

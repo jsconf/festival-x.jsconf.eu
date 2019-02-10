@@ -1,0 +1,66 @@
+{% extends "../layouts/default.html.njk" %}
+
+
+ {% macro phantoms(contents, totalCount, releasedCount) %}
+    {% for phantom in range(0, totalCount - releasedCount) %}
+      <section class="grid-item-speaker phantom">
+        <div class="speaker">
+          <figure class="ma0 speaker-picture">
+            <img src="{{ contents.images.placeholder['speaker-placeholder-' + (phantom % 6) + '.jpg'].url }}">
+          </figure>
+          <h2 class="heading--spaced heading--no-border">Coming soon</h2>
+          <p class="ma0">To be announced on <a href="https://twitter.com/jsconfeu">@jsconfeu</a></p>
+        </div>
+      </section>
+    {% endfor %}
+  {% endmacro %}
+
+{% set speakerPages = contents.speakers._.pages |
+    notRedirect |
+    sortObjects('metadata.speaker.order', 100, 'number') |
+    reverse %}
+
+{% block bodyclass %}page--speakers{% endblock %}
+{% block header %}
+  <section class="grid">
+    <div class="grid-item-left">
+      <h1 id="speakers">Speakers</h1>
+    </div>
+  </section>
+  <article class="grid">
+    <div class="grid-item-left md-content">
+      <p>
+        <b>We are just getting started</b> announcing speakers for JSConf EU!
+        Please check back soon for additional speakers or
+        <a href="https://twitter.com/jsconfeu">follow us on Twitter</a>.
+      </p>
+      <p>
+        And in case you are wondering, we expect the following topics to be covered at our event:
+        GraphQL, DevOps, Machine Learning, Accessibility,
+        New and upcoming JavaScript features,
+        JavaScript frameworks like React, Vue, and Angular,
+        Node.js, Web performance, and Progressive Web Apps.<br><br>
+      </p>
+    </div>
+  </article>
+{% endblock %}
+
+{% block content %}
+
+  <div class="grid">
+    {% for page in speakerPages %}
+      <section class="grid-item-speaker">
+        <a class="speaker" href="{{ page.url }}">
+          {% set data = page.metadata.data %}
+          {% include '../partials/speaker-picture.html.njk' %}
+
+          <h2 class="heading--spaced heading--no-border">{{ data.name }}</h2>
+          <p class="ma0">{{ data.talkTitle }}</p>
+        </a>
+      </section>
+    {% endfor %}
+
+    {{ phantoms(contents, 48, speakerPages.length) }}
+  </div>
+
+{% endblock %}

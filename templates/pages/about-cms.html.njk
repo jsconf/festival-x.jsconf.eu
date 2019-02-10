@@ -25,21 +25,21 @@
     </div>
   </section>
 
-  {% macro teamMember(contents, speaker) %}
+  {% macro teamMember(contents, data) %}
     <section class="grid-item-speaker">
-      {% if speaker.links.twitter %}
-        <a class="speaker" href="{{ speaker.links.twitter }}">
+      {% if data.links.twitter %}
+        <a class="speaker" href="{{ data.links.twitter }}">
       {% endif %}
         {% include '../partials/speaker-picture.html.njk' %}
         <h2 class="heading--spaced heading--no-border">
-          {{ speaker.firstname }} {{ speaker.lastname }}
+          {{ data.firstname }} {{ data.lastname }}
         </h2>
         <p class="ma0">
-          {% if speaker.twitterHandle %}
-            {{ speaker.twitterHandle }}<br>
+          {% if data.twitterHandle %}
+            {{ data.twitterHandle }}<br>
           {% endif %}
         </p>
-      {% if speaker.links.twitter %}
+      {% if data.links.twitter %}
         </a>
       {% endif %}
     </section>
@@ -55,9 +55,9 @@
 
   <div class="grid">
     {% for page in team %}
-      {% set speaker = page.metadata.data %}
-      {% if speaker.core %}
-        {{ teamMember(contents, speaker) }}
+      {% set data = page.metadata.data %}
+      {% if data.core %}
+        {{ teamMember(contents, data) }}
       {% endif %}
     {% endfor %}
   </div>
@@ -70,9 +70,9 @@
 
   <div class="grid">
     {% for page in team %}
-      {% set speaker = page.metadata.data %}
-      {% if not speaker.core %}
-        {{ teamMember(contents, speaker) }}
+      {% set data = page.metadata.data %}
+      {% if not data.core %}
+        {{ teamMember(contents, data) }}
       {% endif %}
     {% endfor %}
   </div>
