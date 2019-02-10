@@ -81,12 +81,18 @@ module.exports = function(env, callback) {
   }
 
   nenv.addFilter('notDraft', function(array) {
+    if (!array) {
+      return [];
+    }
     return array.filter(function(item) {
       return !item.metadata.draft;
     })
   });
 
   nenv.addFilter('notRedirect', function(array) {
+    if (!array) {
+      return [];
+    }
     return array.filter(function(item) {
       return !item.metadata.redirectUrl;
     })
