@@ -6,6 +6,7 @@ const imageType = require('image-type');
 const imageSize = require('image-size');
 const sharp = require('sharp');
 const {promisify} = require('util');
+const smartcrop = require('smartcrop-sharp');
 
 function getImageFilename(originalUrl, name, ext) {
   let filename = name.trim();
@@ -43,8 +44,10 @@ function fullPath(filename) {
   return 'contents/images/cms/' + filename;
 }
 
-function sizedName(filename, width) {
-  return filename.replace(/\.(\w+)$/, ext => '-' + width + '.jpg');
+function sizedName(filename, width, opt_extra) {
+  return filename.replace(/\.(\w+)$/, ext => '-' + width + (
+    opt_extra ? '-' + opt_extra : ''
+  ) + '.jpg');
 }
 
 // Downloads an image from a url unless a local copy is available.
@@ -87,6 +90,7 @@ async function downloadImage(url, name, opt_extension) {
     }
     resize(500, info.buffer, info.filename);
     resize(1000, info.buffer, info.filename);
+    square(1000, info.buffer, info.filename);
     let size = {};
     try {
       size = imageSize(info.buffer) || {};
@@ -97,6 +101,7 @@ async function downloadImage(url, name, opt_extension) {
       filename: info.filename,
       filename_500: sizedName(info.filename, 500),
       filename_1000: sizedName(info.filename, 1000),
+      filename_square_1000: sizedName(info.filename, 1000, 'square'),
       width: size.width,
       height: size.height,
       originalType: info.ext.toLowerCase(),
@@ -124,6 +129,28 @@ async function resize(width, buffer, filename) {
         }
         console.info('Resized', width, path);
       });
+}
+
+async function square(width, buffer, filename) {
+  const path = fullPath(sizedName(filename, width, 'square'));
+
+  if (await promisify(fs.exists)(path)) {
+    console.info('Resize exists', path);
+    return;
+  }
+  const height = width;
+  smartcrop.crop(buffer, { width: width, height: height }).then(function(result) {
+    var crop = result.topCrop;
+    sharp(buffer)
+      .extract({ width: crop.width, height: crop.height, left: crop.x, top: crop.y })
+      .resize(width, height)
+      .toFile(path, function(err) {
+        if (err) {
+          console.error(chalk.red.bold(' !!! Resize failed', name, path));
+        }
+        console.info('Square crop', width, path);
+      });
+  });
 }
 
 module.exports = {downloadImage};
