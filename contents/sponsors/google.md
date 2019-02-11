@@ -19,6 +19,7 @@ data:
     filename: google-6996fd5e.svg
     filename_500: google-6996fd5e-500.jpg
     filename_1000: google-6996fd5e-1000.jpg
+    filename_square_1000: google-6996fd5e-1000-square.jpg
     width: 600
     height: 400
     originalType: svg
