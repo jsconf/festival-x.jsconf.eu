@@ -16,7 +16,7 @@ __How long are applications open for and when will I get feedback?__
 
 This depends on whether you need a [_visa to enter Germany_](https://www.auswaertiges-amt.de/en/einreiseundaufenthalt/visabestimmungen-node). We have two separate application timelines for people who need a visa and people who do not need a visa (i.e. Schengen area residents). The timelines are as follows:
 
-- __If you need a visa__: From 15th of November, 2018 until 30th of January, 2019. Our feedback for this application round will be provided by **Friday, 15th February, 2019**.
+- __If you need a visa__: From 15th of November, 2018 until 30th of January, 2019. Our feedback for this application round will be provided by **Friday, 22nd February, 2019**.
 - __If you do not need a Visa__: From 15th of November, 2018 until 10th of March, 2019. Our feedback for this application round will be provided by **Sunday, 24th March, 2019**.
 
 __Why are scholarship holders without a travel grant being charged 20 EUR per conference day?__
