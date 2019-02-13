@@ -38,11 +38,11 @@
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@jsconfeu">
       <meta name="twitter:creator" content="@jsconfeu">
-      <meta name="twitter:title" content="{{ page.title }}">
-      <meta property="og:title" content="{{ page.title }}">
+      <meta name="twitter:title" content="{{ page.title | escape }}">
+      <meta property="og:title" content="{{ page.title | escape  }}">
       {% if description %}
-        <meta name="description" content="{{ description }}">
-        <meta name="twitter:description" content="{{ description }}">
+        <meta name="description" content="{{ description | escape  }}">
+        <meta name="twitter:description" content="{{ description | escape  }}">
       {% endif %}
       <meta name="twitter:image" content="{{ image }}">
       <meta property="og:image" content="{{ image }}">
