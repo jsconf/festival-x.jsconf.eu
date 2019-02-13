@@ -12,12 +12,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@jsconfeu">
   {% if data.web.twitter.handle %}
-    <meta name="twitter:creator" content="@{{ data.web.twitter.handle }}">
+    <meta name="twitter:creator" content="@{{ data.web.twitter.handle | escape }}">
   {% endif %}
-  <meta name="twitter:title" content="{{ data.talkTitle }}">
-  <meta property="og:title" content="{{ data.talkTitle }}">
-  <meta name="twitter:description" content="{{ data.name }} is speaking at JSConf EU 2019.">
-  <meta name="description" content="{{ data.name }} is speaking at JSConf EU 2019.">
+  <meta name="twitter:title" content="{{ data.talkTitle | escape }}">
+  <meta property="og:title" content="{{ data.talkTitle | escape }}">
+  <meta name="twitter:description" content="{{ data.name | escape }} is speaking at JSConf EU 2019.">
+  <meta name="description" content="{{ data.name | escape }} is speaking at JSConf EU 2019.">
   {% if data.image %}
     <meta name="twitter:image" content="https://2019.jsconf.eu{{ contents.images.cms[data.image.filename_1000].url }}">
     <meta property="og:image" content="https://2019.jsconf.eu{{ contents.images.cms[data.image.filename_1000].url }}" />
