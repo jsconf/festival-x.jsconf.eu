@@ -1,13 +1,16 @@
 {% if data.image.filename %}
   <figure class="ma0 speaker-picture">
     <img
+        lazyload="on"
         src="{{ contents.images.cms[data.image.filename_square_1000].url }}"
         alt="Portrait photo of {{ data.firstname }} {{ data.lastname }}"
         data-aspect-ratio="{{ (data.image.height / data.image.width) * 100 }}%">
   </figure>
 {% else %}
   <figure class="ma0 speaker-picture">
-    <img src="{{ contents.images.placeholder['speaker-placeholder-' + (data.firstname.codePointAt(0) % 6) + '.jpg'].url }}"
+    <img
+        lazyload="on"
+        src="{{ contents.images.placeholder['speaker-placeholder-' + (data.firstname.codePointAt(0) % 6) + '.jpg'].url }}"
     alt="Photo of a bear used as a placeholder because of a missing image.">
   </figure>
 {% endif %}
