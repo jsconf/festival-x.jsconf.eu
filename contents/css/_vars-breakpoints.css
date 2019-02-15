@@ -22,6 +22,7 @@ this resolves to:
 @custom-media --medium (width >= 60rem); /* 960px */
 @custom-media --large (width >= 75rem); /* 1200px */
 @custom-media --xlarge (width >= 87.5rem); /* 1400px */
+@custom-media --xlarger (width >= 91rem); /* 1400px */
 @custom-media --xxlarge (width >= 110rem); /* 1600px */
 @custom-media --xxxlarge (width >= 120rem); /* 1920px */
 
