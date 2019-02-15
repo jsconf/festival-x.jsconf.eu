@@ -3,5 +3,5 @@
   "template": "pages/speakers.html.njk",
   "filename": "/speakers/index.html",
   "title": "Speakers at JSConf EU 2019",
-  "image": "contents:images/speakers-sample.png"
+  "image": "contents:images/speakers-sample-1000.png"
 }
