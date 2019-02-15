@@ -6,7 +6,10 @@
       <section class="grid-item-speaker phantom">
         <div class="speaker">
           <figure class="ma0 speaker-picture">
-            <img src="{{ contents.images.placeholder['speaker-placeholder-' + (phantom % 6) + '.jpg'].url }}">
+            <img
+                lazyload="on"
+                src="{{ contents.images.placeholder['speaker-placeholder-' + (phantom % 6) + '.jpg'].url }}"
+                alt="Photo of a bear used as a placeholder because of a missing image.">
           </figure>
           <h2 class="heading--spaced heading--no-border">Coming soon</h2>
           <p class="ma0">To be announced on <a href="https://twitter.com/jsconfeu">@jsconfeu</a></p>
@@ -33,14 +36,7 @@
         <b>We are just getting started</b> announcing speakers for JSConf EU!
         Please check back soon for additional speakers or
         <a href="https://twitter.com/jsconfeu">follow us on Twitter</a> or
-        <a href="{{ contents['newsletter.json'].url }}">sign up to our newsletter</a>.
-      </p>
-      <p>
-        And in case you are wondering, we expect the following topics to be covered at our event:
-        GraphQL, DevOps, Machine Learning, Accessibility,
-        New and upcoming JavaScript features,
-        JavaScript frameworks like React, Vue, and Angular,
-        Node.js, Web performance, and Progressive Web Apps.<br><br>
+        <a href="{{ contents['newsletter.json'].url }}">sign up to our newsletter</a>.<br><br>
       </p>
     </div>
   </article>
