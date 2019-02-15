@@ -7,6 +7,7 @@
   </figure>
 {% else %}
   <figure class="ma0 speaker-picture">
-    <img src="https://placebear.com/400/400">
+    <img src="{{ contents.images.placeholder['speaker-placeholder-' + (data.firstname.codePointAt(0) % 6) + '.jpg'].url }}"
+    alt="Photo of a bear used as a placeholder because of a missing image.">
   </figure>
 {% endif %}
