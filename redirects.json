@@ -1,2 +1,6 @@
 [
+  {
+    "from": "/test/redirect.html",
+    "to": "/"
+  }
 ]

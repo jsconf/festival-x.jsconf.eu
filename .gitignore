@@ -10,6 +10,7 @@ node_modules/
 /contents/cms/*
 /contents/news/*
 /contents/preview/*
+/contents/redirects/*
 /build
 .\#*
 .DS_Store
