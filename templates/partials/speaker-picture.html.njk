@@ -3,8 +3,7 @@
     <img
         lazyload="on"
         src="{{ contents.images.cms[data.image.filename_square_1000].url }}"
-        alt="Portrait photo of {{ data.firstname }} {{ data.lastname }}"
-        data-aspect-ratio="{{ (data.image.height / data.image.width) * 100 }}%">
+        alt="Portrait photo of {{ data.firstname }} {{ data.lastname }}">
   </figure>
 {% else %}
   <figure class="ma0 speaker-picture">

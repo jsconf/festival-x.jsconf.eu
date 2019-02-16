@@ -50,8 +50,11 @@ function processHtml(baseCss) {
           return '<style>' + css + '</style>';
         });
         if (!found) {
-          console.error('Cant find link element in ', html);
-          throw new Error('Fail');
+          console.error('Cant find link element in ', htmlFilename);
+          // Only fail if it looks like an html file.
+          if (/<body/.test(html)) {
+            throw new Error('Fail');
+          }
         }
         await promisify(fs.writeFile)(htmlFilename, html);
       });
