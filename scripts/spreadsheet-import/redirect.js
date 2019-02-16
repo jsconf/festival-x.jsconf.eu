@@ -10,7 +10,7 @@ module.exports = function redirect(r) {
       JSON.stringify({
         "template": "pages/redirect.html.njk",
         "filename": r.from,
-        "redirectUrl": r.to,
+        "redirectUrl": r.to.replace(/\/index\.html/, '/'),
       }, null, '  '));
   console.info(`Redirect from '${ r.from }' to '${ r.to }' as '${ filename }'`);
 };
