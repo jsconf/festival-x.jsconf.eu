@@ -5,10 +5,12 @@
 {% block header %}{% endblock %}
 
 {% block content %}
+{% import "../partials/news-grid.html.njk" as news %}
 <div class="grid">
   <div class="grid-item-full">
     <div class="section-ornament section-ornament--left">
-      {% include "../partials/news-grid.html.njk" %}
+      {{ news.grid(contents, moment, false) }}
+      {{ news.grid(contents, moment, true) }}
     </div>
   </div>
 </div>

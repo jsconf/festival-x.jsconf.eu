@@ -1,25 +1,30 @@
-{% set newsList = contents.news._.pages |
-  notRedirect |
-  notDraft |
-  sortObjects('metadata.date', '2017-01-01', 'date') |
-  reverse %}
+
+{% macro grid(contents, moment, archived) %}
+  {% set newsList = contents.news._.pages |
+    archive(archived) |
+    notRedirect |
+    notDraft |
+    sortObjects('metadata.date', '2017-01-01', 'date') |
+    reverse %}
 
 
-<h2 class="heading--massive heading--section">News</h2>
-<div class="news-grid mt4">
-  {% for news in newsList %}
-    <article class="news-grid-item" onclick="location=this.querySelector('a').href">
-      {% if news.metadata.data.image.filename %}
-        <div class="news-image">
-          <img src="{{ contents.images.cms[ news.metadata.data.image.filename_500 ].url }}" alt="{{ news.title}}">
-        </div>
-      {% endif %}
-      <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
-      <h3 class="news-title">{{ news.title }}</h3>
-      <p>
-        {{ news.html | striptags | truncate('150') }}
-      </p>
+  <h2 class="heading--massive heading--section">
+    {% if archived %}Archive{% else%}News{%endif%}</h2>
+  <div class="news-grid mt4">
+    {% for news in newsList %}
+      <article class="news-grid-item" onclick="location=this.querySelector('a').href">
+        {% if news.metadata.data.image.filename %}
+          <div class="news-image">
+            <img src="{{ contents.images.cms[ news.metadata.data.image.filename_500 ].url }}" alt="{{ news.title}}">
+          </div>
+        {% endif %}
+        <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
+        <h3 class="news-title">{{ news.title }}</h3>
+        <p>
+          {{ news.html | striptags | truncate('150') }}
+        </p>
         <a href="{{ news.url }}" class="link--slateblack">Read more</a>
-    </article>
-  {% endfor %}
-</div>
+      </article>
+    {% endfor %}
+  </div>
+{% endmacro %}
