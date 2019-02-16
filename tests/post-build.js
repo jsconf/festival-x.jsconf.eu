@@ -18,6 +18,7 @@ function checkDir(name, minCount) {
 
 checkDir('contents/speakers/', 15);
 checkDir('build/una-kravets/', 1);
+checkDir('contents/redirects/', 5);
 // checkDir('contents/mcs/', 0);
 checkDir('contents/team/', 3);
 checkDir('build/team/', 3);
