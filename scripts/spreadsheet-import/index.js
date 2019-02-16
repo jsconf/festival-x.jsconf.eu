@@ -12,6 +12,7 @@ const {downloadImage} = require('./image-utils/image-download');
 const {processSchedule} = require('./process-schedule');
 const rimraf = promisify(require('rimraf'));
 const timeout = promisify(setTimeout);
+const redirect = require('./redirect');
 
 const secret = process.env.preview_filename_component || 'secret';
 
@@ -119,7 +120,7 @@ if (!hasRcFile) {
 }
 
 main(params).catch(err => {
-  console.error(chalk.red(err))
+  console.error(chalk.red(err.stack))
   process.exit(1);
 });
 
@@ -260,6 +261,9 @@ async function main(params) {
             name: `${sheetId}: ${data.name}`,
           });
         }
+        if (metadata.filename) {
+          metadata.filename = maybeUpdateDoubleDash(metadata.filename);
+        }
 
         const fullpath = path.join(contentRoot, cpath, `${filename}.md`);
         console.log(
@@ -337,6 +341,22 @@ function getFilename(name) {
   filename = filename.replace(/-$/g, '');
   filename = filename.replace(/^-/g, '');
   return filename.toLowerCase();
+}
+
+// Backwards compatible change of our URL structure avoiding
+// double-dashes, leading and trailing dashes.
+// If this changes a URL, then a redirect from the previous
+// to the new state is generated.
+function maybeUpdateDoubleDash(path) {
+  const nicer = path.replace(/-+/g, '-').replace(/\/-/g, '/').replace(/-\//g, '/');
+  if (nicer == path) {
+    return path;
+  }
+  redirect({
+    from: path,
+    to: nicer,
+  });
+  return nicer;
 }
 
 // Turn the text pattern DOWNLOAD(https://some.com/url)
