@@ -69,7 +69,8 @@
     <div class="grid">
       <div class="grid-item-full">
         <div class="section-ornament section-ornament--left">
-          {% include "../partials/news-grid.html.njk" %}
+          {% import "../partials/news-grid.html.njk" as news %}
+          {{ news.grid(contents, moment, false) }}
         </div>
       </div>
     </div>

@@ -89,6 +89,15 @@ module.exports = function(env, callback) {
     })
   });
 
+  nenv.addFilter('archive', function(array, filterBool) {
+    if (!array) {
+      return [];
+    }
+    return array.filter(function(item) {
+      return !!item.metadata.archive == filterBool;
+    });
+  });
+
   nenv.addFilter('notRedirect', function(array) {
     if (!array) {
       return [];
