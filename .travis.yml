@@ -8,6 +8,8 @@ node_js:
 script:
   - npm run-script generate-locals
   - npm run-script generate-redirects
+  # Check that ci:import at least compiles
+  - node scripts/spreadsheet-import/index.js --help
   - if [ "$TRAVIS_PULL_REQUEST_BRANCH" ]; then npm run-script build; fi
 
 stages:
