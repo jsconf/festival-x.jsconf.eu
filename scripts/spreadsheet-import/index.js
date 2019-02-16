@@ -262,6 +262,12 @@ async function main(params) {
           });
         }
         if (metadata.filename) {
+          // Make all URLs explicit instead of interpolating filename
+          metadata.filename = metadata.filename.replace(/:file/, filename);
+          if (!/^\//.test(metadata.filename)) {
+            metadata.filename = `/${cpath}/${metadata.filename}`;
+          }
+
           metadata.filename = maybeUpdateDoubleDash(metadata.filename);
         }
 
