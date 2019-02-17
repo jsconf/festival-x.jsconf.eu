@@ -6,6 +6,9 @@ module.exports = function redirect(r) {
   if (!/^\//.test(r.from)) throw new Error('URLs must be path absolute: ' + r.from);
   if (!/^\//.test(r.to))   throw new Error('URLs must be path absolute: ' + r.to);
   const filename = './contents/redirects/' + r.from.replace(/[\/.]/g, '-') + '.json';
+  if (/\/$/.test(r.from)) {
+    r.from = r.from + 'index.html';
+  }
   fs.writeFileSync(filename,
       JSON.stringify({
         "template": "pages/redirect.html.njk",
