@@ -1,10 +1,10 @@
 [
   {
-    "from": "/news/the-jsconf",
+    "from": "/news/the-jsconf/",
     "to": "/news/the-jsconf-cssconf-eu-finances/"
   },
   {
-    "from": "/c-j-silverio/the-economics-of-open-source.htmleigt",
+    "from": "/c-j-silverio/the-economics-of-open-source.htmleigt/",
     "to": "/c-j-silverio/the-economics-of-open-source.html"
   }
 ]
