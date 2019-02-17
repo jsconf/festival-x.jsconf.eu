@@ -1,6 +1,10 @@
 [
   {
-    "from": "/test/redirect.html",
-    "to": "/"
+    "from": "/news/the-jsconf",
+    "to": "/news/the-jsconf-cssconf-eu-finances/"
+  },
+  {
+    "from": "/c-j-silverio/the-economics-of-open-source.htmleigt",
+    "to": "/c-j-silverio/the-economics-of-open-source.html"
   }
 ]
