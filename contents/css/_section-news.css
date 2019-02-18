@@ -32,6 +32,10 @@ time{
   }
 }
 
+.page-info time {
+  display: none;
+}
+
 .news-title {
   line-height: 1.125;
   margin-bottom: 0.625rem;
@@ -42,6 +46,11 @@ time{
     font-size: 2rem;
   }
 }
+
+.page-info .news-title {
+  margin-top: 0.625rem;
+}
+
 
 .news-grid-item {
   margin-bottom:60px;
