@@ -54,6 +54,8 @@
     {% block extraExtraMetaData %}
     {% endblock %}
     <link rel=stylesheet href="{{ contents.css["main.css"].url }}">
+    <!--  For _background-patterns.css -->
+    <style>body{background-position: 50% {{ range(0, 100) | random }}%}</style>
   </head>
   <body class="{% block bodyclass %}{% endblock %}">
     <div class="layout-wrapper">
