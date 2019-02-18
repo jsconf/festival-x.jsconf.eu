@@ -57,22 +57,29 @@ module.exports = function(env, callback) {
     }
 
     render(locals, callback) {
-      try {
-        let html = this.template.render(locals);
-        if (!html) {
-          throw new Error('Template render failed' + this.filename);
+      this.template.render(locals, (err, html) => {
+        if (err) {
+          callback(err);
+          return;
         }
-        html = minify(html, {
-          removeAttributeQuotes: true,
-          collapseWhitespace: true,
-          removeComments: true,
-          sortClassName: true,
-          sortAttributes: true,
-        });
-        callback(null, new Buffer(html));
-      } catch (error) {
-        callback(error);
-      }
+        try {
+          if (!html) {
+            callback(new Error('Template render failed: ' + this.filename));
+            return;
+          }
+          html = minify(html, {
+            removeAttributeQuotes: true,
+            collapseWhitespace: true,
+            removeComments: true,
+            sortClassName: true,
+            sortAttributes: true,
+          });
+          callback(null, new Buffer(html));
+        } catch (error) {
+          callback(error);
+        }
+      });
+
     }
 
     static fromFile(filepath, callback) {
