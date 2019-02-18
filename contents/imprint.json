@@ -2,5 +2,5 @@
   "pageId": "imprint",
   "template": "pages/imprint.html.njk",
   "filename": ":file/index.html",
-  "title": "Imprint"
+  "title": "Impressum"
 }
