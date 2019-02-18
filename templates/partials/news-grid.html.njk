@@ -11,9 +11,7 @@
   <h2 class="heading--massive heading--section">
     {% if archived %}Archive{% else%}News{%endif%}</h2>
   <div class="news-grid mt4">
-    {% for news in newsList %}
-      {{ renderGrid(contents, newsList, moment) }}
-    {% endfor %}
+    {{ renderGrid(contents, newsList, moment) }}
   </div>
 {% endmacro %}
 
