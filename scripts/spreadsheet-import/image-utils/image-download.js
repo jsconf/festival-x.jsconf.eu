@@ -90,7 +90,8 @@ async function downloadImage(url, name, opt_extension) {
     }
     resize(500, info.buffer, info.filename);
     resize(1000, info.buffer, info.filename);
-    square(1000, info.buffer, info.filename);
+    square(500, info.buffer, info.filename);
+    square(200, info.buffer, info.filename);
     let size = {};
     try {
       size = imageSize(info.buffer) || {};
@@ -102,6 +103,8 @@ async function downloadImage(url, name, opt_extension) {
       filename_500: sizedName(info.filename, 500),
       filename_1000: sizedName(info.filename, 1000),
       filename_square_1000: sizedName(info.filename, 1000, 'square'),
+      filename_square_500: sizedName(info.filename, 500, 'square'),
+      filename_square_200: sizedName(info.filename, 200, 'square'),
       width: size.width,
       height: size.height,
       originalType: info.ext.toLowerCase(),
