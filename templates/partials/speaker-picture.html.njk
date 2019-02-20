@@ -3,6 +3,11 @@
     <img
         lazyload="on"
         src="{{ contents.images.cms[data.image.filename_square_1000].url }}"
+        srcset="{{
+          contents.images.cms[data.image.filename_square_200].url }} 200w, {{
+          contents.images.cms[data.image.filename_square_500].url }} 500w, {{
+          contents.images.cms[data.image.filename_square_1000].url }} 1000w"
+        sizes="33vw"
         alt="Portrait photo of {{ data.firstname }} {{ data.lastname }}">
   </figure>
 {% else %}
