@@ -10,7 +10,7 @@ If you get selected for a scholarship, you will receive a full ticket to JSConf 
 
 __Can I apply for a scholarship again if I got one last year?__
 
-We will not consider anyone who received a scholarship for JSConf EU/CSSconf EU in 2018, for the sake of fairness.
+For the sake of fairness we don't give away a scholarship to the same person within 2 years, this means we won't consider anyone who has already received a scholarship for CSSconf/JSConf EU in 2017 and 2018.
 
 __How long are applications open for and when will I get feedback?__
 
