@@ -8,6 +8,10 @@ __What does the scholarship entail?__
 
 If you get selected for a scholarship, you receive a combo ticket to CSSconf/JSConf EU 2019. Additionally and dependent on what you need, we will organize and pay for your flights/transport and/or hotel (up to 4 nights). We will get in touch with you to discuss further travel details but if you have any questions beforehand, please reach out to us via [scholarship@jsconf.eu](mailto:scholarship@jsconf.eu?subject=Scholarship%20FAQ).
 
+__How can I get an invitation letter for my visa?__
+
+Once you get selected for the scholarship, we will send you a form from which we will create an invitation letter for visa. This might take some time, so if your country has specific time restrictions on visas, please let us know in advance via [scholarship@jsconf.eu](mailto:scholarship@jsconf.eu?subject=Scholarship%20FAQ).
+
 __Can I apply for a scholarship again if I got one last year?__
 
 For the sake of fairness we don't give away a scholarship to the same person within 2 years, this means we won't consider anyone who has already received a scholarship for CSSconf/JSConf EU in 2017 and 2018.
