@@ -8,4 +8,4 @@ If you’ve always wanted to visit JSConf and/or CSSconf EU, but haven’t had t
 
 ❤️ Granting these scholarships is made possible thanks to the wonderful people that buy Diversity Support Tickets, as well as the generous contributions made by our sponsors. More help is needed – talk to us if you’d like to get involved: [scholarship@jsconf.eu](mailto:scholarship@jsconf.eu?subject=Scholarship%20Program).
 
-__Before you apply, please make sure to have fully read the 👍 FAQ to learn about our deadlines and conditions.__
+__Before you apply, please make sure to have fully read the 👍 [FAQ](https://2019.jsconf.eu/scholarships/#frequently-asked-questions) to learn about our deadlines and conditions.__
