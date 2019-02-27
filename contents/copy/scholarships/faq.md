@@ -23,6 +23,18 @@ __Can I apply for a scholarship again if I got one last year?__
 
 For the sake of fairness we don't give away a scholarship to the same person within 2 years, this means we won't consider anyone who has already received a scholarship for CSSconf/JSConf EU in 2017 and 2018.
 
+__What is a support person?__
+
+In case you are invited to CSSconf and/or JSConf EU in any role (speaker, scholarship holder, MC, artist), you are asked, if you need a support person to attend the event either for support during travel and/or during the whole event. If needed and you can’t afford to cover the extra costs for a support person, we are happy to cover the costs for you and help with travel, accommodation and a ticket to the conference(s).
+
+*A support person is necessary to protect the health and safety of the person with impairments/disabilities during the travel and/or events.*
+
+The role of a support person is for example:
+- Sign Language interpretation
+- Prompting or giving advice, including requesting a break if needed
+- Providing physical support during travel and/or the event
+- Providing emotional support and reassurance during travel and/or the event
+
 __Why are scholarship holders without a travel grant being charged 20 EUR per conference day?__
 
 This is a good and valid question. In the past we unfortunately experienced a small number of scholarship holders that neither informed us beforehand nor showed up at the conference. Therefore we had tickets left which we were not able to give to another scholarship applicant from the waiting list. Applicants who needed a visa and travel were not among this group since we are in contact with them the weeks before the conference to book travel and hotel. That's why we decided to take a small fee per conference day for the scholarships without travel grants, just to make sure that people who are not able to attend inform us on time. 
