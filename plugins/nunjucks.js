@@ -118,6 +118,12 @@ module.exports = function(env, callback) {
     return JSON.stringify(object);
   });
 
+  nenv.addFilter('seededStableRandom', function(array, seed) {
+    const rand = require('seed-random')(seed);
+    const index = Math.floor(rand() * array.length);
+    return array[index];
+  });
+
   env.registerTemplatePlugin('**/*.*(html|nunjucks|njk)', NunjucksTemplate);
   // Transform static URLs into the form:
   // /immutable/$fileHash/filename

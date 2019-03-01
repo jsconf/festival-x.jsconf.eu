@@ -40,6 +40,7 @@
     "purify-css": "^1.2.6",
     "replace-in-file": "^3.4.0",
     "rimraf": "^2.6.2",
+    "seed-random": "^2.2.0",
     "sharp": "^0.21.0",
     "smartcrop-sharp": "^2.0.3",
     "svgo": "^1.0.5",
