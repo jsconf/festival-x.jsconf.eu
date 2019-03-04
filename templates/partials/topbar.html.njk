@@ -27,12 +27,8 @@
     </nav>
     <a href="{{ buyTicketsLink }}" class="btn btn--undefinedpurple topbar-cta buy-ticket">Buy ticket</a>
     <button id="topbar-toggle" type="button" class="topbar-toggle"
-        title="Toggle Navigation">
+        title="Toggle Navigation"
+        onclick="document.getElementById('topbar-nav').classList.toggle('topbar-nav--is-visible')">
     </button>
-    <!--
-    Changes to the script must be reflected in the CSP in default.html.njk
-    Use https://report-uri.com/home/hash to generate the new hash.
-    -->
-    <script>document.getElementById('topbar-toggle').onclick=function(){document.getElementById('topbar-nav').classList.toggle('topbar-nav--is-visible')}</script>
   </div>
 </div>
