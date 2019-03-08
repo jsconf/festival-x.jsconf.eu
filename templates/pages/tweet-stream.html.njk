@@ -24,6 +24,12 @@
           var element = document.createElement('div');
           element.style.contain = 'content';
           container.insertBefore(element, loading);
+
+          if (id.html) {
+            element.innerHTML = id.html;
+            return renderTweets();
+          }
+
           twttr.widgets.createTweet(
             id,
             element,
