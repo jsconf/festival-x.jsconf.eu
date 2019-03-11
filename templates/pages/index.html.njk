@@ -16,14 +16,14 @@
                data-src="{{ contents.js['lottie.js'].url }}"
                class="section-intro-lottie">
             <!-- The icon is here just for sizing. -->
-            {{ svgIcon(contents, 'jsconf-heart', width = 500, height = 500, alt = 'JSConf EU heart') }}
+            {{ svgIcon(contents, 'jsconf-heart', width = 500, height = 500, title = 'JSConf EU Logo') }}
             <link rel="preload" href="{{ contents.js['lottie.js'].url }}" as="script">
           </a>
           <a class="section-intro-festival" href="/x/">
-            {{ svgIcon(contents, 'festival', width = 520, height = 124, alt = 'festival') }}
+            {{ svgIcon(contents, 'festival', width = 520, height = 124, title = 'festival X') }}
           </a>
           <div class="section-intro-logo">
-            {{ svgIcon(contents, 'jsconf-logo-white-full', width = 258, height = 39, alt = 'JSConf EU') }}
+            {{ svgIcon(contents, 'jsconf-logo-white-full', width = 258, height = 39, title = 'JSConf EU') }}
           </div>
           <p class="mt4 mb4">
             {{ fullConferenceDate }} &mdash; Berlin, Germany
@@ -65,7 +65,7 @@
       href="https://www.youtube.com/watch?v=zNk28iHdoFk"
       target="_blank">
     <div class="section-video-icon">
-      {{ svgIcon(contents, 'play', width = 86, height = 86, alt = 'Play') }}
+      {{ svgIcon(contents, 'play', width = 86, height = 86, title = 'Play') }}
     </div>
     <div class="section-video-text ttu mb4 tc">Impressions of JSConf EU 2018</div>
   </a>
