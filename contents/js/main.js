@@ -29,9 +29,7 @@ function pingTypekit() {
 function prefetch() {
   addLink('prefetch', 'https://use.typekit.com/zjo8qhc.js');
   addLink('prefetch', 'https://ti.to/jsconfeu/jsconf-eu-x-2019');
-  addLink('prefetch', 'https://assets.beta.tito.io/assets/event/mcdonagh-f6f1b3c7a80e57c984a0f9d9c4b8b85028edc3ea3fc9a6526da63316cb314e3c.css');
-  addLink('prefetch', 'https://assets.beta.tito.io/assets/event_homepage-b7a2789ecc2ff9232a349177f083d8af30902d2c0663ccda688c1168a7351dbc.js');
-  addLink('prefetch', 'https://assets.beta.tito.io/assets/tito-94b42e9b7efe734702e80e6139aa86a3e604f32872a83c5f6ca9e564e254aafd.js');
+  addLink('prefetch', 'https://assets.beta.tito.io/assets/event/mcdonagh-3e98502eab0051e882bb15d690656b4b174ba0cd24e0c3d4bb66450e6e7ec6b0.css');
   addLink('prefetch', 'https://d2z6c3c3r6k4bx.cloudfront.net/uploads/event/logo/1062210/e2c441a28eaa527eabdb848377d2bf56.png');
   addLink('prefetch', 'https://js.stripe.com/v2/');
   if (/localhost/.test(location.href)) {
