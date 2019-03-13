@@ -33,7 +33,11 @@
       <time>{{ moment(news.metadata.date).utcOffset(8).format('ddd, DD MMM YYYY') }}</time>
       <h3 class="news-title">{{ news.title }}</h3>
       <p>
-        {{ news.html | striptags | truncate('150') }}
+        {% if news.metadata.description %}
+          {{ news.metadata.description }}
+        {% else %}
+          {{ news.html | striptags | truncate('150') }}
+        {% endif %}
       </p>
       <a href="{{ news.url }}" class="link--slateblack">Read more</a>
     </article>
