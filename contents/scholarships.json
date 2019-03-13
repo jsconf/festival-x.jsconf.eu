@@ -2,5 +2,6 @@
   "pageId": "scholarships",
   "template": "pages/scholarships.html.njk",
   "filename": ":file/index.html",
-  "title": "Scholarships"
+  "title": "Scholarships",
+  "description": "For the fourth time, we are running our Scholarship Program, which provides individuals from underrepresented groups with support to attend JSConf EU and CSSconf EU."
 }
