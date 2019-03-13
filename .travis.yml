@@ -6,11 +6,13 @@ node_js:
 - "10"
 
 script:
+  - echo 'Build step (Open me for details)...' && echo -en 'travis_fold:start:script.1\\r'
   - npm run-script generate-locals
   - npm run-script generate-redirects
   # Check that ci:import at least compiles
-  - node scripts/spreadsheet-import/index.js --help
+  - if [ "$TRAVIS_PULL_REQUEST_BRANCH" ]; then node scripts/spreadsheet-import/index.js --help; fi
   - if [ "$TRAVIS_PULL_REQUEST_BRANCH" ]; then npm run-script build; fi
+  - echo -en 'travis_fold:end:script.1\\r'
 
 stages:
   - name:
