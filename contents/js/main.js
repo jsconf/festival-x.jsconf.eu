@@ -97,3 +97,14 @@ if (intro) {
   };
   document.head.appendChild(script);
 }
+
+document.documentElement.addEventListener('click', function(e) {
+  if (!/^H\d$/.test(e.target.tagName)) {
+    return;
+  }
+  var id = e.target.id;
+  if (!id) {
+    return;
+  }
+  location.hash = '#' + id;
+});
