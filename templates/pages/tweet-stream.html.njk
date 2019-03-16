@@ -15,6 +15,7 @@
         var ids = {{ page.metadata.tweets | dumpsafe }};
         var container = document.getElementById('tweets');
         var loading = document.getElementById('tweets-loading');
+        var count = 0;
         window.renderTweets = function() {
           var id = ids.shift();
           if (!id) {
@@ -37,9 +38,13 @@
               conversation: 'none',
               dnt: true
             }
-          ).then(function() {
+          )
+          if (count++ % 10 == 9) {
             requestAnimationFrame(renderTweets);
-          });
+          } else {
+            renderTweets();
+          }
+
         }
       })();
       </script>
