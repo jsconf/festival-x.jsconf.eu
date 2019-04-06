@@ -4,7 +4,7 @@
       <title id='title-{{ id }}'>{{ title }}</title>
     {% endif %}
     <image xlink:href="{{ contents.svg[id + '.svg'].url }}"
-        lazyload="off"
+        loading="eager"
         decoding="async"
         height="{{ height }}px"
         width="{{ width }}px"/>
