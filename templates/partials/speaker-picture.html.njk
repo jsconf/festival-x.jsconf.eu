@@ -1,7 +1,7 @@
 {% if data.image.filename %}
   <figure class="ma0 speaker-picture">
     <img
-        lazyload="on"
+        loading="lazy"
         decoding="async"
         src="{{ contents.images.cms[data.image.filename_square_1000].url }}"
         srcset="{{
@@ -14,7 +14,7 @@
 {% else %}
   <figure class="ma0 speaker-picture">
     <img
-        lazyload="on"
+        loading="lazy"
         decoding="async"
         src="{{ contents.images.placeholder['speaker-placeholder-' + (data.firstname.codePointAt(0) % 6) + '.jpg'].url }}"
     alt="Photo of a bear used as a placeholder because of a missing image.">
