@@ -74,15 +74,39 @@ function introAnimation(intro) {
     container: intro,
     renderer: "svg",
     loop: false,
-    autoplay: true,
     animationData: window.festivalXIntroAnimationJson
   });
+
+  if (matchMedia('(prefers-reduced-motion)').matches) {
+    anim1.goToAndStop(259, true);
+  } else {
+    anim1.play();
+  }
 
   anim1.addEventListener("DOMLoaded", el => {
     anim1.addEventListener("complete", el => {
       anim1.playSegments([259, 396], true);
     });
   });
+
+  function playIfDesired() {
+    if (!matchMedia('(prefers-reduced-motion)').matches) {
+      anim1.play();
+    }
+  }
+
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      anim1.pause();
+    } else {
+      playIfDesired();
+    }
+  });
+
+  // Pause after 5 minutes to save battery.
+  setTimeout(function() {
+    anim1.pause();
+  }, 1000 * 60 * 5);
 }
 var intro = document.getElementById("intro");
 if (intro) {
