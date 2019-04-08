@@ -77,36 +77,37 @@ function introAnimation(intro) {
     animationData: window.festivalXIntroAnimationJson
   });
 
-  if (matchMedia('(prefers-reduced-motion)').matches) {
-    anim1.goToAndStop(259, true);
-  } else {
-    anim1.play();
-  }
-
   anim1.addEventListener("DOMLoaded", el => {
     anim1.addEventListener("complete", el => {
       anim1.playSegments([259, 396], true);
     });
   });
 
+  var timeout;
   function playIfDesired() {
-    if (!matchMedia('(prefers-reduced-motion)').matches) {
-      anim1.play();
+    if (matchMedia('(prefers-reduced-motion)').matches) {
+      anim1.goToAndStop(259, true);
+      return;
     }
+    anim1.play();
+    // Pause after 3 minutes to save battery.
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      anim1.pause();
+    }, 1000 * 60 * 3);
   }
 
-  document.addEventListener("visibilitychange", function() {
+  function playIfVisible() {
     if (document.hidden) {
       anim1.pause();
     } else {
       playIfDesired();
     }
-  });
+  }
 
-  // Pause after 5 minutes to save battery.
-  setTimeout(function() {
-    anim1.pause();
-  }, 1000 * 60 * 5);
+  document.addEventListener("visibilitychange", playIfVisible);
+  window.addEventListener("focus", playIfVisible);
+  playIfDesired();
 }
 var intro = document.getElementById("intro");
 if (intro) {
