@@ -1,0 +1,40 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import svgIcon %}
+
+{% set sponsor = page.metadata.sponsor %}
+
+{% block header %}{% endblock %}
+
+{% set sponsor = page.metadata.data %}
+
+{% block content %}
+  <div class="grid">
+    <div class="grid-item-center">
+      <a href="{{ contents['sponsors.json'].url }}"
+         class="sponsor-details-back-link">
+        &lt; back
+      </a>
+      <figure class="sponsor-details-logo">
+        <a href="{{ sponsor.link }}"
+           target="_blank"
+           rel="nofollow">
+          <img
+            src="{{ contents.images.cms[sponsor.image.filename].url }}"
+            alt="{{ sponsor.name }}"
+          />
+        </a>
+      </figure>
+      <div class="sponsor-details-content">
+        {{ page.html }}
+      </div>
+      <a href="{{ sponsor.link }}"
+         target="_blank"
+         rel="nofollow"
+         class="sponsor-details-link">
+         {{ svgIcon(contents, 'icon-website') }}
+         {{ sponsor.link | simplifiedUrl }}
+      </a>
+    </div>
+  </div>
+{% endblock %}
