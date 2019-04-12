@@ -13,11 +13,7 @@
   {% if sponsors | length > 0 %}
     <section class="grid">
       <div class="grid-item-sponsor" id="sponsors-{{ sponsorsType }}">
-        {% if sponsorType === 'legacy' %}
-          <h2>A heartfelt thanks to our 2018 sponsors:</h2>
-        {% elif sponsorsTitle %}
-          <h2>{{ sponsorsTitle }}</h2>
-        {% endif %}
+        {% if sponsorsTitle %}<h2>{{ sponsorsTitle }}</h2>{% endif %}
         <div class="sponsors sponsors-{{ sponsorsType }}">
           {% for page in sponsors %}
             {% set sponsor = page.metadata.data %}
