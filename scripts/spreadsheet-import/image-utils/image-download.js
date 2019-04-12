@@ -128,7 +128,7 @@ async function resize(width, buffer, filename) {
       .jpeg()
       .toFile(path, function(err) {
         if (err) {
-          console.error(chalk.red.bold(' !!! Resize failed', name, path));
+          console.error(chalk.red.bold(' !!! Resize failed', filename, path));
         }
         console.info('Resized', width, path);
       });
