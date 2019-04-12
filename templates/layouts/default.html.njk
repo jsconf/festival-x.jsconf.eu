@@ -53,7 +53,7 @@
     {% endblock %}
     {% block extraExtraMetaData %}
     {% endblock %}
-    <link rel=stylesheet href="{{ contents.css["main.css"].url }}">
+    <link rel=stylesheet href="{{ contents.css['main.css'].url }}">
     <!--  For _background-patterns.css -->
     <style>body{background-position: 50% {{ range(0, 100) | seededStableRandom(page.url) }}%}</style>
   </head>
@@ -89,11 +89,11 @@
       {% endblock %}
 
       {% block footer %}
-        {% include "../partials/footer-small.html.njk" %}
+        {% include "../partials/footer.html.njk" %}
       {% endblock %}
 
     </div>
   <script src="{{ contents.js['main.js'].url }}" async></script>
-  <link rel=preload href="{{ contents.images["background-pattern-cross.svg"].url }}" as=image>
+  <link rel=preload href="{{ contents.images['background-pattern-cross.svg'].url }}" as=image>
   </body>
 </html>

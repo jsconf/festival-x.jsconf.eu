@@ -1,23 +1,23 @@
 
-{% set sponsorTypes = ['legacy'] %}
+{% set sponsorTypes = ['organizing', 'festival', 'main', 'supporting', 'community'] %}
 
 {% for sponsorType in sponsorTypes %}
-  {% set sponsors = contents.sponsors._.pages %}
-  {% if page.metadata.showOnlyReviewedSponsors %}
-    {% set sponsors = sponsors |
-      filterObjects('metadata.data.reviewed', true) %}
-  {% endif %}
-  {% set sponsors = sponsors |
+  {% set sponsors = contents.sponsors._.pages |
+    filterObjects('metadata.data.reviewed', true) |
     filterObjects('metadata.data.type', sponsorType) |
     sortObjects('metadata.data.order', 100, 'number') %}
   {% set firstSponsor = sponsors | first %}
   {% set sponsorsTitle = firstSponsor.metadata.data.title %}
   {% set sponsorsType = sponsorType | replace(' ', '-') %}
 
-  {% if sponsors.length > 0 %}
+  {% if sponsors | length > 0 %}
     <section class="grid">
       <div class="grid-item-sponsor" id="sponsors-{{ sponsorsType }}">
-        {% if sponsorsTitle %}<h2>{{ sponsorsTitle }}</h2>{% endif %}
+        {% if sponsorType === 'legacy' %}
+          <h2>A heartfelt thanks to our 2018 sponsors:</h2>
+        {% elif sponsorsTitle %}
+          <h2>{{ sponsorsTitle }}</h2>
+        {% endif %}
         <div class="sponsors sponsors-{{ sponsorsType }}">
           {% for page in sponsors %}
             {% set sponsor = page.metadata.data %}
