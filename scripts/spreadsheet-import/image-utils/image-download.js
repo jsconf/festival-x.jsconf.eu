@@ -90,6 +90,7 @@ async function downloadImage(url, name, opt_extension) {
     }
     resize(500, info.buffer, info.filename);
     resize(1000, info.buffer, info.filename);
+    square(1000, info.buffer, info.filename);
     square(500, info.buffer, info.filename);
     square(200, info.buffer, info.filename);
     let size = {};
