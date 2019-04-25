@@ -12,6 +12,11 @@
 
     <section class="talk-description md-content">
       {{ page.html }}
+
+      <!-- Hack? How could anyone call this a hack? -->
+      {% if data.name.includes('TC39') %}
+        {{ contents.cms['tc39-panel.md'].html }}
+      {% endif %}
     </section>
 
     <ul class="speaker-links">
