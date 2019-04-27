@@ -1,0 +1,8 @@
+{
+  "pageId": "artists",
+  "template": "pages/artists.html.njk",
+  "filename": "/artists/index.html",
+  "title": "Artists at JSConf EU 2019",
+  "image": "contents:images/speakers-sample-1000.png",
+  "description": ""
+}

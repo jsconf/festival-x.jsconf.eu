@@ -31,3 +31,19 @@
     </p>
   </section>
 {% endmacro %}
+
+{% macro artistMcGrid(contents, pages) %}
+    <div class="grid">
+      {% for page in pages %}
+        <section class="grid-item-speaker">
+          {% set data = page.metadata.data %}
+          <a class="speaker" href="{{ data.web.twitter.url }}">
+            {% include './partials/speaker-picture.html.njk' %}
+
+            <h2 class="heading--spaced heading--no-border">{{ data.name }}</h2>
+            <p class="ma0">@{{ data.web.twitter.handle }}</p>
+          </a>
+        </section>
+      {% endfor %}
+    </div>
+  {% endmacro %}

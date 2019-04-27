@@ -48,35 +48,5 @@
     {% endfor %}
 
     {{ phantoms(contents, 48, speakerPages.length) }}
-  </div>
-
-  {% macro artistMcGrid(contents, title, pages) %}
-    <section class="grid">
-      <div class="grid-item-left">
-        <h1 id="artists">{{ title }}</h1>
-      </div>
-    </section>
-
-    <div class="grid">
-      {% for page in pages %}
-        <section class="grid-item-speaker">
-          {% set data = page.metadata.data %}
-          <a class="speaker" href="{{ data.web.twitter.url }}">
-            {% include '../partials/speaker-picture.html.njk' %}
-
-            <h2 class="heading--spaced heading--no-border">{{ data.name }}</h2>
-            <p class="ma0">@{{ data.web.twitter.handle }}</p>
-          </a>
-        </section>
-      {% endfor %}
-    </div>
-  {% endmacro %}
-
-  {% set artistPages = contents.artists._.pages |
-  notRedirect |
-  sortObjects('metadata.data.name', 100, 'string') %}
-
-  {{ artistMcGrid(contents, "Artists", artistPages) }}
-  
-
+  </div>  
 {% endblock %}
