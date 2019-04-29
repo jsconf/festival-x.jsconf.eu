@@ -3,9 +3,12 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-  <h1>Just a placeholder to make wintersmith directory iteration work</h1>
+  <h1>Placeholder</h1>
 {% endblock %}
 
 {% block extraMetaData %}
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="noindex"> 
+  {% if data.web.twitter.url %}
+    <meta http-equiv="refresh" content="0;url={{data.web.twitter.url}}" />
+  {% endif %}
 {% endblock %}
