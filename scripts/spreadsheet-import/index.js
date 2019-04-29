@@ -50,7 +50,7 @@ const sheetParams = {
     },
     contentPath: 'speakers'
   },
-  /*mcs: {
+  mcs: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
@@ -61,7 +61,7 @@ const sheetParams = {
       template: 'pages/placeholder.html.njk'
     },
     contentPath: 'artists'
-  },*/
+  },
   team: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
@@ -198,7 +198,10 @@ async function main(params) {
         }
 
         if (!data.name) {
-          data.name = data.firstname + ' ' + data.lastname;
+          data.name = data.firstname;
+          if (data.lastname) {
+            data.name += ' ' + data.lastname;
+          }
         }
 
         let imageExtension = null;
@@ -224,6 +227,9 @@ async function main(params) {
         if (data.talkTitle) {
           title += `: ${data.talkTitle}`;
         }
+        if (!title) {
+          throw new Error(`Missing name/title in ${sheetId}: ${JSON.stringify(record)}`);
+        }
 
         const imagesInContent = [];
         content = await downloadContentUrls(content, imagesInContent);
@@ -238,7 +244,7 @@ async function main(params) {
           data,
         };
 
-        if (sheetId === 'speakers') {
+        if (data.firstname) {
           prepPersonMetadata(metadata)
         }
 

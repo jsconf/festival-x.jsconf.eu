@@ -1,5 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
+{% from "../_macros.njk" import artistMcGrid %}
 
  {% macro phantoms(contents, totalCount, releasedCount) %}
     {% for phantom in range(0, totalCount - releasedCount) %}
@@ -48,6 +49,22 @@
     {% endfor %}
 
     {{ phantoms(contents, 48, speakerPages.length) }}
-  </div>
+  </div>  
 
+  <section class="grid">
+    <div class="grid-item-left">
+      <h1 id="mcs">MCs</h1>
+    </div>
+  </section>
+
+  {% set mcsPages = contents.mcs._.pages |
+  notRedirect |
+  sortObjects('metadata.data.name', 100, 'string') %}
+
+  {{ artistMcGrid(contents, mcsPages) }}
+{% endblock %}
+
+{% block footer %}
+  <!-- Exclude sponsors because this page is super long without them already -->
+  {% include "../partials/footer-small.html.njk" %}
 {% endblock %}

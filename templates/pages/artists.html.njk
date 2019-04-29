@@ -1,0 +1,23 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% from "../_macros.njk" import artistMcGrid %}
+
+{% block bodyclass %}page--speakers{% endblock %}
+{% block header %}
+  <section class="grid">
+    <div class="grid-item-left">
+      <h1 id="artists">Artists</h1>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+
+  {% set artistPages = contents.artists._.pages |
+  notRedirect |
+  sortObjects('metadata.data.name', 100, 'string') %}
+
+  {{ artistMcGrid(contents, artistPages) }}
+  
+
+{% endblock %}
