@@ -50,12 +50,12 @@ const sheetParams = {
     },
     contentPath: 'speakers'
   },
-  /*mcs: {
+  mcs: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
     },
     contentPath: 'mcs'
-  },*/
+  },
   artists: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
