@@ -32,7 +32,7 @@ const tracksMap = {
   backtrack: 'Back Track',
   sidetrack: 'Side Track',
   community: 'Community Lounge',
-  bipocit: 'BIPOCIT Space',
+  bipocit: 'BIPoCiT Space',
   livejs: 'live:js Stage',
   sponsor: 'Sponsor Booth',
 }
