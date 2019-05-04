@@ -13,7 +13,7 @@ module.exports = function(env, callback) {
     extensions: {}
   };
   Object.assign(env.config.locals, require('../locals-generated.json'));
-  env.config.locals.loadSchedule = function() {
+  env.config.locals.loadSchedule = function(contents) {
     var schedule = JSON.parse(fs.readFileSync('./contents/schedule.json')).actualJson;
     if (schedule.stub) {
       console.error('ERROR: JSON not generated');

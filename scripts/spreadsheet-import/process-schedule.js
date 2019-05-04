@@ -1,10 +1,11 @@
 const fs = require('fs');
 
 module.exports.processSchedule = function(sheet) {
-  const data = structureData(sheet);
+  const {data, speakers} = structureData(sheet);
   const schedule = {
     info: info(),
     schedule: data,
+    speakers,
   }
   // Write with .txt filename, because wintersmith doesn't support serving
   // files with the "magic" .json extension.
@@ -39,7 +40,7 @@ const tracksMap = {
 function structureData(lessCrappyData) {
   let day = 1;
   const mergedRecords = {};
-
+  const speakers = {};
   for (let row = 2, nRows = lessCrappyData.length; row < nRows; row++) {
 
 
@@ -78,6 +79,9 @@ function structureData(lessCrappyData) {
       tracks[track].dateTime = tracks[track].date + ' ' +
           tracks[track].startTime.replace('.', ':') +
           ' GMT+0200';
+      tracks[track].id = (tracks[track].who + ' ' + tracks[track].what)
+          .toLowerCase().trim().replace(/[^a-z]/g, '-');
+      speakers[tracks[track].who] = tracks[track];
       if (!mergedRecords[day]) {
         mergedRecords[day] = {};
       }
@@ -88,7 +92,10 @@ function structureData(lessCrappyData) {
     });
   }
 
-  return mergedRecords;
+  return {
+    data: mergedRecords,
+    speakers
+  };
 }
 
 function info() {

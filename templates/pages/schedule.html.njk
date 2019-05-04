@@ -428,7 +428,7 @@ article.with-description {
               datetime="{{ talk.dateTime }}"
               class="session {{ talk.trackId }} time-row-item"
               {% if talkPage %}
-                id="talk-{{ talkPage.url | replace('/', '-') | replace('.', '-') }}"
+                id="talk-{{ talk.id }}"
               {% else %}
                 id="talk-{{ talk.date }}-{{ talk.startTime | replace('.', '-') }}-{{ talkIndex }}"
               {% endif %}

@@ -17,6 +17,15 @@
       {% if data.name.includes('TC39') %}
         {{ contents.cms['tc39-panel.md'].html }}
       {% endif %}
+
+      {% set time = loadSchedule().speakers[data.name.trim()] %}
+      {% if time %}
+        <p class="talkTime"><a href="/schedule/timetable.html#talk-{{ time.id }}">
+          Speaks on day {{ time.day }} 
+          at {{ time.startTime }} 
+          on the `{{ time.track }}` stage.
+        </a></p>
+      {% endif %}
     </section>
 
     <ul class="speaker-links">
