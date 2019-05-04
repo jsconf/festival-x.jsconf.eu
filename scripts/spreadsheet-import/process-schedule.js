@@ -6,28 +6,34 @@ module.exports.processSchedule = function(sheet) {
     info: info(),
     schedule: data,
   }
-  const json = JSON.stringify(schedule, null, '  ');
-  console.info(json);
-  fs.writeFileSync('./schedule.json', json);
   // Write with .txt filename, because wintersmith doesn't support serving
   // files with the "magic" .json extension.
-  fs.writeFileSync('./contents/schedule-json.txt', json);
+  fs.writeFileSync('./contents/schedule.json', JSON.stringify({
+    "pageId": "scheduleJson",
+    "template": "pages/json.html.njk",
+    "filename": ":file.json",
+    "actualJson": schedule,
+  }, null, '  '));
 }
 
 const columns = [
   'backtrack:startTime', 'backtrack:duration', 'backtrack:number',
-  '-', 'backtrack:who', 'backtrack:what', '-',
+  '-', 'backtrack:who',  'backtrack:what', '-',
   'sidetrack:startTime', 'sidetrack:duration', 'sidetrack:number',
-  '-', 'sidetrack:who', 'sidetrack:what', '-',
-  'community:startTime', 'community:what', 'community:detail', '-',
-  'sponsor:startTime', 'sponsor:what', 'sponsor:detail'
+  '-', 'sidetrack:who',  'sidetrack:what', 
+  'community:startTime', 'community:what', 'community:detail', 
+  'bipocit:startTime',   'bipocit:what',   'bipocit:detail',
+  'livejs:startTime',    'livejs:what',    'livejs:detail',
+  'sponsor:startTime',   'sponsor:what',   'sponsor:detail'
 ];
 
 const tracksMap = {
   backtrack: 'Back Track',
   sidetrack: 'Side Track',
   community: 'Community Lounge',
-  sponsor: 'Sponsor Booth'
+  bipocit: 'BIPOCIT Space',
+  livejs: 'live:js Stage',
+  sponsor: 'Sponsor Booth',
 }
 
 function structureData(lessCrappyData) {
@@ -52,12 +58,16 @@ function structureData(lessCrappyData) {
       if (!tracks[track]) {
         tracks[track] = {
           day: day,
-          date: day == 1 ? '2018-06-02' : '2018-06-03',
+          date: day == 1 ? '2019-06-01' : '2019-06-02',
           track: tracksMap[track],
           trackId: track
         };
       }
-      tracks[track][field] = lessCrappyData[row][col];
+      var val = lessCrappyData[row][col];
+      if (typeof val == 'string') {
+        val = val.trim();
+      }
+      tracks[track][field] = val;
     }
 
     Object.keys(tracks).forEach(track => {
@@ -83,7 +93,7 @@ function structureData(lessCrappyData) {
 
 function info() {
   const now = new Date();
-  const conferenceDay = now < Date.parse('Sun Jun 02 2018 00:00:00 GMT+0200 (CEST)') ? 1 : 2;
+  const conferenceDay = now < Date.parse('Sun Jun 01 2019 00:00:00 GMT+0200 (CEST)') ? 1 : 2;
   return {
     currentDay: conferenceDay,
     generationTime: now.toString(),

@@ -1,0 +1,631 @@
+<!doctype html>
+
+{% from "../_macros.njk" import svgIcon %}
+<html generated="{{ Date.now() }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JSConf EU Schedule 2019</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel=preconnect href="https://use.typekit.net">
+  <style id="typekit" data-tracking-url="{{ typekitTracking }}">
+    {{ typekitCss }}
+  </style>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="JSConf EU schedule">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest-json.txt">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#303f62">
+
+  <style id="style">
+    :root {
+      --callbackpink: #E10079;
+      --timeoutblue: #051ADD;
+      --undefinedpurple: #6058C5;
+      --evalblack: #303F62;
+      --returnrose: #FFC4BC;
+      --getdaycloud: #DDE4F2;
+      --promiselinen: #F3ECDA;
+      --evalblacklight: #7B889D;
+      --clearwhite: #FFFFFF;
+      --communitycolor: #bcffc4;
+      --sponsorcolor: #bcf7ff;
+
+      --text-color: var(--promiselinen);
+    }
+
+h2,
+h1,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 1em;
+}
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: "jaf-domus", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #bbbbbb;
+  background-color: var(--evalblack);
+  margin: 0 2em;
+}
+a {
+  -webkit-transition: color 0.3s, background-color 0.5s;
+  -moz-transition: color 0.3s, background-color 0.5s;
+  -o-transition: color 0.3s, background-color 0.5s;
+  transition: color 0.3s, background-color 0.5s;
+  color: #ff0079;
+}
+header {
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+  color: var(--clearwhite);
+  z-index: 10;
+  background: var(--evalblack)
+}
+
+header h1 {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  header h1 {
+    display: inline;
+    margin: 0;
+    font-size: 1rem;
+    vertical-align: middle;
+    margin-right: 2em;
+  }
+
+}
+
+header a {
+  display: flex;
+  align-items: center;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+header .svg {
+  width: 1.875rem;
+  height: 1.875rem;
+  margin-right: .5em;
+}
+
+nav {
+  display: inline-block;
+
+  font-feature-settings: "lnum";
+  font-variant: lining-nums;
+  letter-spacing: .25em;
+}
+nav a {
+  display: inline-block;
+  box-sizing: border-box;
+  margin:0 5px;
+  padding: 0.3em 1em;
+  height: 1.875rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color 0.3s;
+}
+nav a.active {
+  background-color: var(--evalblacklight);
+}
+.events {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.day {
+  padding-top: 5rem;
+  padding-bottom: 2.8rem;
+}
+
+.day h2 {
+  margin: 0;
+  padding: 0.25rem 0;
+  font-size: 3em;
+  color: var(--promiselinen);
+}
+.day li {
+  padding: 0 0.625rem;
+}
+.day .time {
+  margin-top: 0;
+  text-align: center;
+  /*visibility: hidden;*/
+  height: 0;
+}
+.day .time * {
+  display: none;
+}
+.day .session {
+  --primary-color: var(--returnrose);
+  --text-color: var(--promiselinen);
+  --invert-text-color: var(--evalblack);
+
+  margin: 1.5rem 0;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+
+
+.day .session.in-the-past{
+  --text-color: var(--evalblacklight) !important;
+  --primary-color: var(--evalblacklight) !important;
+}
+
+.day .session::before{
+  content: '';
+  background-color: var(--primary-color);
+  flex: 0 0 4px;
+  margin-right: 0.75rem;
+  margin-left: 2.125rem;
+}
+
+.day .session.sidetrack {
+  --primary-color: var(--getdaycloud);
+}
+.day .session.sponsor {
+  --primary-color: var(--sponsorcolor);
+}
+.day .session.community {
+  --primary-color: var(--communitycolor);
+}
+.day .session time {
+  color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left:0;
+}
+.day .session .track {
+  color: var(--primary-color);
+}
+.day .session div time {
+  top: 0.875rem;
+}
+.day .session h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--text-color);
+}
+.day .session h3 .speaker {
+  color: var(--primary-color);
+  display: block;
+}
+.day .session a,
+.day .session > div {
+  text-decoration: none;
+  padding: 0.635em 0;
+  color: inherit;
+}
+article.with-description {
+  cursor: pointer
+}
+.day .session article.with-description:not(.active) h3::after {
+  font-family: "jaf-domus";
+  content: ' →';
+  padding: 0.31em 0;
+}
+.day .session article > p,
+.day .session div > p {
+  margin:0;
+}
+.day .session .description {
+  display: none;
+  padding-top: .5em;
+  padding-bottom: 0;
+}
+.day .session .active .description,
+.day .session .active + .description {
+  display: block;
+}
+.day .session .description p {
+  line-height: 1.5;
+  margin-bottom: .5em;
+}
+.day .session .description p:last-child{
+  margin-bottom: 0;
+}
+.day .session .description ul {
+  margin: 0;
+  padding: 0;
+}
+.day .session .description ul li {
+  line-height: 1.2;
+  margin: 0 0 .5em 0;
+  padding: 0;
+  list-style-position: inside;
+  list-style-type: disc;
+}
+.day .session .description a {
+  display: inline-block;
+  border-bottom: 4px solid var(--primary-color);
+  background: linear-gradient(var(--primary-color), var(--primary-color) 100%) bottom no-repeat;
+  background-size: 100% 0;
+  transition: background-size .1s;
+  padding-bottom: 0;
+}
+.day .session .description a:hover {
+  color: var(--invert-text-color);
+  background-size: 100% 100%;
+}
+
+.message {
+  padding: 6px 20px;
+  text-align: center;
+}
+
+.notice {
+  position:fixed;
+  bottom: 0; left: 0; right: 0;
+  width: 100vw;
+  color: var(--evalblack);
+  padding: 0 2em;
+  background-color: var(--promiselinen);
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.5s ease-in-out, transform 0.16s ease-out;
+}
+.notice[hidden] {
+  opacity: 0;
+  display: block;
+  transform: translateY(100%);
+  visibility: hidden;
+  transition: visibility 1s, opacity 0.3s ease-in-out, transform 0.3s ease-out;
+}
+.notice a{
+  color: inherit;
+}
+
+@media (min-width: 767px) {
+  .time-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .time-row-item{
+    flex: 1 0 0;
+  }
+}
+
+
+@media print {
+
+
+
+  header {
+    display: none;
+  }
+
+  li {
+    page-break-inside: avoid;
+  }
+
+  .notice{
+    display: none;
+  }
+
+  nav{
+    display: none;
+  }
+
+  .time-row{
+    display: flex;
+    flex-wrap: wrap;;
+    justify-content: flex-start;
+    page-break-inside: avoid;
+    border-bottom: 1px solid;
+  }
+
+  .time-row-item{
+    flex: 1 0 0;
+  }
+
+  .day{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  body{
+    color: black;
+    background-color: white;
+  }
+
+  .day h2{
+    color: black;
+  }
+
+  .day .session h3{
+    color: black;
+  }
+
+  .day .session h3 .speaker{
+    color: #A9A9A9;
+  }
+
+  .day .session .track{
+    color: #A9A9A9;
+  }
+
+  .day .session time {
+    color: black;
+  }
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+  <header>
+    <a href="/" title="Back to Homepage">
+      {{ svgIcon(contents, 'jsconf-heart', svgClass='w2 h2') }}
+      <h1>
+        <span class="logo-text">JSConf EU</span>
+        <span class="logo-date">June 1st &amp; 2nd 2019</span>
+      </h1>
+    </a>
+
+    <nav>
+      <a href="#day1" class="active" id="nav_day1">Day 1</a>
+      <a href="#day2" id="nav_day2">Day 2</a>
+    </nav>
+  </header>
+  {% set schedule = loadSchedule() %}
+  {% for day, sessions in schedule.schedule %}
+    <div class="day {% if schedule.info.currentDay == day %}active{% endif %}" id="day{{ day }}">
+    <h2>Day {{ day }}</h2>
+    <ul class="events">
+      {% for session, talks in sessions %}
+        <div class="time-row">
+        <li class="time" id="day{{ day }}-{{ session | replace('.', '-') }}">
+          <h3>{{ session }}</h3>
+        </li>
+        {% set talkIndex = 0 %}
+        {% for talk in talks %}
+          {% set talkIndex = talkIndex + 1 %}
+          {% set talkPage = '' %}
+          {% for page in contents.speakers._.pages %}
+            {% if talk.who and page.metadata.data.name == talk.who %}
+              {% set talkPage = page %}
+            {% endif %}
+            {% if talk.what and page.metadata.data.talkTitle == talk.what %}
+              {% set talkPage = page %}
+            {% endif %}
+          {% endfor %}
+          <li
+              datetime="{{ talk.dateTime }}"
+              class="session {{ talk.trackId }} time-row-item"
+              {% if talkPage %}
+                id="talk-{{ talkPage.url | replace('/', '-') | replace('.', '-') }}"
+              {% else %}
+                id="talk-{{ talk.date }}-{{ talk.startTime | replace('.', '-') }}-{{ talkIndex }}"
+              {% endif %}
+              >
+
+            <article {% if talkPage or talk.detail %}class="with-description"{% endif %} onclick="this.classList.toggle('active')">
+              <h3>
+                {% if talk.who %}
+                  <span class="speaker">{{ talk.who }}</span>
+                {% endif %}
+                {{ talk.what }}
+              </h3>
+              {% if talk.who == 'all' %}
+                <time>{{ session }}</time>
+              {% else %}
+              <p>
+                <time>{{ session }}</time> <span class="track">{{ talk.track }}</span>
+              </p>
+              {% endif %}
+              {% if talkPage %}
+                <div class="description">
+                  {{ talkPage.html }}
+                  <p><a href="{{ talkPage.url }}">More info</a></p>
+                </div>
+              {% endif %}
+              {% if talk.detail %}
+                <div class="description">
+                  {{ talk.detail | md }}
+                </div>
+              {% endif %}
+            </article>
+          </li>
+        {% endfor %}
+        </div>
+      {% endfor %}
+    </ul>
+    </div>
+  {% endfor %}
+  <div class="notice" hidden id="notice">
+    <p>The schedule was automatically updated.</p>
+  </div>
+
+
+<script id="inline">
+document.body.className = 'js';
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+
+var overriddenTime = null;
+function dateNow() {
+  if (overriddenTime) {
+    return overriddenTime;
+  }
+  return Date.now();
+}
+
+if (location.href.includes('cycle')) {
+  overriddenTime = Date.parse('2019-06-01 1:00 GMT+0200');
+  setInterval(function() {
+    var cur = document.querySelector('.session:not(.in-the-past)');
+    overriddenTime = Date.parse(cur.getAttribute('datetime')) + 1;
+  }, 5000);
+}
+
+const t = new URLSearchParams(location.search).get("t");
+if (t) {
+  overriddenTime = Date.parse(t);
+}
+
+Array.from(document.querySelector('nav').children).forEach(function(btn) {
+  btn.onclick = function(e) {
+    setTimeout(function() {
+      history.replaceState(null, null, '/schedule/timetable.html')
+    }, 100)
+  };
+});
+
+var day1 = document.getElementById('nav_day1');
+var day2 = document.getElementById('nav_day2');
+function updateActivateDay() {
+  var active = day1;
+  var notActive = day2;
+  if (document.scrollingElement.scrollTop >=
+      document.getElementById('day2').offsetTop - 95) {
+    active = day2;
+    notActive = day1;
+  }
+  if (!active.classList.contains('active')) {
+    active.classList.add('active')
+  }
+  if (notActive.classList.contains('active')) {
+    notActive.classList.remove('active')
+  }
+}
+window.onscroll = updateActivateDay;
+document.addEventListener('DOMContentLoaded', updateActivateDay);
+
+/**
+ * Date.parse isn't working in Safari for our datetime strings so thank you Stackoverflow
+ */
+function parseDate(date) {
+  if (!date) {
+    return NaN;
+  }
+
+  const parsed = Date.parse(date);
+  if (!isNaN(parsed)) {
+    return parsed;
+  }
+
+  return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
+}
+
+function markItemsAsInThePast(doc) {
+  var now = dateNow();
+  Array.from(doc.querySelectorAll('[datetime]')).forEach(function(talk) {
+    var time = parseDate(talk.getAttribute('datetime'));
+    if (time < now) {
+      if (!talk.classList.contains('in-the-past')) {
+        talk.classList.add('in-the-past')
+      }
+    }
+  });
+}
+markItemsAsInThePast(document)
+setInterval(function() {
+  markItemsAsInThePast(document)
+}, 10000);
+
+function scrollTimeIntoView(onload) {
+  // var now = new Date('2018-06-02 14:20 GMT+0200');
+  var now = dateNow();
+  if (now < Date.parse('2019-06-01 0:00 GMT+0200') ||
+      now > Date.parse('2019-06-03 0:00 GMT+0200')) {
+    // Only scroll into view on the day off.
+    return;
+  }
+
+  var firstFuture = document.querySelector('.session:not(.in-the-past)');
+  setTimeout(function() {
+    if (onload && document.documentElement.scrollTop != 0) {
+      return;
+    }
+    firstFuture.scrollIntoView();
+    document.documentElement.scrollTop -= 93;
+  }, 100)
+}
+
+function checkCurrent() {
+  // return
+  fetch('/schedule/timetable.html', {cache: 'reload'}).then(function(response) {
+    if (response.ok) {
+      response.text().then(function(text) {
+        var generationTime = text.match(/<html generated=(\d+)/)[1];
+        if (!generationTime) {
+          console.error('Failed to find generation time', text);
+          return;
+        }
+        if (generationTime != document.documentElement.getAttribute('generated')) {
+          console.info('Updating schedule', generationTime);
+          var d = new DOMParser()
+          var doc = d.parseFromString(text, 'text/html')
+          markItemsAsInThePast(doc);
+          updateActivateDay();
+          setDOM(document, doc.documentElement);
+          document.querySelector('.notice').removeAttribute('hidden');
+          setTimeout(function() {
+             document.querySelector('.notice').setAttribute('hidden', '');
+          }, 6000)
+        } else {
+          console.info('Schedule current', generationTime);
+        }
+      });
+    } else {
+      console.error('Check failed', response);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', checkCurrent);
+window.addEventListener('focus', checkCurrent);
+document.addEventListener('DOMContentLoaded', scrollTimeIntoView.bind(null, true))
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) {
+    scrollTimeIntoView();
+  }
+})
+setInterval(checkCurrent, 1000 * 60 * 5);  // Check every 5 minutes
+
+</script>
+
+<script id="setDOM">
+// setDOM from https://github.com/DylanPiercey/set-dom under MIT License
+!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).setDOM=e()}}(function(){return function e(t,n,r){function i(d,a){if(!n[d]){if(!t[d]){var f="function"==typeof require&&require;if(!a&&f)return f(d,!0);if(o)return o(d,!0);var u=new Error("Cannot find module '"+d+"'");throw u.code="MODULE_NOT_FOUND",u}var l=n[d]={exports:{}};t[d][0].call(l.exports,function(e){var n=t[d][1][e];return i(n||e)},l,l.exports,e,t,n,r)}return n[d].exports}for(var o="function"==typeof require&&require,d=0;d<r.length;d++)i(r[d]);return i}({1:[function(e,t){"use strict";function n(e,t){!function(e,t){if(!e)throw new Error("set-dom: "+t)}(e&&e.nodeType,"You must provide a valid node to update."),e.nodeType===h&&(e=e.documentElement),t.nodeType===v?i(e,t):r(e,"string"==typeof t?s(t,e.nodeName):t),e[m]||(e[m]=!0,f(e))}function r(e,t){if(e.nodeType===t.nodeType)if(e.nodeType===p){if(function(e,t){return a(e)&&a(t)||d(e)===d(t)||e.isEqualNode(t)}(e,t))return;if(i(e,t),e.nodeName===t.nodeName)!function(e,t){var n,r,i,o,d;for(n=e.length;n--;)r=e[n],o=r.namespaceURI,d=r.localName,(i=t.getNamedItemNS(o,d))||e.removeNamedItemNS(o,d);for(n=t.length;n--;)r=t[n],o=r.namespaceURI,d=r.localName,(i=e.getNamedItemNS(o,d))?i.value!==r.value&&(i.value=r.value):(t.removeNamedItemNS(o,d),e.setNamedItemNS(r))}(e.attributes,t.attributes);else{for(var n=t.cloneNode();e.firstChild;)n.appendChild(e.firstChild);e.parentNode.replaceChild(n,e)}}else e.nodeValue!==t.nodeValue&&(e.nodeValue=t.nodeValue);else e.parentNode.replaceChild(t,u(e)),f(t)}function i(e,t){for(var n,i,d,a,l,s,c=e.firstChild,m=t.firstChild,p=0;c;)p++,i=o(n=c),c=c.nextSibling,i&&(s||(s={}),s[i]=n);for(c=e.firstChild;m;)p--,d=m,m=m.nextSibling,s&&(a=o(d))&&(l=s[a])?(delete s[a],l!==c?e.insertBefore(l,c):c=c.nextSibling,r(l,d)):c?(n=c,c=c.nextSibling,o(n)?(e.insertBefore(d,n),f(d)):r(n,d)):(e.appendChild(d),f(d));for(i in s)p--,e.removeChild(u(s[i]));for(;--p>=0;)e.removeChild(u(e.lastChild))}function o(e){if(e.nodeType===p){var t=e.getAttribute(n.KEY)||e.id;return t?c+t:void 0}}function d(e){return e.getAttribute(n.CHECKSUM)||NaN}function a(e){return null!=e.getAttribute(n.IGNORE)}function f(e){return l(e,"mount")}function u(e){return l(e,"dismount")}function l(e,t){if(o(e)){var n=document.createEvent("Event"),r={value:e};n.initEvent(t,!1,!1),Object.defineProperty(n,"target",r),Object.defineProperty(n,"srcElement",r),e.dispatchEvent(n)}for(var i=e.firstChild;i;)i=l(i,t).nextSibling;return e}n.KEY="data-key",n.IGNORE="data-ignore",n.CHECKSUM="data-checksum";var s=e(2),c="_set-dom-",m=c+"mounted",p=1,h=9,v=11;t.exports=n},{2:2}],2:[function(e,t){"use strict";function n(e,t){if(t===i){if(d)return c.innerHTML=e,c;var n=e.match(p);if(n){var o=n[2],a=n.index+n[1].length,u=a+o.length;e=e.slice(0,a)+e.slice(u),m.innerHTML=o}for(var l=r.parseFromString(e,f),s=l.body;m.firstChild;)s.appendChild(m.firstChild);return l.documentElement}return m.innerHTML=e,m.firstChild}var r=window.DOMParser&&new window.DOMParser,i="HTML",o=!1,d=!1,a="text/html",f="application/xhtml+xml";try{var u=r.parseFromString('<wbr class="A"/>',a).body.firstChild,l=document.createElement("div");if(l.appendChild(u),"A"!==l.firstChild.classList[0])throw new Error;o=!0}catch(e){}var s=document.implementation.createHTMLDocument(""),c=s.documentElement,m=s.body;try{c.innerHTML+="",d=!0}catch(e){r.parseFromString('<wbr class="A"/>',f);var p=/(<body[^>]*>)([\s\S]*)<\/body>/}t.exports=o?function(e,t){var o=r.parseFromString(e,a);return o.body?t===i?o.documentElement:o.body.firstChild:n(e,t)}:n},{}]},{},[1])(1)});
+</script>
+
+</body>
+</html>

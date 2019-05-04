@@ -1,0 +1,6 @@
+{
+  "pageId": "schedule",
+  "template": "pages/schedule.html.njk",
+  "filename": "/schedule/timetable.html",
+  "title": "Schedule"
+}
