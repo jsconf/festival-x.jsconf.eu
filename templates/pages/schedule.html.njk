@@ -55,7 +55,7 @@ html {
 }
 html {
   font-size: 16px;
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  margin-top: 93px;
 }
 body {
   font-family: "jaf-domus", Helvetica, Arial, sans-serif;
@@ -561,6 +561,12 @@ setInterval(function() {
 }, 10000);
 
 function scrollTimeIntoView(onload) {
+  if (onload && location.hash) {
+    setTimeout(function() {
+      document.documentElement.scrollTop -= 93;
+    }, 100)
+    return;
+  }
   // var now = new Date('2018-06-02 14:20 GMT+0200');
   var now = dateNow();
   if (now < Date.parse('2019-06-01 0:00 GMT+0200') ||

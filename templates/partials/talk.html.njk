@@ -18,10 +18,10 @@
         {{ contents.cms['tc39-panel.md'].html }}
       {% endif %}
 
-      {% set time = loadSchedule().speakers[data.name.trim()] %}
+      {% set time = loadSchedule().speakers[data.name.trim().toLowerCase()] %}
       {% if time %}
-        <p class="talkTime"><a href="/schedule/timetable.html#talk-{{ time.id }}">
-          Speaks on day {{ time.day }} 
+        <p class="talk-time"><a href="/schedule/timetable.html#talk-{{ time.id }}">
+          Scheduled for day {{ time.day }} 
           at {{ time.startTime }} 
           on the `{{ time.track }}` stage.
         </a></p>

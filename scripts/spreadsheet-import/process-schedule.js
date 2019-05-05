@@ -80,8 +80,8 @@ function structureData(lessCrappyData) {
           tracks[track].startTime.replace('.', ':') +
           ' GMT+0200';
       tracks[track].id = (tracks[track].who + ' ' + tracks[track].what)
-          .toLowerCase().trim().replace(/[^a-z]/g, '-');
-      speakers[tracks[track].who] = tracks[track];
+          .toLowerCase().trim().replace(/[^a-z0-9]/g, '-');
+      speakers[tracks[track].who.toLowerCase()] = tracks[track];
       if (!mergedRecords[day]) {
         mergedRecords[day] = {};
       }
