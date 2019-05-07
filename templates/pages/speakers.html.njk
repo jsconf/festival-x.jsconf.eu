@@ -62,6 +62,17 @@
   sortObjects('metadata.data.name', 100, 'string') %}
 
   {{ artistMcGrid(contents, mcsPages) }}
+
+  <section class="grid">
+    <div class="grid-item-left">
+      <h1 id="bipocit-speakers">BIPoCiT Speakers</h1>
+    </div>
+  </section>
+
+  {% set bipocitSpeakerPages = contents['bipocit-speakers']._.pages |
+  notRedirect %}
+
+  {{ artistMcGrid(contents, bipocitSpeakerPages) }}
 {% endblock %}
 
 {% block footer %}
