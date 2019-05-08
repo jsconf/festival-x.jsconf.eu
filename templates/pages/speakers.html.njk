@@ -20,16 +20,17 @@
 
   {{ speakersGrid(contents, speakerPages, true) }}
 
-  <section class="grid">
-    <div class="grid-item-left">
-      <h1 id="bipocit-speakers">BIPoCiT Speakers</h1>
-    </div>
-  </section>
+  {% set bipocitSpeakerPages = contents['bipocit-speakers']._.pages | notRedirect %}
 
-  {% set bipocitSpeakerPages = contents['bipocit-speakers']._.pages |
-  notRedirect %}
+  {% if bipocitSpeakerPages | length > 0 %}
+    <section class="grid">
+      <div class="grid-item-left">
+        <h1 id="bipocit-speakers">BIPoCiT Speakers</h1>
+      </div>
+    </section>
 
-  {{ speakersGrid(contents, bipocitSpeakerPages) }}
+    {{ speakersGrid(contents, bipocitSpeakerPages) }}
+  {% endif %}
 
   <section class="grid">
     <div class="grid-item-left">
