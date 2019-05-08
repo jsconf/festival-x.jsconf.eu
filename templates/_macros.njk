@@ -32,18 +32,61 @@
   </section>
 {% endmacro %}
 
-{% macro artistMcGrid(contents, pages) %}
-    <div class="grid">
-      {% for page in pages %}
-        <section class="grid-item-speaker">
-          {% set data = page.metadata.data %}
-          <a class="speaker" href="{{ data.web.twitter.url }}">
-            {% include './partials/speaker-picture.html.njk' %}
+{% macro phantoms(contents, totalCount, releasedCount) %}
+  {% for phantom in range(0, totalCount - releasedCount) %}
+    <section class="grid-item-speaker phantom">
+      <div class="speaker">
+        <figure class="ma0 speaker-picture">
+          <img
+              loading="lazy"
+              src="{{ contents.images.placeholder['speaker-placeholder-' + (phantom % 6) + '.jpg'].url }}"
+              alt="Photo of a bear used as a placeholder because of a missing image.">
+        </figure>
+        <h2 class="heading--spaced heading--no-border">Coming soon</h2>
+        <p class="ma0">To be announced on <a href="https://twitter.com/jsconfeu">@jsconfeu</a></p>
+      </div>
+    </section>
+  {% endfor %}
+{% endmacro %}
 
-            <h2 class="heading--spaced heading--no-border">{{ data.name }}</h2>
-            <p class="ma0">@{{ data.web.twitter.handle }}</p>
-          </a>
-        </section>
-      {% endfor %}
-    </div>
-  {% endmacro %}
+{% macro gridItem(contents, page, twitterLink = false) %}
+  <section class="grid-item-speaker">
+    {% set data = page.metadata.data %}
+    {% set link = page.url %}
+    {% if twitterLink %}
+      {% set link = data.web.twitter.url %}
+    {% endif %}
+
+    <a class="speaker" href="{{ link }}">
+      {% include './partials/speaker-picture.html.njk' %}
+
+      <h2 class="heading--spaced heading--no-border">{{ data.name }}</h2>
+      <p class="ma0">
+        {% if twitterLink %}
+          @{{ data.web.twitter.handle }}
+        {% else %}
+          {{ data.talkTitle }}
+        {% endif %}
+      </p>
+    </a>
+  </section>
+{% endmacro %}
+
+{% macro speakersGrid(contents, pages, withPhantoms = false) %}
+  <div class="grid">
+    {% for page in pages %}
+      {{ gridItem(contents, page) }}
+    {% endfor %}
+    {% if withPhantoms %}
+      {{ phantoms(contents, 48, pages.length) }}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro artistMcGrid(contents, pages) %}
+  <div class="grid">
+    {% for page in pages %}
+      {{ gridItem(contents, page, true) }}
+    {% endfor %}
+  </div>
+{% endmacro %}

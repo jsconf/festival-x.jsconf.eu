@@ -1,23 +1,6 @@
 {% extends "../layouts/default.html.njk" %}
 
-{% from "../_macros.njk" import artistMcGrid %}
-
- {% macro phantoms(contents, totalCount, releasedCount) %}
-    {% for phantom in range(0, totalCount - releasedCount) %}
-      <section class="grid-item-speaker phantom">
-        <div class="speaker">
-          <figure class="ma0 speaker-picture">
-            <img
-                loading="lazy"
-                src="{{ contents.images.placeholder['speaker-placeholder-' + (phantom % 6) + '.jpg'].url }}"
-                alt="Photo of a bear used as a placeholder because of a missing image.">
-          </figure>
-          <h2 class="heading--spaced heading--no-border">Coming soon</h2>
-          <p class="ma0">To be announced on <a href="https://twitter.com/jsconfeu">@jsconfeu</a></p>
-        </div>
-      </section>
-    {% endfor %}
-  {% endmacro %}
+{% from "../_macros.njk" import artistMcGrid, speakersGrid %}
 
 {% set speakerPages = contents.speakers._.pages |
     notRedirect |
@@ -35,21 +18,19 @@
 
 {% block content %}
 
-  <div class="grid">
-    {% for page in speakerPages %}
-      <section class="grid-item-speaker">
-        <a class="speaker" href="{{ page.url }}">
-          {% set data = page.metadata.data %}
-          {% include '../partials/speaker-picture.html.njk' %}
+  {{ speakersGrid(contents, speakerPages, true) }}
 
-          <h2 class="heading--spaced heading--no-border">{{ data.name }}</h2>
-          <p class="ma0">{{ data.talkTitle }}</p>
-        </a>
-      </section>
-    {% endfor %}
+  {% set bipocitSpeakerPages = contents['bipocit-speakers']._.pages | notRedirect %}
 
-    {{ phantoms(contents, 48, speakerPages.length) }}
-  </div>  
+  {% if bipocitSpeakerPages | length > 0 %}
+    <section class="grid">
+      <div class="grid-item-left">
+        <h1 id="bipocit-speakers">BIPoCiT Speakers</h1>
+      </div>
+    </section>
+
+    {{ speakersGrid(contents, bipocitSpeakerPages) }}
+  {% endif %}
 
   <section class="grid">
     <div class="grid-item-left">

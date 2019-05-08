@@ -50,6 +50,12 @@ const sheetParams = {
     },
     contentPath: 'speakers'
   },
+  'bipocit-speakers': {
+    templateGlobals: {
+      template: 'pages/speaker.html.njk'
+    },
+    contentPath: 'bipocit-speakers'
+  },
   mcs: {
     templateGlobals: {
       template: 'pages/placeholder.html.njk'
