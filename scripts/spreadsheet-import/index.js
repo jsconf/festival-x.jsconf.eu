@@ -51,11 +51,11 @@ const sheetParams = {
     },
     contentPath: 'speakers'
   },
-  'bipocit-speakers': {
+  'bipocit-space-speakers': {
     templateGlobals: {
       template: 'pages/speaker.html.njk'
     },
-    contentPath: 'bipocit-speakers'
+    contentPath: 'bipocit-space-speakers'
   },
   mcs: {
     templateGlobals: {
