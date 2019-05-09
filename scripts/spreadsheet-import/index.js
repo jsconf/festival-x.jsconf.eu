@@ -407,8 +407,15 @@ async function downloadContentUrls(text, imagesOut) {
 
 function prepPersonMetadata(metadata) {
   const data = metadata.data;
-  const normalizedName = getFilename(data.name, true);
-  metadata.filename = `/${normalizedName}/${getFilename(data.talkTitle || 'talk')}.html`;
+  const makeName = newSlug => `/${getFilename(data.name, newSlug)}/${getFilename(data.talkTitle || 'talk', newSlug)}.html`
+  const legacyName = makeName(false);
+  const filename = metadata.filename = makeName(true);
+  if (filename != legacyName) {
+    redirect({
+      from: legacyName,
+      to: filename,
+    });
+  }
 
   data.web = {
     twitter: {},
