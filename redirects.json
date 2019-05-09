@@ -9,6 +9,18 @@
   },
   {
     "from": "/news/commuity-lounge-call-for-stories-artists/",
-    "to":   "/news/community-lounge-call-for-stories-artists/"
+    "to": "/news/community-lounge-call-for-stories-artists/"
+  },
+  {
+    "from": "/constanza-y-ez-calder-n/about-life-robots-and-cats.html",
+    "to": "/constanza-yanez-calderon/about-life-robots-and-cats.html"
+  },
+  {
+    "from": "/kat-march-n/tink-a-next-generation-package-manager.html",
+    "to": "/kat-marchan/tink-a-next-generation-package-manager.html"
+  },
+  {
+    "from": "/ma-l-nison/yarn-2019-and-beyond.html",
+    "to": "/mael-nison/yarn-2019-and-beyond.html"
   }
 ]

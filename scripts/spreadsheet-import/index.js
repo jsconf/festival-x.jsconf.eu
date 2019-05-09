@@ -5,6 +5,7 @@ const wordwrap = require('wordwrap')(80);
 const chalk = require('chalk');
 const program = require('commander');
 const mkdirp = require('mkdirp');
+const slug = require('slug');
 const {promisify} = require('util');
 const {getSheetData} = require('./spreadsheet-api');
 const {processSheet, simplifySpreadsheetData} = require('./spreadsheet-utils');
@@ -251,7 +252,7 @@ async function main(params) {
         };
 
         if (data.firstname) {
-          prepPersonMetadata(metadata)
+          prepPersonMetadata(metadata);
         }
 
         let cpath = contentPath;
@@ -352,7 +353,11 @@ function extractFrontmatter(data, content) {
   }
 }
 
-function getFilename(name) {
+function getFilename(name, useNewImplentation) {
+  if (useNewImplentation) {
+    return slug(name, { lower: true });
+  }
+
   let filename = name.trim();
   filename = filename.replace(/[^\w]/g, '-');
   filename = filename.replace(/--/g, '-');
@@ -402,7 +407,8 @@ async function downloadContentUrls(text, imagesOut) {
 
 function prepPersonMetadata(metadata) {
   const data = metadata.data;
-  metadata.filename = `/${getFilename(data.name)}/${getFilename(data.talkTitle || 'talk')}.html`;
+  const normalizedName = getFilename(data.name, true);
+  metadata.filename = `/${normalizedName}/${getFilename(data.talkTitle || 'talk')}.html`;
 
   data.web = {
     twitter: {},

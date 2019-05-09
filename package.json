@@ -42,6 +42,7 @@
     "rimraf": "^2.6.2",
     "seed-random": "^2.2.0",
     "sharp": "^0.21.0",
+    "slug": "^1.1.0",
     "smartcrop-sharp": "^2.0.3",
     "svgo": "^1.0.5",
     "svgstore": "^2.0.3",
