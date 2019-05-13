@@ -12,7 +12,6 @@
     <nav id="topbar-nav" class="topbar-nav items-center">
       <a href="/speakers/" class="link--promiselinen link--nav">Speakers</a>
       <a href="/artists/" class="link--promiselinen link--nav">Artists</a>
-      <a href="/schedule/" class="link--promiselinen link--nav">Schedule</a>
       <a href="/about/" class="link--promiselinen link--nav">About</a>
       <a href="{{ contents['info.json'].url }}" class="link--promiselinen link--nav">Info</a>
       <a href="{{ contents['news.json'].url }}" class="link--promiselinen link--nav">News</a>
@@ -26,7 +25,7 @@
         </a>
       </div>
     </nav>
-    <a href="{{ buyTicketsLink }}" class="btn btn--undefinedpurple topbar-cta buy-ticket">Buy ticket</a>
+    <a href="/schedule/" class="btn btn--undefinedpurple topbar-cta buy-ticket">Schedule</a>
     <button id="topbar-toggle" type="button" class="topbar-toggle"
         title="Toggle Navigation"
         onclick="document.getElementById('topbar-nav').classList.toggle('topbar-nav--is-visible')">
