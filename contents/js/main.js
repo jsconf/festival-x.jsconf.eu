@@ -27,16 +27,11 @@ function pingTypekit() {
 }
 
 function prefetch() {
-  addLink('prefetch', 'https://use.typekit.com/zjo8qhc.js');
-  addLink('prefetch', 'https://ti.to/jsconfeu/jsconf-eu-x-2019');
-  addLink('prefetch', 'https://assets.beta.tito.io/assets/event/mcdonagh-3e98502eab0051e882bb15d690656b4b174ba0cd24e0c3d4bb66450e6e7ec6b0.css');
-  addLink('prefetch', 'https://d2z6c3c3r6k4bx.cloudfront.net/uploads/event/logo/1062210/e2c441a28eaa527eabdb848377d2bf56.png');
-  addLink('prefetch', 'https://js.stripe.com/v2/');
   if (/localhost/.test(location.href)) {
     return;
   }
   addLink('prefetch', '/');
-  document.querySelectorAll('.link--nav').forEach(function(a) {
+  document.querySelectorAll('.link--nav,.topbar-cta').forEach(function(a) {
     addLink('prefetch', a.href);
   });
   addLink('preconnect', 'https://jsconf.us11.list-manage.com');
