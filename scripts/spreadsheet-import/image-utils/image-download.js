@@ -121,7 +121,7 @@ async function resize(width, buffer, filename) {
   const path = fullPath(sizedName(filename, width));
 
   if (await promisify(fs.exists)(path)) {
-    console.info('Resize exists', path);
+    // console.info('Resize exists', path);
     return;
   }
   sharp(buffer)
@@ -139,7 +139,7 @@ async function square(width, buffer, filename) {
   const path = fullPath(sizedName(filename, width, 'square'));
 
   if (await promisify(fs.exists)(path)) {
-    console.info('Resize exists', path);
+    // console.info('Resize exists', path);
     return;
   }
   const height = width;
