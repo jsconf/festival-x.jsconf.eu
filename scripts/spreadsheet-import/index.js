@@ -87,9 +87,9 @@ const sheetParams = {
     },
     contentPath: 'sponsors'
   },
-  /*schedule: {
+  schedule: {
     parseSchedule: true,
-  },*/
+  },
 };
 
 const wwwtfrcFile = __dirname + '/../../.wwwtfrc';

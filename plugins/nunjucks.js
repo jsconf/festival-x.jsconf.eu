@@ -13,7 +13,13 @@ module.exports = function(env, callback) {
     extensions: {}
   };
   Object.assign(env.config.locals, require('../locals-generated.json'));
-  // env.config.locals.schedule = require('../schedule.json');
+  env.config.locals.loadSchedule = function(contents) {
+    if (!fs.existsSync('./contents/schedule.json')) {
+      console.error('Error: Schedule file was not generated.')
+      return null;
+    }
+    return JSON.parse(fs.readFileSync('./contents/schedule.json')).actualJson;
+  };
   env.config.locals.Date = Date;
   env.config.locals.effectiveUrl = env.mode === 'preview'
       ? 'http://localhost:8080'

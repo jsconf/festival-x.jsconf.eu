@@ -104,6 +104,9 @@
   list-style: none;
   padding: 0;
 }
+.talk-time {
+  font-style: italic;
+}
 .speaker-link { margin: 1em 0; }
 .speaker-link a { display: block; }
 

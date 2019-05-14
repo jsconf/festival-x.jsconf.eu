@@ -31,6 +31,7 @@ function prefetch() {
     return;
   }
   addLink('prefetch', '/');
+  addLink('prefetch', '/schedule/timetable.html');
   document.querySelectorAll('.link--nav,.topbar-cta').forEach(function(a) {
     addLink('prefetch', a.href);
   });
