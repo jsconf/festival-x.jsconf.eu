@@ -32,3 +32,4 @@ checkDir('build/sponsors/', 3);
 checkDir('build/about/', 1);
 checkDir('build/why/', 1);
 checkDir('build/x/', 1);
+checkDir('build/schedule/', 2); // overview and timetable
