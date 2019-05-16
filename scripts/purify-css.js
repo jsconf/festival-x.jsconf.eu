@@ -52,8 +52,8 @@ function processHtml(baseCss) {
         if (!found) {
           console.error('Cant find link element in ', htmlFilename);
           // Only fail if it looks like an html file.
-          if (/<body/.test(html)) {
-            throw new Error('Fail');
+          if (/<body/.test(html) && !/only-inline-style/.test(html)) {
+            throw new Error('Cant find link element in ', htmlFilename);
           }
         }
         await promisify(fs.writeFile)(htmlFilename, html);
