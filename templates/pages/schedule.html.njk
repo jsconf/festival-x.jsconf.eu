@@ -434,7 +434,7 @@ article.with-description {
               {% endif %}
               >
 
-            <article {% if talkPage or talk.detail %}class="with-description"{% endif %} onclick="this.classList.toggle('active')">
+            <article {% if talkPage or talk.detail %}class="with-description"{% endif %} onclick="if (event.target.tagName != 'A')this.classList.toggle('active')">
               <h3>
                 {% if talk.who %}
                   <span class="speaker">{{ talk.who }}</span>
