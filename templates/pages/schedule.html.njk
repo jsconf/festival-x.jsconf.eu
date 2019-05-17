@@ -97,6 +97,10 @@ header h1 {
     color: var(--primary-color);
 }
 
+a[role=button] {
+  text-decoration: none;
+}
+
 @media (min-width: 767px) {
   header h1 {
     display: inline;
@@ -453,14 +457,14 @@ article.with-description {
                 {% if talk.who %}
                   <span class="speaker">
                     {% if talkPage or talk.detail %}
-                      <span role="button" class="fav" onclick="fav('{{id}}')">☆</span> 
-                      <span role="button" class="unfav" onclick="unfav('{{id}}')">★</span> 
+                      <a href="#" role="button" class="fav"   onclick="fav('{{id}}')">☆</a> 
+                      <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')">★</a> 
                     {% endif %}
                     {{ talk.who }}</span>
                 {% else %}
                   {% if talkPage or talk.detail %}
-                    <span role="button" class="fav" onclick="fav('{{id}}')">☆</span> 
-                    <span role="button" class="unfav" onclick="unfav('{{id}}')">★</span> 
+                    <a href="#" role="button" class="fav"   onclick="fav('{{id}}')">☆</a> 
+                    <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')">★</a> 
                   {% endif %}
                 {% endif %}
                 {{ talk.what }}
@@ -646,6 +650,7 @@ showFavs()
 
 function fav(id) {
   event.stopPropagation();
+  event.preventDefault();
   favorites[id] = true;
   localStorage['favorites'] = JSON.stringify(favorites);
   showFavs()
@@ -653,6 +658,7 @@ function fav(id) {
 
 function unfav(id) {
   event.stopPropagation();
+  event.preventDefault();
   delete favorites[id];
   localStorage['favorites'] = JSON.stringify(favorites);
   showFavs()
