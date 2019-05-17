@@ -89,6 +89,14 @@ header h1 {
   display: none;
 }
 
+.unfav {
+    display: none;
+}
+
+.unfav {
+    color: var(--primary-color);
+}
+
 @media (min-width: 767px) {
   header h1 {
     display: inline;
@@ -380,11 +388,14 @@ article.with-description {
     color: black;
   }
 
+  
+
 }
 
 
 </style>
-
+<style id="selection">
+</style>
 </head>
 
 <body>
@@ -424,20 +435,33 @@ article.with-description {
               {% set talkPage = page %}
             {% endif %}
           {% endfor %}
+          {% set id = "" %}
           <li
               datetime="{{ talk.dateTime }}"
               class="session {{ talk.trackId }} time-row-item"
               {% if talkPage %}
-                id="talk-{{ talk.id }}"
+                {% set id = "talk-" + talk.id %}
+                id="{{ id }}"
               {% else %}
-                id="talk-{{ talk.date }}-{{ talk.startTime | replace('.', '-') }}-{{ talkIndex }}"
+                {% set id = "talk-" + talk.date + "-" + talk.startTime.replace('.', '-') + "-" + talkIndex %}
+                id="{{ id }}"
               {% endif %}
               >
 
             <article {% if talkPage or talk.detail %}class="with-description"{% endif %} onclick="if (event.target.tagName != 'A')this.classList.toggle('active')">
               <h3>
                 {% if talk.who %}
-                  <span class="speaker">{{ talk.who }}</span>
+                  <span class="speaker">
+                    {% if talkPage or talk.detail %}
+                      <span role="button" class="fav" onclick="fav('{{id}}')">☆</span> 
+                      <span role="button" class="unfav" onclick="unfav('{{id}}')">★</span> 
+                    {% endif %}
+                    {{ talk.who }}</span>
+                {% else %}
+                  {% if talkPage or talk.detail %}
+                    <span role="button" class="fav" onclick="fav('{{id}}')">☆</span> 
+                    <span role="button" class="unfav" onclick="unfav('{{id}}')">★</span> 
+                  {% endif %}
                 {% endif %}
                 {{ talk.what }}
               </h3>
@@ -602,6 +626,7 @@ function checkCurrent() {
           markItemsAsInThePast(doc);
           updateActivateDay();
           setDOM(document, doc.documentElement);
+          showFavs()
           document.querySelector('.notice').removeAttribute('hidden');
           setTimeout(function() {
              document.querySelector('.notice').setAttribute('hidden', '');
@@ -614,6 +639,41 @@ function checkCurrent() {
       console.error('Check failed', response);
     }
   });
+}
+
+var favorites = localStorage['favorites'] ? JSON.parse(localStorage['favorites']) : {};
+showFavs()
+
+function fav(id) {
+  event.stopPropagation();
+  favorites[id] = true;
+  localStorage['favorites'] = JSON.stringify(favorites);
+  showFavs()
+}
+
+function unfav(id) {
+  event.stopPropagation();
+  delete favorites[id];
+  localStorage['favorites'] = JSON.stringify(favorites);
+  showFavs()
+}
+
+function showFavs() {
+  var style = document.getElementById('selection');
+  var css = ''
+  for (var id in favorites) {
+    css += `#${id} {
+  --primary-color: var(--callbackpink);
+}
+#${id} .fav {
+  display: none;
+}
+#${id} .unfav {
+  display: inline;
+}
+`
+  }
+  style.textContent = css;
 }
 
 document.addEventListener('DOMContentLoaded', checkCurrent);
