@@ -90,11 +90,7 @@ header h1 {
 }
 
 .unfav {
-    display: none;
-}
-
-.unfav {
-    color: var(--primary-color);
+  display: none;
 }
 
 a[role=button] {
@@ -391,15 +387,9 @@ article.with-description {
   .day .session time {
     color: black;
   }
-
-  
-
 }
-
-
 </style>
-<style id="selection">
-</style>
+<style id="selection" data-ignore></style>
 </head>
 
 <body>
@@ -452,19 +442,22 @@ article.with-description {
               {% endif %}
               >
 
+            {% macro favButton(id, title) %}
+              <a href="#" role="button" class="fav"   onclick="fav('{{id}}')"   title="Mark talk as favorite: {{ title }}">☆</a> 
+              <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')" title="Un-Favorite talk: {{ title }}">★</a>
+            {% endmacro %}
+
             <article {% if talkPage or talk.detail %}class="with-description"{% endif %} onclick="if (event.target.tagName != 'A')this.classList.toggle('active')">
               <h3>
                 {% if talk.who %}
                   <span class="speaker">
                     {% if talkPage or talk.detail %}
-                      <a href="#" role="button" class="fav"   onclick="fav('{{id}}')">☆</a> 
-                      <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')">★</a> 
+                      {{ favButton(id, talk.what) }}
                     {% endif %}
                     {{ talk.who }}</span>
                 {% else %}
                   {% if talkPage or talk.detail %}
-                    <a href="#" role="button" class="fav"   onclick="fav('{{id}}')">☆</a> 
-                    <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')">★</a> 
+                    {{ favButton(id, talk.what) }}
                   {% endif %}
                 {% endif %}
                 {{ talk.what }}
@@ -630,7 +623,6 @@ function checkCurrent() {
           markItemsAsInThePast(doc);
           updateActivateDay();
           setDOM(document, doc.documentElement);
-          showFavs()
           document.querySelector('.notice').removeAttribute('hidden');
           setTimeout(function() {
              document.querySelector('.notice').setAttribute('hidden', '');
@@ -646,7 +638,7 @@ function checkCurrent() {
 }
 
 var favorites = localStorage['favorites'] ? JSON.parse(localStorage['favorites']) : {};
-showFavs()
+showFavs();
 
 function fav(id) {
   event.stopPropagation();
@@ -677,6 +669,10 @@ function showFavs() {
 #${id} .unfav {
   display: inline;
 }
+#${id} h3 {
+  color: var(--primary-color);
+}
+
 `
   }
   style.textContent = css;
