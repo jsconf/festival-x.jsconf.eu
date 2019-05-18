@@ -421,12 +421,16 @@ article.with-description {
         {% for talk in talks %}
           {% set talkIndex = talkIndex + 1 %}
           {% set talkPage = '' %}
+          {% set talkTitle = talk.what %}
           {% for page in contents.speakers._.pages %}
             {% if talk.who and page.metadata.data.name == talk.who %}
               {% set talkPage = page %}
             {% endif %}
             {% if talk.what and page.metadata.data.talkTitle == talk.what %}
               {% set talkPage = page %}
+            {% endif %}
+            {% if talkPage %}
+              {% set talkTitle = talkPage.metadata.data.talkTitle %}
             {% endif %}
           {% endfor %}
           {% set id = "" %}
@@ -443,8 +447,8 @@ article.with-description {
               >
 
             {% macro favButton(id, title) %}
-              <a href="#" role="button" class="fav"   onclick="fav('{{id}}')"   title="Mark talk as favorite: {{ title }}">☆</a> 
-              <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')" title="Un-Favorite talk: {{ title }}">★</a>
+              <a href="#" role="button" class="fav"   onclick="fav('{{id}}')"   title="Mark talk as favorite: {{ title  | escape }}">☆</a> 
+              <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')" title="Un-Favorite talk: {{ title  | escape }}">★</a>
             {% endmacro %}
 
             <article {% if talkPage or talk.detail %}class="with-description"{% endif %} onclick="if (event.target.tagName != 'A')this.classList.toggle('active')">
@@ -452,15 +456,15 @@ article.with-description {
                 {% if talk.who %}
                   <span class="speaker">
                     {% if talkPage or talk.detail %}
-                      {{ favButton(id, talk.what) }}
+                      {{ favButton(id, talkTitle) }}
                     {% endif %}
                     {{ talk.who }}</span>
                 {% else %}
                   {% if talkPage or talk.detail %}
-                    {{ favButton(id, talk.what) }}
+                    {{ favButton(id, talkTitle) }}
                   {% endif %}
                 {% endif %}
-                {{ talk.what }}
+                {{ talkTitle | escape }}
               </h3>
               {% if talk.who == 'all' %}
                 <time>{{ session }}</time>
