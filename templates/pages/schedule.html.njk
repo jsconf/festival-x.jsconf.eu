@@ -1,7 +1,7 @@
 <!doctype html>
 
 {% from "../_macros.njk" import svgIcon %}
-<html generated="{{ Date.now() }}">
+<html checksum="___CHECKSUM___">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -611,13 +611,13 @@ function checkCurrent() {
   fetch('/schedule/timetable.html', {cache: 'reload'}).then(function(response) {
     if (response.ok) {
       response.text().then(function(text) {
-        var generationTime = text.match(/<html generated=(\d+)/)[1];
-        if (!generationTime) {
-          console.error('Failed to find generation time', text);
+        var checksum = text.match(/<html checksum=(\w+)/)[1];
+        if (!checksum) {
+          console.error('Failed to find checksum', text);
           return;
         }
-        if (generationTime != document.documentElement.getAttribute('generated')) {
-          console.info('Updating schedule', generationTime);
+        if (checksum != document.documentElement.getAttribute('checksum')) {
+          console.info('Updating schedule', checksum);
           var d = new DOMParser()
           var doc = d.parseFromString(text, 'text/html')
           markItemsAsInThePast(doc);
@@ -628,7 +628,7 @@ function checkCurrent() {
              document.querySelector('.notice').setAttribute('hidden', '');
           }, 6000)
         } else {
-          console.info('Schedule current', generationTime);
+          console.info('Schedule current', checksum);
         }
       });
     } else {
@@ -637,7 +637,9 @@ function checkCurrent() {
   });
 }
 
-var favorites = localStorage['favorites'] ? JSON.parse(localStorage['favorites']) : {};
+var favorites = localStorage['favorites'] 
+    ? JSON.parse(localStorage['favorites']) 
+    : {};
 showFavs();
 
 function fav(id) {
@@ -645,7 +647,7 @@ function fav(id) {
   event.preventDefault();
   favorites[id] = true;
   localStorage['favorites'] = JSON.stringify(favorites);
-  showFavs()
+  showFavs();
 }
 
 function unfav(id) {
@@ -653,7 +655,7 @@ function unfav(id) {
   event.preventDefault();
   delete favorites[id];
   localStorage['favorites'] = JSON.stringify(favorites);
-  showFavs()
+  showFavs();
 }
 
 function showFavs() {
@@ -684,6 +686,7 @@ document.addEventListener('DOMContentLoaded', scrollTimeIntoView.bind(null, true
 document.addEventListener('visibilitychange', function() {
   if (!document.hidden) {
     scrollTimeIntoView();
+    checkCurrent();
   }
 })
 setInterval(checkCurrent, 1000 * 60 * 5);  // Check every 5 minutes

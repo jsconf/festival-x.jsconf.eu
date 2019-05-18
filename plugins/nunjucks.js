@@ -80,6 +80,11 @@ module.exports = function(env, callback) {
             sortClassName: true,
             sortAttributes: true,
           });
+          html = html.replace(/___CHECKSUM___/, () =>{
+            const hash = require('crypto').createHash('sha1');
+            hash.update(html);
+            return hash.digest('hex')
+          });
           callback(null, new Buffer(html));
         } catch (error) {
           callback(error);
