@@ -11,6 +11,7 @@
   <style id="typekit" data-tracking-url="{{ typekitTracking }}">
     {{ typekitCss }}
   </style>
+  <base target="_blank">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="JSConf EU schedule">
@@ -422,6 +423,22 @@ article.with-description {
           {% set talkIndex = talkIndex + 1 %}
           {% set talkPage = '' %}
           {% set talkTitle = talk.what %}
+          {% set detail = talk.detail %}
+
+          {% if talk.who == "Curators" %}
+            {% macro curators() %}
+The curators of JSConf EU are 
+[Malte Ubl](https://twitter.com/cramforce), 
+[Simone Haas](https://twitter.com/haas_simone), 
+[Holger Blank](https://twitter.com/hblank), 
+[Jan Lehnardt](https://twitter.com/janl), and 
+[Feli Kugland](https://twitter.com/kotzendekrabbe).
+
+And we'll be joined by [the JSConf EU MCs](/speakers/#mcs).
+            {% endmacro %}
+            {% set detail = curators() %}
+          {% endif %}
+
           {% for page in contents.speakers._.pages %}
             {% if talk.who and page.metadata.data.name == talk.who %}
               {% set talkPage = page %}
@@ -451,16 +468,16 @@ article.with-description {
               <a href="#" role="button" class="unfav" onclick="unfav('{{id}}')" title="Un-Favorite talk: {{ title  | escape }}">★</a>
             {% endmacro %}
 
-            <article {% if talkPage or talk.detail %}class="with-description"{% endif %} onclick="if (event.target.tagName != 'A')this.classList.toggle('active')">
+            <article {% if talkPage or detail %}class="with-description"{% endif %} onclick="if (event.target.tagName != 'A')this.classList.toggle('active')">
               <h3>
                 {% if talk.who %}
                   <span class="speaker">
-                    {% if talkPage or talk.detail %}
+                    {% if talkPage or detail %}
                       {{ favButton(id, talkTitle) }}
                     {% endif %}
                     {{ talk.who }}</span>
                 {% else %}
-                  {% if talkPage or talk.detail %}
+                  {% if talkPage or detail %}
                     {{ favButton(id, talkTitle) }}
                   {% endif %}
                 {% endif %}
@@ -479,9 +496,9 @@ article.with-description {
                   <p><a href="{{ talkPage.url }}">More info</a></p>
                 </div>
               {% endif %}
-              {% if talk.detail %}
+              {% if detail %}
                 <div class="description">
-                  {{ talk.detail | md }}
+                  {{ detail | md }}
                 </div>
               {% endif %}
             </article>
