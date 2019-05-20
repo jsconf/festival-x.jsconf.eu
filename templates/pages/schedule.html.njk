@@ -24,19 +24,20 @@
 
   <style id="style" only-inline-style>
     :root {
-      --callbackpink: #E10079;
+      --callbackpink: #F55DAF;
       --timeoutblue: #051ADD;
       --undefinedpurple: #6058C5;
-      --evalblack: #303F62;
-      --returnrose: #FFC4BC;
-      --getdaycloud: #DDE4F2;
+      --evalblack: #15216B;
+      --returnrose: #FC9A9B;
+      --getdaycloud: #FFD2BB;
       --promiselinen: #F3ECDA;
       --evalblacklight: #7B889D;
       --clearwhite: #FFFFFF;
-      --communitycolor: #bcffc4;
+      --communitycolor: #A5B1F9;
+      --bipocitcolor: #D4A1F8;
       --sponsorcolor: #bcf7ff;
 
-      --text-color: var(--promiselinen);
+      --text-color: var(--clearwhite);
     }
 
 h2,
@@ -142,7 +143,8 @@ nav a {
   transition: border-color 0.3s;
 }
 nav a.active {
-  background-color: var(--evalblacklight);
+  background-color: var(--undefinedpurple);
+  border-radius: 0.9375rem;
 }
 .events {
   padding: 0;
@@ -158,7 +160,7 @@ nav a.active {
   margin: 0;
   padding: 0.25rem 0;
   font-size: 3em;
-  color: var(--promiselinen);
+  color: var(--clearwhite);
 }
 .day li {
   padding: 0 0.625rem;
@@ -174,7 +176,7 @@ nav a.active {
 }
 .day .session {
   --primary-color: var(--returnrose);
-  --text-color: var(--promiselinen);
+  --text-color: var(--clearwhite);
   --invert-text-color: var(--evalblack);
 
   margin: 1.5rem 0;
@@ -197,6 +199,7 @@ nav a.active {
   flex: 0 0 4px;
   margin-right: 0.75rem;
   margin-left: 2.125rem;
+  border-radius: 2px;
 }
 
 .day .session.sidetrack {
@@ -208,6 +211,12 @@ nav a.active {
 .day .session.community {
   --primary-color: var(--communitycolor);
 }
+
+.day .session.bipocit {
+  --primary-color: var(--bipocitcolor);
+}
+
+
 .day .session time {
   color: var(--primary-color);
   position: absolute;
@@ -216,6 +225,7 @@ nav a.active {
 }
 .day .session .track {
   color: var(--primary-color);
+  font-weight: bold;
 }
 .day .session div time {
   top: 0.875rem;
@@ -226,7 +236,8 @@ nav a.active {
   color: var(--text-color);
 }
 .day .session h3 .speaker {
-  color: var(--primary-color);
+  color: var(--clearwhite);
+  font-weight: bold;
   display: block;
 }
 .day .session a,
@@ -697,7 +708,7 @@ function showFavs() {
 #${id} .unfav {
   display: inline;
 }
-#${id} h3 {
+#${id} h3, #${id} h3 .speaker {
   color: var(--primary-color);
 }
 
