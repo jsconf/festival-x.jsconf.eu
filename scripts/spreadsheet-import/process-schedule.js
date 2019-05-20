@@ -58,7 +58,6 @@ function structureData(lessCrappyData) {
 
 
       if (!tracks[track]) {
-        console.info('Row start time', track, rowStartTime)
         tracks[track] = {
           day: day,
           date: day == 1 ? '2019-06-01' : '2019-06-02',
@@ -74,13 +73,11 @@ function structureData(lessCrappyData) {
       tracks[track][field] = val;
       if (field == "startTime" && !rowStartTime) {
         rowStartTime = val;
-        console.info('START', rowStartTime)
       }
     }
 
     Object.keys(tracks).forEach(track => {
       if (!tracks[track].startTime || !tracks[track].what) {
-        console.warn('Skipping entry', track, tracks[track].startTime);
         return;
       }
       tracks[track].startTime = String(tracks[track].startTime).replace(':', '.');
