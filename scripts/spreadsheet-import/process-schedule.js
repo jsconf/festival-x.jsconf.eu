@@ -23,9 +23,9 @@ const columns = [
   'sidetrack:startTime', 'sidetrack:duration', 'sidetrack:number',
   '-', 'sidetrack:who',  'sidetrack:what', 
   'community:startTime', 'community:what', 'community:detail', 
-  'bipocit:startTime',   'bipocit:what',   'bipocit:detail',
-  'livejs:startTime',    'livejs:what',    'livejs:detail',
-  'sponsor:startTime',   'sponsor:what',   'sponsor:detail'
+  '-',   'bipocit:who',   'bipocit:what',
+  '-',    'livejs:what',    'livejs:detail',
+  '-',   'sponsor:what',   'sponsor:detail'
 ];
 
 const tracksMap = {
@@ -50,6 +50,7 @@ function structureData(lessCrappyData) {
       day = 2;
     }
 
+    let rowStartTime = null;
     const tracks = {};
     for (let col = 0, nCols = lessCrappyData[row].length; col < nCols; col++) {
       if (!columns[col] || columns[col] === '-') { continue; }
@@ -61,7 +62,8 @@ function structureData(lessCrappyData) {
           day: day,
           date: day == 1 ? '2019-06-01' : '2019-06-02',
           track: tracksMap[track],
-          trackId: track
+          trackId: track,
+          startTime: rowStartTime,
         };
       }
       var val = lessCrappyData[row][col];
@@ -69,6 +71,9 @@ function structureData(lessCrappyData) {
         val = val.trim();
       }
       tracks[track][field] = val;
+      if (field == "startTime" && !rowStartTime) {
+        rowStartTime = val;
+      }
     }
 
     Object.keys(tracks).forEach(track => {
