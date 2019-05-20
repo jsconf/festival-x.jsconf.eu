@@ -446,10 +446,15 @@ And we'll be joined by [the JSConf EU MCs](/speakers/#mcs).
             {% if talk.what and page.metadata.data.talkTitle == talk.what %}
               {% set talkPage = page %}
             {% endif %}
-            {% if talkPage %}
-              {% set talkTitle = talkPage.metadata.data.talkTitle %}
+          {% endfor %}
+          {% for page in contents['bipocit-space-speakers']._.pages %}
+            {% if talk.who and page.metadata.data.name == talk.who %}
+              {% set talkPage = page %}
             {% endif %}
           {% endfor %}
+          {% if talkPage %}
+            {% set talkTitle = talkPage.metadata.data.talkTitle %}
+          {% endif %}
           {% set id = "" %}
           <li
               datetime="{{ talk.dateTime }}"
