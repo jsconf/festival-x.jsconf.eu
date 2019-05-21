@@ -406,7 +406,7 @@ article.with-description {
 
 <body>
   <header>
-    <a href="/" title="Back to Homepage">
+    <a href="/" title="Back to Homepage" target="_self">
       {{ svgIcon(contents, 'jsconf-heart', svgClass='w2 h2') }}
       <h1>
         <span class="logo-text">JSConf EU</span>
@@ -415,8 +415,8 @@ article.with-description {
     </a>
 
     <nav>
-      <a href="#day1" class="active" id="nav_day1">Day 1</a>
-      <a href="#day2" id="nav_day2">Day 2</a>
+      <a href="#day1" class="active" id="nav_day1" target="_self">Day 1</a>
+      <a href="#day2" id="nav_day2" target="_self">Day 2</a>
     </nav>
   </header>
   {% set schedule = loadSchedule() %}
