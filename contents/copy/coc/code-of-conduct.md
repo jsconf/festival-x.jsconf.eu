@@ -60,7 +60,7 @@ In case of any doubt, please ask before taking photographs of attendees, speaker
 
 ## Inclusive language
 
-In our commitment to a harassment-free and inclusive environment we strongly believe it’s important to pay attention to harmful language patterns.
+In our commitment to a harassment-free and inclusive environment we strongly believe it’s important to pay attention to harmful language patterns and an [intersectional](https://en.wikipedia.org/wiki/Intersectionality) view on discriminations that rarely happen only one-sided. We understand that our list of isms below is by far not complete and believe it is a basic start to raise awareness at our events.
 
 ### Ableism
 
@@ -70,12 +70,20 @@ To find out more about ableism and replacement terms please read [this guide](ht
 
 ### Sexism
 
-Using gendered terms like _"dude"_ or _"guys"_ to address a mixed-gendered group of people contributes to furthering exclusion of underrepresented individuals. We strongly advise avoiding gendered pronouns as well as gendered terms.
+Using gendered terms like _"dude"_ or _"guys"_ to address a mixed-gendered group of
+people contributes to furthering exclusion of underrepresented individuals. We
+strongly advise avoiding gendered pronouns as well as gendered terms. If unsure about people’s pronouns, we highly recommend to ask people directly for their pronouns first and to check if there are already any hints provided by themselves (e.g. on badges) instead of assuming their pronouns.
 
-For more information please familiarise yourself with [Geek Feminism wiki guide](http://geekfeminism.wikia.com/wiki/Nonsexist_language).
+For more information please familiarise yourself with [Geek Feminism wiki guide](http://geekfeminism.wikia.com/wiki/Nonsexist_language) and [Wikipedia Third Person Pronoun](https://en.wikipedia.org/wiki/Third-person_pronoun).
+
+### Racism
+
+Racism is deeply rooted in our society and global, exists among all social classes and is connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence, oppression and domination of one group or individual over another group or individual of different race, ethnicity, culture, and their territories. Addressing individuals or a group of people in a diminutive, derogative or questioning way based on their (assumed) race and ethnic background is therefore racist, disrespectful and harmful. We do not tolerate any racist behavior, slurs, statements or jokes and will take actions if any reports on this matter reaches us.
+
+For more information please read [Wikipedia Racism](https://en.wikipedia.org/wiki/Racism).
 
 ## Attribution
 
 This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com), [The Geek Feminism wiki](http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy), the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/) and [Conference Code of Conduct](http://confcodeofconduct.com/).
 
-Last update: 21 Nov 2017
+Last update: 22 May 2019 - Version 1.2
