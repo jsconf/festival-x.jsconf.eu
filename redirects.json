@@ -10,5 +10,9 @@
   {
     "from": "/news/commuity-lounge-call-for-stories-artists/",
     "to": "/news/community-lounge-call-for-stories-artists/"
+  },
+  {
+    "from": "/schedule/compact.html",
+    "to": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPFRgIOYBWp8965AmRAsCigExzNIxhyCa-UmDK_EywSLeurz_X5NQky4DXZwky0jS_yBXqlmPGDD-B/pubhtml?gid=52748233&single=true"
   }
 ]
