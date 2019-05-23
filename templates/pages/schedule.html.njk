@@ -95,6 +95,10 @@ header h1 {
   display: none;
 }
 
+.copresent-message {
+  display: none;
+}
+
 a[role=button] {
   text-decoration: none;
 }
@@ -454,7 +458,7 @@ And we'll be joined by [the JSConf EU MCs](/speakers/#mcs).
             {% if talk.who and page.metadata.data.name == talk.who %}
               {% set talkPage = page %}
             {% endif %}
-            {% if talk.what and page.metadata.data.talkTitle == talk.what %}
+            {% if not(talkPage) and talk.what and page.metadata.data.talkTitle == talk.what %}
               {% set talkPage = page %}
             {% endif %}
           {% endfor %}
@@ -491,7 +495,11 @@ And we'll be joined by [the JSConf EU MCs](/speakers/#mcs).
                     {% if talkPage or detail %}
                       {{ favButton(id, talkTitle) }}
                     {% endif %}
-                    {{ talk.who }}</span>
+                    {{ talk.who }}
+                    {% if talkPage.metadata.data.coSpeakers %}
+                      &amp; {{ talkPage.metadata.data.coSpeakers }}
+                    {% endif %}
+                  </span>
                 {% else %}
                   {% if talkPage or detail %}
                     {{ favButton(id, talkTitle) }}
