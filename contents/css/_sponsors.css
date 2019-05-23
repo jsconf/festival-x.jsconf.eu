@@ -29,7 +29,8 @@
   }
 }
 
-.sponsors-community {
+.sponsors-community,
+.sponsors-travel {
   @media (--xsmall) {
     --sponsors-grid-count: 4;
   }
