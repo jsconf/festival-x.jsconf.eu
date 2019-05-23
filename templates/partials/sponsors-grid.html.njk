@@ -1,5 +1,8 @@
+{% set sponsorTypes = ['organizing', 'festival', 'main', 'supporting', 'community'] %}
 
-{% set sponsorTypes = ['organizing', 'festival', 'main', 'supporting', 'community', 'travel'] %}
+{% if page.metadata.allSponsors %}
+  {{ sponsorTypes.push('travel') }}
+{% endif %}
 
 {% for sponsorType in sponsorTypes %}
   {% set sponsors = contents.sponsors._.pages |
