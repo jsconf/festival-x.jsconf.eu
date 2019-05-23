@@ -4,7 +4,7 @@ const path = require('path');
 // r: {from: "/path", to: "/path"}
 module.exports = function redirect(r) {
   if (!/^\//.test(r.from)) throw new Error('URLs must be path absolute: ' + r.from);
-  if (!/^\//.test(r.to))   throw new Error('URLs must be path absolute: ' + r.to);
+  if (!/^\/|^https?\:\/\//.test(r.to))   throw new Error('URLs must be absolute: ' + r.to);
   const filename = './contents/redirects/' + r.from.replace(/[\/.]/g, '-') + '.json';
   if (/\/$/.test(r.from)) {
     r.from = r.from + 'index.html';
