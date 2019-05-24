@@ -51,5 +51,5 @@ checkDir('build/schedule/', 2); // overview and timetable
 checkHtml('build/schedule/timetable.html', /time-row[^-]/g, 45);
 checkHtml('build/sponsors/index.html', /class="sponsor/g, 30);
 checkHtml('build/artists/index.html', /speaker-picture/g, 14);
-checkHtml('build/speakers/index.html', /speaker-picture/g, 75);
+checkHtml('build/speakers/index.html', /speaker-picture/g, 70);
 checkHtml('build/about/index.html', /speaker-picture/g, 30);
