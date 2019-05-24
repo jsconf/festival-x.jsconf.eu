@@ -1,0 +1,394 @@
+<!doctype html>
+<html generated="{{ Date.now() }}" version="3">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JSConf EU 2019 Venue Schedule</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="JSConf EU schedule">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#303f62">
+  <style id="typekit" data-tracking-url="{{ typekitTracking }}">
+    {{ typekitCss }}
+  </style>
+
+  <style id="style">
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "jaf-domus", Arial, sans-serif;
+      font-size: 2em;
+      color: #FFF;
+      background-color: #15216B;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      top: 20px;
+      right: 71px;
+      left: 64px;
+      bottom: 48px;
+      border: 0;
+      background-image:
+        url({{ contents.images['in-venue-pattern-top.svg'].url }}),
+        url({{ contents.images['in-venue-pattern-bottom.svg'].url }});
+      background-position: top right, left bottom;
+      background-repeat: no-repeat;
+    }
+    .wrapper{
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-left: 220px;
+      margin-right: 410px;
+      height: 100vh;
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header {
+      font-family: "jaf-domus", 'Arial Narrow', sans-serif;
+      font-size: 32px;
+    }
+    header b {
+      display: block;
+    }
+    .talk {
+      font-size: 1.5em;
+      margin-top: .5em;
+      line-height: 1.2em;
+    }
+    .speaker{
+      font-size: 0.8em;
+      margin-top: 1.2em;
+    }
+    .time{
+      font-family: "jaf-domus", 'Arial Narrow', sans-serif;
+      font-size: 2em;
+      margin-top: -.3em;
+    }
+    .session section {
+      width: 100%;
+      padding-left: 40px;
+      position: relative;
+      margin-top: 64px;
+    }
+    .session section::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      content: "";
+      border-radius: 5px;
+      width: 10px;
+      background-color: #FFF;
+    }
+    .session {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 110px;
+      display: flex;
+      align-content: flex-start;
+      align-items: flex-start;
+      transform: translateX(-1000px) translateZ(0);
+      /*transition: transform 2s ease-in-out;*/
+      display:none;
+    }
+    .session.active {
+      transform: translateX(0) translateZ(0);
+    }
+    .session.previous {
+      transform: translateX(2000px) translateZ(0);
+      /*transition: transform 2s ease-in-out;*/
+    }
+    .session.inplay {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .session .info > * {
+      transform: translateY(-1000px) translateZ(0);
+      /*transition: transform 2s;
+      transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);*/
+    }
+    .session.active .info > * {
+      transform: translateY(0) translateZ(0) !important;
+    }
+
+    .up-next {
+      font-size: 54px;
+      flex-basis: 100%;
+      margin-top: 64px;
+    }
+    .up-next-time {
+      font-size: 84px
+    }
+
+    .session-columns {
+      justify-content: space-between;
+    }
+    .session-columns section {
+      flex-basis: 45%;
+    }
+
+    .track {
+      margin-top: 24px;
+    }
+    .back-track .track {
+      color: #FC9A9B;
+    }
+    .side-track .track {
+      color: #FFD2BB;
+    }
+    .sponsor-area .track {
+      color: #F55DAF;
+    }
+    .community-lounge .track {
+      color: #A5B1F9;
+    }
+    .bipocit-space .track {
+      color: #D4A1F8;
+    }
+
+    .session-medium section {
+      margin-top: 82px;
+    }
+    .session-medium header b {
+      font-size: 54px;
+      line-height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .session-big section {
+      margin-top: 92px;
+    }
+    .session-big header,
+    .session-big .track {
+      font-size: 54px;
+    }
+    .session-big header b {
+      font-size: 84px;
+      line-height: 60px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="background"></div>
+<div class="wrapper">
+  {% set schedule = loadSchedule() %}
+  {% for day, sessions in schedule.schedule %}
+    {% for session, talks in sessions %}
+      {% set talkIndex = 0 %}
+      <div
+        class="
+          session
+          {% if talks | length < 3 %}session-big{% endif %}
+          {% if talks | length === 3 %}session-medium{% endif %}
+          {% if talks | length > 3 %}session-columns{% endif %}
+        "
+        id="session-{{day}}-{{ session | replace('.', '-') }}">
+        <div class=up-next>
+          up next<br>
+          <b class=up-next-time>{{ session | replace('.', ':') }}</b>
+        </div>
+        {% for talk in talks %}
+          {% set talkIndex = talkIndex + 1 %}
+          {% set talkPage = '' %}
+          {% for page in contents.speakers._.pages %}
+            {% if page.metadata.speaker.name == talk.who %}
+              {% set talkPage = page %}
+            {% endif %}
+            {% if page.metadata.speaker.talkTitle == talk.what %}
+              {% set talkPage = page %}
+            {% endif %}
+          {% endfor %}
+
+          <section
+            {% if talkPage %}
+              id="talk-{{ talkPage.metadata.speaker.id }}"
+            {% else %}
+              id="talk-{{ talk.date }}-{{ talk.startTime | replace('.', '-') }}-{{ talkIndex }}"
+            {% endif %}
+            datetime="{{ talk.dateTime }}"
+            sessionlength="{{ talks.length }}"
+            class="{{ talk.track | lower | replace(' ', '-') }}">
+            <div class="info">
+              <header>
+                {% if talk.who %}
+                  <b>{{ talk.who }}</b>
+                  {{ talk.what }}
+                {% else %}
+                  <b>{{ talk.what }}</b>
+                {% endif %}
+              </header>
+              <div class=track>{{ talk.track }}</div>
+            </div>
+          </section>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>
+
+<script id="inline">
+  window.onunhandledrejection = window.onerror = function() {
+    setTimeout(function() {
+      location.reload();
+    }, 5000)
+  };
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+
+  function activate(doc) {
+    var sections = Array.from(doc.querySelectorAll('.session section'));
+
+    var inFuture = 0;
+    var firstAfterActive = false;
+    sections.forEach(function(section, index) {
+      var session = section.parentElement;
+      var time = Date.parse(section.getAttribute('datetime'));
+      var future = now() < (time + 5 * 60 * 1000); // 5 minutes offset
+      section.setAttribute('in-future', future);
+      if (future && inFuture == 0) {
+        if (!session.classList.contains('active')) {
+          session.classList.add('active');
+        }
+        if (!session.classList.contains('inplay')) {
+          session.classList.add('inplay');
+        }
+        if (session.nextElementSibling) {
+          session.nextElementSibling.classList.add('inplay');
+          if (session.nextElementSibling.nextElementSibling) {
+            session.nextElementSibling.nextElementSibling.classList.add('inplay');
+          }
+        }
+        firstAfterActive = true;
+      } else {
+        firstAfterActive = false;
+      }
+      if (!future) {
+        if (session.classList.contains('active')) {
+          session.classList.remove('active');
+        }
+        if (!session.classList.contains('previous')) {
+          session.classList.add('previous');
+          if (session.previousElementSibling) {
+            session.previousElementSibling.classList.remove('inplay');
+          }
+        }
+      }
+      if (future) {
+        inFuture++;
+      }
+      Array.from(session.querySelectorAll('.info > *')).forEach(function(item) {
+        if (item.style.transform) {
+          return;
+        }
+        var dir0 = '';
+        var dir1 = '';
+        if (Math.random() > 0.5) dir0 = '-';
+        if (Math.random() > 0.5) dir1 = '-';
+        item.style.transform = 'translateY(' + dir0 + '2000px) translateX(' + dir1 + '2000px)';
+      });
+    });
+  }
+
+  var overriddenTime = null;
+  function now() {
+    if (overriddenTime) {
+      return overriddenTime;
+    }
+    return Date.now();
+  }
+
+  if (location.href.includes('cycle')) {
+    setInterval(function() {
+      var cur = document.querySelector('.active section');
+      overriddenTime = Date.parse(cur.getAttribute('datetime')) + 6 * 60 * 1000;
+      console.info('New time', new Date(overriddenTime))
+    }, 5000);
+  }
+
+  var startTime = 0
+  if (startTime = location.hash.match(/\d+/)) {
+    overriddenTime = startTime[0];
+  }
+
+  var pageLoadTime = Date.now();
+
+  var version = document.documentElement.getAttribute('version');
+  var script = document.getElementById('inline').textContent;
+  var lastText = '';
+  function checkCurrent() {
+    // Reload once per hour at 15 after to be robust for memory leaks.
+    if (Date.now() - pageLoadTime > 60 * 1000 * 60 && new Date().getMinutes() > 15) {
+      console.info('Memory reload')
+      location.href = location.href;
+    }
+    fetch('/schedule/venue.html', {cache: 'reload'}).then(function(response) {
+      if (response.ok) {
+        response.text().then(function(text) {
+          var generationTime = text.match(/<html generated=(\d+)/)[1];
+          if (!generationTime) {
+            console.error('Failed to find generation time', text);
+            return;
+          }
+          if (generationTime != document.documentElement.getAttribute('generated')) {
+            var textWithoutTime = text.replace(generationTime, '');
+            if (textWithoutTime == lastText) {
+              console.info('Schedule unchanged except for generation time', generationTime);
+              return;
+            }
+            lastText = textWithoutTime;
+            console.info('Updating schedule', generationTime);
+            var d = new DOMParser()
+            var doc = d.parseFromString(text, 'text/html')
+            activate(doc);
+            setDOM(document, doc.documentElement);
+            // If the version of this file changes, reload
+            if (version != document.documentElement.getAttribute('version')) {
+              location.reload();
+            }
+            // Script changed, reload
+            if (script != document.getElementById('inline').textContent) {
+              location.reload();
+            }
+          } else {
+            console.info('Schedule current', generationTime);
+          }
+        });
+      } else {
+        console.error('Check failed', response);
+      }
+    });
+  }
+
+  setInterval(checkCurrent, 1000 * 5);  // Check every 5 seconds
+  setInterval(activate.bind(null, document), 500);
+
+</script>
+
+<script id="setDOM">
+  // setDOM from https://github.com/DylanPiercey/set-dom under MIT License
+  !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).setDOM=e()}}(function(){return function e(t,n,r){function i(d,a){if(!n[d]){if(!t[d]){var f="function"==typeof require&&require;if(!a&&f)return f(d,!0);if(o)return o(d,!0);var u=new Error("Cannot find module '"+d+"'");throw u.code="MODULE_NOT_FOUND",u}var l=n[d]={exports:{}};t[d][0].call(l.exports,function(e){var n=t[d][1][e];return i(n||e)},l,l.exports,e,t,n,r)}return n[d].exports}for(var o="function"==typeof require&&require,d=0;d<r.length;d++)i(r[d]);return i}({1:[function(e,t){"use strict";function n(e,t){!function(e,t){if(!e)throw new Error("set-dom: "+t)}(e&&e.nodeType,"You must provide a valid node to update."),e.nodeType===h&&(e=e.documentElement),t.nodeType===v?i(e,t):r(e,"string"==typeof t?s(t,e.nodeName):t),e[m]||(e[m]=!0,f(e))}function r(e,t){if(e.nodeType===t.nodeType)if(e.nodeType===p){if(function(e,t){return a(e)&&a(t)||d(e)===d(t)||e.isEqualNode(t)}(e,t))return;if(i(e,t),e.nodeName===t.nodeName)!function(e,t){var n,r,i,o,d;for(n=e.length;n--;)r=e[n],o=r.namespaceURI,d=r.localName,(i=t.getNamedItemNS(o,d))||e.removeNamedItemNS(o,d);for(n=t.length;n--;)r=t[n],o=r.namespaceURI,d=r.localName,(i=e.getNamedItemNS(o,d))?i.value!==r.value&&(i.value=r.value):(t.removeNamedItemNS(o,d),e.setNamedItemNS(r))}(e.attributes,t.attributes);else{for(var n=t.cloneNode();e.firstChild;)n.appendChild(e.firstChild);e.parentNode.replaceChild(n,e)}}else e.nodeValue!==t.nodeValue&&(e.nodeValue=t.nodeValue);else e.parentNode.replaceChild(t,u(e)),f(t)}function i(e,t){for(var n,i,d,a,l,s,c=e.firstChild,m=t.firstChild,p=0;c;)p++,i=o(n=c),c=c.nextSibling,i&&(s||(s={}),s[i]=n);for(c=e.firstChild;m;)p--,d=m,m=m.nextSibling,s&&(a=o(d))&&(l=s[a])?(delete s[a],l!==c?e.insertBefore(l,c):c=c.nextSibling,r(l,d)):c?(n=c,c=c.nextSibling,o(n)?(e.insertBefore(d,n),f(d)):r(n,d)):(e.appendChild(d),f(d));for(i in s)p--,e.removeChild(u(s[i]));for(;--p>=0;)e.removeChild(u(e.lastChild))}function o(e){if(e.nodeType===p){var t=e.getAttribute(n.KEY)||e.id;return t?c+t:void 0}}function d(e){return e.getAttribute(n.CHECKSUM)||NaN}function a(e){return null!=e.getAttribute(n.IGNORE)}function f(e){return l(e,"mount")}function u(e){return l(e,"dismount")}function l(e,t){if(o(e)){var n=document.createEvent("Event"),r={value:e};n.initEvent(t,!1,!1),Object.defineProperty(n,"target",r),Object.defineProperty(n,"srcElement",r),e.dispatchEvent(n)}for(var i=e.firstChild;i;)i=l(i,t).nextSibling;return e}n.KEY="data-key",n.IGNORE="data-ignore",n.CHECKSUM="data-checksum";var s=e(2),c="_set-dom-",m=c+"mounted",p=1,h=9,v=11;t.exports=n},{2:2}],2:[function(e,t){"use strict";function n(e,t){if(t===i){if(d)return c.innerHTML=e,c;var n=e.match(p);if(n){var o=n[2],a=n.index+n[1].length,u=a+o.length;e=e.slice(0,a)+e.slice(u),m.innerHTML=o}for(var l=r.parseFromString(e,f),s=l.body;m.firstChild;)s.appendChild(m.firstChild);return l.documentElement}return m.innerHTML=e,m.firstChild}var r=window.DOMParser&&new window.DOMParser,i="HTML",o=!1,d=!1,a="text/html",f="application/xhtml+xml";try{var u=r.parseFromString('<wbr class="A"/>',a).body.firstChild,l=document.createElement("div");if(l.appendChild(u),"A"!==l.firstChild.classList[0])throw new Error;o=!0}catch(e){}var s=document.implementation.createHTMLDocument(""),c=s.documentElement,m=s.body;try{c.innerHTML+="",d=!0}catch(e){r.parseFromString('<wbr class="A"/>',f);var p=/(<body[^>]*>)([\s\S]*)<\/body>/}t.exports=o?function(e,t){var o=r.parseFromString(e,a);return o.body?t===i?o.documentElement:o.body.firstChild:n(e,t)}:n},{}]},{},[1])(1)});
+</script>
+
+</body>
+</html>
