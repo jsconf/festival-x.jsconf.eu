@@ -150,7 +150,7 @@ async function square(width, buffer, filename) {
       .resize(width, height)
       .toFile(path, function(err) {
         if (err) {
-          console.error(chalk.red.bold(' !!! Resize failed', name, path));
+          console.error(chalk.red.bold(' !!! Resize failed', filename, path));
         }
         console.info('Square crop', width, path);
       });
