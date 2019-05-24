@@ -49,15 +49,6 @@ Our team will be happy to help you contact hotel/venue security, local law enfor
 *   **Police:** [Sonnenallee 107, 12045 Berlin](https://www.google.com/maps/place/Polizeirevier+Abschnitt+54/@52.5010881,13.4242929,14z/data=!4m8!1m2!2m1!1spolizei!3m4!1s0x0:0x6d9541d25f1cfab2!8m2!3d52.4819537!4d13.4407693?hl=en),  phone: 110
 *   **Medical Emergency:** Call 112.
 
-## Photo Policy
-
-We will have colored lanyards for attendees to indicate their comfort level with being photographed:
-
-*   **Black**: fine to photograph
-*   **Red**: do not photograph
-
-In case of any doubt, please ask before taking photographs of attendees, speakers or staff.
-
 ## Inclusive language
 
 In our commitment to a harassment-free and inclusive environment we strongly believe it’s important to pay attention to harmful language patterns and an [intersectional](https://en.wikipedia.org/wiki/Intersectionality) view on discriminations that rarely happen only one-sided. We understand that our list of isms below is by far not complete and believe it is a basic start to raise awareness at our events.
@@ -78,12 +69,48 @@ For more information please familiarise yourself with [Geek Feminism wiki guide]
 
 ### Racism
 
-Racism is deeply rooted in our society and global, exists among all social classes and is connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence, oppression and domination of one group or individual over another group or individual of different race, ethnicity, culture, and their territories. Addressing individuals or a group of people in a diminutive, derogative or questioning way based on their (assumed) race and ethnic background is therefore racist, disrespectful and harmful. We do not tolerate any racist behavior, slurs, statements or jokes and will take actions if any reports on this matter reaches us.
+Racism is deeply rooted in our society and global, exists among all social classes and is connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence, oppression and domination of one group or individual over another group or individual of different race, ethnicity, culture, and their territories. Addressing individuals or a group of people in a diminutive, derogative or questioning way based on their (assumed) race and ethnic background is therefore racist, disrespectful and harmful. We do not tolerate any racist behavior, slurs, statements or jokes and will take actions if any reports on this matter reach us.
 
 For more information please read [Wikipedia Racism](https://en.wikipedia.org/wiki/Racism).
 
+## Photo Policy
+
+The conference has various photographers and videographers present at the venue for visual documentation of the event. Pictures and videos will be published on the conferences’ websites and social media channels.
+
+### Opting-in / opting-out of appearing in published pictures
+
+We provide **colored lanyards** for attendees to indicate their consent with appearing in pictures published by the conference.
+
+*   **Black**: I am fine to appear in published pictures
+*   **Red**: I do not want to appear in published pictures
+
+We brief our conference photographers and videographers to be careful about avoiding photographing in the direction of people wearing red lanyards. However, please note that this is not always feasible due to the crowded and busy environment of our event.
+
+Before we publish our pictures, we’ll remove all pictures containing identifiable pictures of people wearing red lanyards.
+
+### Asking to have your picture removed after the conference
+
+If after the event you find a published picture of yourself that you’d like to have removed, please let us know at contact@cssconf.eu / contact@jsconf.eu.
+
+### Family photo and other group photos
+
+At the end of the conference, we invite everyone on stage for taking a big group photo (the “family photo”). If you don’t want to be in this picture, please do not join the group for the photo. The red lanyard policy is not applicable in this photo (or possible other clearly announced and organized group photos).
+
+### Photos of children
+
+Please absolutely avoid taking photos of minors without explicit consent of the parents, or photos inside the childcare area. The conference will not take or publish any photos of children without explicit consent of the parents.
+
+### Respect others’ choice to be in photos or not
+
+Please respect other people’s privacy, boundaries and choice about their willingness to be in pictures. In case of any doubt, please ask before taking photographs of anyone.
+
+In case people with a red lanyard accidentally end up in your pictures, we ask you to unpublish and remove their picture immediately, as well as in case anyone (wearing a red lanyard or not) states their disagreement of getting their picture taken and/or published, or if reported and explicitly requested.
+
 ## Attribution
 
-This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com), [The Geek Feminism wiki](http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy), the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/) and [Conference Code of Conduct](http://confcodeofconduct.com/).
+This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com),
+[The Geek Feminism wiki](http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy),
+the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/)
+and [Conference Code of Conduct](http://confcodeofconduct.com/).
 
-Last update: 22 May 2019 - Version 1.2
+Last update: 24 May 2019 - Version 1.3
