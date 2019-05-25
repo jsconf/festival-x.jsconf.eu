@@ -30,15 +30,28 @@ If someone makes you or anyone else feel unsafe or unwelcome, please report it a
 
 ### Anonymous report
 
-You can [make an anonymous report here](https://docs.google.com/forms/d/e/1FAIpQLSebVmHYCWaf-vfQWA-OhIk3vtIEZwzaEPiTIOH-GOCquUZpjg/viewform). We can’t follow up an anonymous report with you directly, but we will fully investigate it and take whatever action is necessary to prevent a recurrence.
+You can [make an anonymous report here](https://docs.google.com/forms/d/e/1FAIpQLSebVmHYCWaf-vfQWA-OhIk3vtIEZwzaEPiTIOH-GOCquUZpjg/viewform). We, the organisers, can’t follow up an anonymous report with you directly, but we will fully investigate it and take whatever action is necessary to prevent a recurrence.
 
 ### Personal report
+
+*In case of aggression or violence please call the security immediately!*
+
+__Awareness Team__
+
+If you need personal support you can always reach out to the Awareness Team directly. Members of the Awareness Team are [BIPoC](https://2019.jsconf.eu/bipocit-space/#frequently-asked-questions) who are hired and trained to provide personal support and help mediate (**this does not include security work**). They are walking in pairs around the venue and can be identified by blue T-Shirts that read “AWARENESS TEAM” in the front and back. Additionally you can always find two members of the Awareness Team at the registration.
+
+If you would like to report an incident, you can do so via email to [awareness@jsconf.eu](mailto:awareness@jsconf.eu) (Awareness Team). Emails sent to this address are read by the Awareness Team and its Coordination Team which also includes white people (organisers of CSSconf and JSConf EU).
+
+Below you will find the phone numbers which you can call during the main conference hours. The phone will be staffed by the Awareness Team only. If you would like to report anonymously only to the Awareness Team please hide your phone number and reach out to one of the following phone numbers:
+* [+49 152 363 800 02](tel:+4915236380002)
+* [+49 152 363 800 07](tel:+4915236380007)
+
+__Organisers/Curators__
 
 You can make a personal report by:
 
 *   Contacting a TEAM member, identified by TEAM buttons.
-*   Emailing us: [contact@jsconf.eu](mailto:contact@jsconf.eu).
-*   Calling us: We’ll publish a phone number that is staffed during main conference hours.
+*   Emailing us: [contact@jsconf.eu](mailto:contact@jsconf.eu)
 
 When taking a personal report, our staff will ensure you are safe and cannot be overheard. They may involve other event staff to ensure your report is managed properly. Once safe, we’ll ask you to tell us about what happened. This can be upsetting, but we’ll handle it as respectfully as possible, and you can bring someone to support you. You won’t be asked to confront anyone and we won’t tell anyone who you are.
 
@@ -113,4 +126,4 @@ This Code of Conduct was based on [CSSConf / JSConf AU](http://jsconfau.com),
 the work of [Valerie Aurora](https://frameshiftconsulting.com/code-of-conduct-training/)
 and [Conference Code of Conduct](http://confcodeofconduct.com/).
 
-Last update: 24 May 2019 - Version 1.3
+Last update: 25 May 2019 - Version 1.4
