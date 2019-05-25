@@ -1,5 +1,5 @@
 <!doctype html>
-<html generated="{{ Date.now() }}" version="3">
+<html checksum="___CHECKSUM___" version="4">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -335,29 +335,22 @@
 
   var version = document.documentElement.getAttribute('version');
   var script = document.getElementById('inline').textContent;
-  var lastText = '';
   function checkCurrent() {
     // Reload once per hour at 15 after to be robust for memory leaks.
     if (Date.now() - pageLoadTime > 60 * 1000 * 60 && new Date().getMinutes() > 15) {
       console.info('Memory reload')
       location.href = location.href;
     }
-    fetch('/schedule/venue.html', {cache: 'reload'}).then(function(response) {
+    fetch(location.href, {cache: 'reload'}).then(function(response) {
       if (response.ok) {
         response.text().then(function(text) {
-          var generationTime = text.match(/<html generated=(\d+)/)[1];
-          if (!generationTime) {
-            console.error('Failed to find generation time', text);
+          var checksum = text.match(/<html checksum=(\w+)/)[1];
+          if (!checksum) {
+            console.error('Failed to find checksum', text);
             return;
           }
-          if (generationTime != document.documentElement.getAttribute('generated')) {
-            var textWithoutTime = text.replace(generationTime, '');
-            if (textWithoutTime == lastText) {
-              console.info('Schedule unchanged except for generation time', generationTime);
-              return;
-            }
-            lastText = textWithoutTime;
-            console.info('Updating schedule', generationTime);
+          if (checksum != document.documentElement.getAttribute('checksum')) {
+            console.info('Updating schedule', checksum);
             var d = new DOMParser()
             var doc = d.parseFromString(text, 'text/html')
             activate(doc);
@@ -371,7 +364,7 @@
               location.reload();
             }
           } else {
-            console.info('Schedule current', generationTime);
+            console.info('Schedule current', checksum);
           }
         });
       } else {
