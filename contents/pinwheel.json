@@ -1,0 +1,6 @@
+{
+  "pageId": "pinwheel",
+  "template": "pages/pinwheel.html.njk",
+  "filename": ":file/index.html",
+  "title": "Yay, let's build a pinwheel"
+}

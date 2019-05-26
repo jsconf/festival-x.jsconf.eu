@@ -1,0 +1,30 @@
+{% extends "../layouts/default.html.njk" %}
+
+{% block content %}
+
+  <section class="grid">
+    <div class="grid-item-center md-content">
+      <p>Grab yourself one of the square pattern papers and enjoy building your own Festival X pinwheel 🎊🌀 Check out the instructions:</p>
+      <img
+        src="{{ contents.images["pinwheel-instructions.svg"].url }}"
+        alt="Pinwheel Instructions"
+      />
+      <p 
+        style="text-align: center; margin-top: 0;"
+      >
+        <a 
+        href="{{ contents.images["pinwheel-instructions.pdf"].url }}"
+        download="jsconf-pinwheel-instructions.pdf"
+        >
+          Download as PDF
+        </a>
+      </p>
+      <img
+        src="{{ contents.images["pinwheel.jpg"].url }}"
+        alt="Pinwheel Example"
+        style="margin-top: 3em;"
+      />
+    </div>
+  </section>
+
+{% endblock %}
