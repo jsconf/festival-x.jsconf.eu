@@ -1,4 +1,9 @@
 /* Default Layout */
+::selection{
+ color:var(--x-white);
+  background: var(--x-purple);
+}
+
 .layout-wrapper {
   display: flex;
   flex-direction: column;
