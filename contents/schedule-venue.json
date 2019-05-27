@@ -1,6 +1,6 @@
 {
   "pageId": "schedule-venue",
   "template": "pages/schedule-venue.html.njk",
-  "filename": "schedule/venue.html",
+  "filename": "schedule/venue/index.html",
   "title": "Schedule"
 }
