@@ -1,0 +1,7 @@
+{
+  "pageId": "schedule-venue",
+  "template": "pages/schedule-venue.html.njk",
+  "filename": "schedule/venue/community.html",
+  "title": "Schedule Community Lounge",
+  "trackIdFilter": "community"
+}

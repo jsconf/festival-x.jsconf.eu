@@ -14,11 +14,12 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#303f62">
+  <meta name="robots" content="noindex">
   <style id="typekit" data-tracking-url="{{ typekitTracking }}">
     {{ typekitCss }}
   </style>
 
-  <style id="style">
+  <style id="style" only-inline-style>
     body {
       margin: 0;
       padding: 0;
@@ -192,6 +193,9 @@
 <div class="wrapper">
   {% set schedule = loadSchedule() %}
   {% for day, sessions in schedule.schedule %}
+    {% if page.metadata.trackIdFilter %}
+      {% set sessions = filterSessionsByTrackId(sessions, page.metadata.trackIdFilter) %}
+    {% endif %}
     {% for session, talks in sessions %}
       {% set talkIndex = 0 %}
       <div
