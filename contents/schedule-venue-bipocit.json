@@ -1,0 +1,7 @@
+{
+  "pageId": "schedule-venue",
+  "template": "pages/schedule-venue.html.njk",
+  "filename": "schedule/venue/bipocit.html",
+  "title": "Schedule BIPOCIT",
+  "trackIdFilter": "bipocit"
+}

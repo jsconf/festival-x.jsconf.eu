@@ -18,7 +18,7 @@
     {{ typekitCss }}
   </style>
 
-  <style id="style">
+  <style id="style" only-inline-style>
     body {
       margin: 0;
       padding: 0;
@@ -192,6 +192,9 @@
 <div class="wrapper">
   {% set schedule = loadSchedule() %}
   {% for day, sessions in schedule.schedule %}
+    {% if page.metadata.trackIdFilter %}
+      {% set sessions = filterSessionsByTrackId(sessions, page.metadata.trackIdFilter) %}
+    {% endif %}
     {% for session, talks in sessions %}
       {% set talkIndex = 0 %}
       <div
