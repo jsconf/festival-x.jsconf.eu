@@ -82,7 +82,7 @@ For more information please familiarise yourself with [Geek Feminism wiki guide]
 
 ### Racism
 
-Racism is deeply rooted in our society and global, exists among all social classes and is connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence, oppression and domination of one group or individual over another group or individual of different race, ethnicity, culture, and their territories. Addressing individuals or a group of people in a diminutive, derogative or questioning way based on their (assumed) race and ethnic background is therefore racist, disrespectful and harmful. We do not tolerate any racist behavior, slurs, statements or jokes and will take actions if any reports on this matter reach us.
+Racism is deeply rooted in our society and globally, exists among all social classes and is connected to [colonialism](https://en.wikipedia.org/wiki/Colonialism) that has a long history of violence, oppression and domination of one group or individual over another group or individual of different race, ethnicity, culture, and their territories. Addressing individuals or a group of people in a diminutive, derogative or questioning way based on their (assumed) race and ethnic background is therefore racist, disrespectful and harmful. We do not tolerate any racist behavior, slurs, statements or jokes and will take actions if any reports on this matter reach us.
 
 For more information please read [Wikipedia Racism](https://en.wikipedia.org/wiki/Racism).
 
