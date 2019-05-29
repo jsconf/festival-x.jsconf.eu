@@ -1,7 +1,7 @@
 {% set sponsorTypes = ['organizing', 'festival', 'main', 'supporting', 'community'] %}
 
 {% if page.metadata.allSponsors %}
-  {{ sponsorTypes.push('travel') }}
+  {% set sponsorTypes = ['organizing', 'festival', 'main', 'supporting', 'community', 'travel'] %}
 {% endif %}
 
 {% for sponsorType in sponsorTypes %}
