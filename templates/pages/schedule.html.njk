@@ -610,7 +610,7 @@ function parseDate(date) {
   return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
 }
 
-function markItemsAsInThePast(doc) {
+/*function markItemsAsInThePast(doc) {
   var now = dateNow();
   Array.from(doc.querySelectorAll('[datetime]')).forEach(function(talk) {
     var time = parseDate(talk.getAttribute('datetime'));
@@ -625,6 +625,7 @@ markItemsAsInThePast(document)
 setInterval(function() {
   markItemsAsInThePast(document)
 }, 10000);
+*/
 
 function scrollTimeIntoView(onload) {
   if (onload && location.hash) {
