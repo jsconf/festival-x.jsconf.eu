@@ -146,6 +146,5 @@ function info(checksum) {
   return {
     currentDay: conferenceDay,
     checksum,
-    generationTime: now.toString()
   };
 }
