@@ -11,6 +11,12 @@
     </header>
 
     <section class="talk-description md-content">
+
+      {% if page.metadata.yt %}
+        {% set youtubeId = page.metadata.yt.id %}
+        {% include '../partials/youtube.html.njk' %}
+      {% endif %}
+
       {{ page.html }}
 
       <!-- Hack? How could anyone call this a hack? -->
