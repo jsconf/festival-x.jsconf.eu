@@ -2,7 +2,15 @@
 
 <div class="grid mt3 speaker-detail">
   <div class="grid-item-center">
-    {% include './speaker-picture.html.njk' %}
+
+    {% if page.metadata.yt.id %}
+      <section>
+        {% set youtubeId = page.metadata.yt.id %}
+        {% include '../partials/youtube.html.njk' %}
+      </section>
+    {% else %}
+      {% include './speaker-picture.html.njk' %}
+    {% endif %}
 
     <h1>{{ data.name }}</h1>
 
@@ -12,11 +20,6 @@
 
     <section class="talk-description md-content">
 
-      {% if page.metadata.yt %}
-        {% set youtubeId = page.metadata.yt.id %}
-        {% include '../partials/youtube.html.njk' %}
-      {% endif %}
-
       {{ page.html }}
 
       <!-- Hack? How could anyone call this a hack? -->
@@ -24,13 +27,17 @@
         {{ contents.cms['tc39-panel.md'].html }}
       {% endif %}
 
-      {% set time = loadSchedule().speakers[data.name.trim().toLowerCase()] %}
-      {% if time %}
-        <p class="talk-time"><a href="/schedule/timetable.html#talk-{{ time.id }}">
-          Scheduled for day {{ time.day }} 
-          at {{ time.startTime }} 
-          on the `{{ time.track }}` stage.
-        </a></p>
+      {% if page.metadata.yt.id %}
+        {% include './speaker-picture.html.njk' %}
+      {% else %}
+        {% set time = loadSchedule().speakers[data.name.trim().toLowerCase()] %}
+        {% if time %}
+          <p class="talk-time"><a href="/schedule/timetable.html#talk-{{ time.id }}">
+            Scheduled for day {{ time.day }} 
+            at {{ time.startTime }} 
+            on the `{{ time.track }}` stage.
+          </a></p>
+        {% endif %}
       {% endif %}
     </section>
 
