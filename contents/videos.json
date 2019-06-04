@@ -1,0 +1,8 @@
+{
+  "pageId": "videos",
+  "template": "pages/videos.html.njk",
+  "filename": "/videos/index.html",
+  "title": "Videos of JSConf EU 2019",
+  "image": "contents:images/speakers-sample-1000.png",
+  "description": "Watch the talks of JSConf EU 2019"
+}

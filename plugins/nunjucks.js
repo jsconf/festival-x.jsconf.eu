@@ -139,6 +139,15 @@ module.exports = function(env, callback) {
     });
   });
 
+  nenv.addFilter("hasVideo", function(array) {
+    if (!array) {
+      return [];
+    }
+    return array.filter(function(item) {
+      return item.metadata.yt.id;
+    });
+  });
+
   nenv.addFilter("json", function(object) {
     return JSON.stringify(object);
   });
