@@ -60,7 +60,10 @@
     <a class="speaker" href="{{ link }}">
       {% include './partials/speaker-picture.html.njk' %}
 
-      <h2 class="heading--spaced heading--no-border">{{ data.name }}</h2>
+      <h2 class="heading--spaced heading--no-border">
+        {% if page.metadata.yt.id %}📹{% endif %}
+        {{ data.name }}
+      </h2>
       <p class="ma0">
         {% if twitterLink %}
           @{{ data.web.twitter.handle }}
