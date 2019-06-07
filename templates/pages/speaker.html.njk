@@ -18,7 +18,10 @@
   <meta property="og:title" content="{{ data.talkTitle | escape }}">
   <meta name="twitter:description" content="{{ data.name | escape }} is speaking at JSConf EU 2019.">
   <meta name="description" content="{{ data.name | escape }} is speaking at JSConf EU 2019.">
-  {% if data.image %}
+   {% if page.metadata.yt.id %}
+    <meta name="twitter:image" content="{{ page.metadata.yt.poster }}">
+    <meta property="og:image" content="{{ page.metadata.yt.poster }}" />
+  {% elif data.image %}
     <meta name="twitter:image" content="https://2019.jsconf.eu{{ contents.images.cms[data.image.filename_1000].url }}">
     <meta property="og:image" content="https://2019.jsconf.eu{{ contents.images.cms[data.image.filename_1000].url }}" />
   {% endif %}
