@@ -1,6 +1,6 @@
 {
   "pageId": "google-verify",
-  "template": "pages/placeholder.html.njk",
+  "template": "pages/reflect.html.njk",
   "filename": "/googlefd8dd906b3ef0809.html",
-  "title": "Google Verify"
+  "content": "google-site-verification: googlefd8dd906b3ef0809.html"
 }
