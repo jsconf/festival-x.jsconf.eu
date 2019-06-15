@@ -29,6 +29,9 @@
 
       {% if page.metadata.yt.id %}
         {% include './speaker-picture.html.njk' %}
+        <script type="application/ld+json">
+          {{ page.metadata.yt.schema | json }}
+        </script>
       {% else %}
         {% set time = loadSchedule().speakers[data.name.trim().toLowerCase()] %}
         {% if time %}
