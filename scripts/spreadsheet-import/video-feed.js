@@ -38,7 +38,27 @@ function processYt(videos, json, index) {
       url: "https://youtube.com/watch/" + encodeURIComponent(id),
       title: snippet.title,
       poster: snippet.thumbnails.maxres.url,
-      index: index++
+      index: index++,
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: snippet.title,
+        description: snippet.description,
+        thumbnailUrl: snippet.thumbnails.maxres.url,
+        uploadDate: snippet.publishedAt,
+        publisher: {
+          "@type": "Organization",
+          name: "JSConf EU",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://2019.jsconf.eu/android-chrome-512x512.png",
+            width: 512,
+            height: 512
+          }
+        },
+        embedUrl: "https://www.youtube.com/embed/" + encodeURIComponent(id)
+        //interactionCount: item.statistics.viewCount
+      }
     };
     const desc = snippet.description;
     const url = desc.match(/https\:\/\/2019\.jsconf\.eu(\/\S+\.html)/m);
