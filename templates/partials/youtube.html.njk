@@ -2,7 +2,8 @@
   <div class="youtube-bg" style="background-image: url(https://i.ytimg.com/vi/{{youtubeId}}/default.jpg);"></div>
   <iframe src="https://www.youtube.com/embed/{{ youtubeId }}"
           frameborder="0"
-          allowfullscreen="true">
+          allowfullscreen="true"
+          onload="var p = this.parentElement; p.removeChild(p.firstElementChild)">
   </iframe>
   <!-- Preconnect to poster image host -->
   <link rel="preconnect" href="https://i.ytimg.com/">

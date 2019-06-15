@@ -11,6 +11,7 @@
   left: 0;
   background-size: cover;
   filter: blur(6px);
+  z-index: 0;
 }
 
 .youtube iframe {
