@@ -313,6 +313,11 @@ async function main(params) {
           );
 
           metadata.yt = videoMapping[metadata.filename] || {};
+          if (metadata.yt.schema) {
+            metadata.yt.schema.actor = {
+              name: `${data.firstname} ${data.lastname}`
+            };
+          }
 
           const frontmatter = yaml.safeDump(metadata);
           const markdownContent =
