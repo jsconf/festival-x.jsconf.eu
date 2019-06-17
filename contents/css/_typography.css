@@ -15,21 +15,32 @@ body {
   cursor: pointer;
 }
 
-h1[id], h2[id], h3[id], h4[id] {
+h1[id],
+h2[id],
+h3[id],
+h4[id] {
   cursor: pointer;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font-family: "jaf-domus", Helvetica, Arial, sans-serif;
 }
 
 /* Typography */
 
-p, ul, ol, blockquote {
+p,
+ul,
+ol,
+blockquote {
   line-height: 1.6364;
 }
 
-p, ul, ol, blockquote {
+p,
+ul,
+ol,
+blockquote {
   @media (--xsmall) {
     font-size: 1.375rem;
   }
@@ -44,15 +55,19 @@ main {
   }
 }
 
-
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: normal;
 }
 
-h1, .heading--massive {
+h1,
+.heading--massive {
   font-size: 3rem;
-  line-height: .9375;
-  margin-bottom: .5rem;
+  line-height: 0.9375;
+  margin-bottom: 0.5rem;
   padding-bottom: 0;
   border-bottom: none;
   text-transform: none;
@@ -71,11 +86,12 @@ h1, .heading--massive {
   }
   @media (--xlarge) {
     font-size: 6rem;
-    line-height: .9444;
+    line-height: 0.9444;
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 1rem;
   line-height: 1.625;
   @media (--xsmall) {
@@ -83,18 +99,19 @@ h2, .h2 {
   }
 }
 
-h2, .heading--spaced {
+h2,
+.heading--spaced {
   line-height: 1.625;
   text-transform: uppercase;
   font-variant: lining-nums;
   letter-spacing: 0.25em;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 4px solid var(--evalblack);
   display: inline-block;
   margin-bottom: 0;
   margin-top: 1.5rem;
   @media (--xsmall) {
-    padding-bottom: .45rem;
+    padding-bottom: 0.45rem;
     margin-top: 3rem;
   }
 }
