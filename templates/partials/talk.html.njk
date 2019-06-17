@@ -47,7 +47,7 @@
     {% if data.caption %}
       <section class="captions">
         <h2>Transcript</h2>
-        <p>{{ data.caption | replaceAll('\\n', '</p>\n<p>') | replaceAll('\\s+', ' ')  }}</p>
+        <p>{{ data.caption | replaceAll('\\n', 'XXX___XXX') | replaceAll('\\s+', ' ') | escape | replaceAll('XXX___XXX', '</p>\n<p>')}}</p>
       </section>
     {% endif %}
 
