@@ -112,6 +112,10 @@ module.exports = function(env, callback) {
     }
   }
 
+  nenv.addFilter("replaceAll", function(string, re, replace) {
+    return string.replace(new RegExp(re, "g"), replace);
+  });
+
   nenv.addFilter("notDraft", function(array) {
     if (!array) {
       return [];

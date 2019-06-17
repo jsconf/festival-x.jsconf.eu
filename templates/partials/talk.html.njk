@@ -44,6 +44,13 @@
       {% endif %}
     </section>
 
+    {% if data.caption %}
+      <section class="captions">
+        <h2>Transcript</h2>
+        <p>{{ data.caption | replaceAll('\\n', '</p>\n<p>') | replaceAll('\\s+', ' ')  }}</p>
+      </section>
+    {% endif %}
+
     <ul class="speaker-links">
       {% if data.web.twitter.handle %}
         <li class="speaker-link speaker-link--twitter">
