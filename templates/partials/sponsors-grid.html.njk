@@ -24,7 +24,8 @@
             <div class="sponsor sponsor-{{ sponsorsType }}"
                 id="{{ sponsor.id }}">
               <a href="{{ page.url if page.html else sponsor.link }}"
-                  {% if not page.html %}rel="nofollow" target="_blank"{% endif %}>
+                  rel="nofollow"
+                  {% if not page.html %} target="_blank"{% endif %}>
                 <img src="{{ contents.images.cms[sponsor.image.filename].url }}"
                     loading="lazy"
                     alt="{{ sponsor.name }}">
