@@ -50,10 +50,12 @@
         <p>{{ data.caption 
           | trim
           | insertLineBreaksIntoCaptions
-          | replaceAll('\\n', 'XXX___XXX') 
+          | replaceAll('\\n', '[[|/p|]]\n[[|p|]]')
+          | replaceAll('\\[([\\w\\s]+)\]', '[[|i|]][$1][[|/i|]]') 
           | replaceAll('\\s+', ' ') 
           | escape 
-          | replaceAll('XXX___XXX', '</p>\n<p>')
+          | replaceAll('\\[\\[\\|', '<')
+          | replaceAll('\\|\\]\\]', '>')
         }}</p>
       </section>
     {% endif %}
