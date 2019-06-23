@@ -116,6 +116,47 @@ module.exports = function(env, callback) {
     return string.replace(new RegExp(re, "g"), replace);
   });
 
+  // Our captions often come as one single paragraph which is very
+  // difficult to read. This function makes it so that paragraphs
+  // with 6 or more sentences are broken into 2 paragraphs of roughly
+  // equal number of sentences until no paragraphs with 6 or more
+  // sentences remain.
+  function insertParas(string) {
+    const paras = string.split(/[\n\r]+/);
+    let insertedPara = false;
+    for (let i = 0; i < paras.length; i++) {
+      // Let's assume that `. ` means that a sentence ended. Seems
+      // to work on the input data.
+      const sentences = paras[i].trim().split(/\.\s+/);
+
+      if (sentences.length < 6) {
+        continue;
+      }
+      let r = "";
+      for (let s = 0; s < sentences.length; s++) {
+        r += sentences[s];
+        // Add back the `. ` except for the last one, since
+        // that one isn't impacted by the split
+        if (s != sentences.length - 1) {
+          r += ". ";
+        }
+        if (s == Math.floor(sentences.length / 2)) {
+          r += "\n";
+        }
+      }
+
+      insertedPara = true;
+      paras[i] = r;
+    }
+    const newString = paras.join("\n");
+    if (insertedPara) {
+      // We split in half. That means there may be more work to do.
+      return insertParas(newString);
+    }
+    return newString;
+  }
+  nenv.addFilter("insertLineBreaksIntoCaptions", insertParas);
+
   nenv.addFilter("notDraft", function(array) {
     if (!array) {
       return [];
