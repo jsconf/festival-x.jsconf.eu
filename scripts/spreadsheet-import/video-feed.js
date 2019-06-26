@@ -34,7 +34,6 @@ async function processYt(videos, json, index) {
   const infos = await getVideoInfo(json.items);
   json.items.forEach((item, itemIndex) => {
     const snippet = item.snippet;
-    const info = infos[itemIndex];
     const id = snippet.resourceId.videoId;
     if (!id) {
       throw new Error(`Can't find video id in ${JSON.stringify(item)}`);
@@ -47,6 +46,10 @@ async function processYt(videos, json, index) {
     if (!snippet.thumbnails) {
       console.log(snippet);
       throw new Error(`Incomplete meta data for ${id}`);
+    }
+    const info = infos.find(i => i.id == id);
+    if (!info) {
+      throw new Error(`Can't find info for video ${JSON.stringify(item)}`);
     }
     const yt = {
       id: id,
