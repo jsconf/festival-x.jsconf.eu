@@ -41,6 +41,7 @@ async function processYt(videos, json, index) {
     }
     if (snippet.title == "Private video") {
       console.warn(`Skipping private video ${id}`);
+      index++;
       return; // Skip
     }
     if (!snippet.thumbnails) {
