@@ -39,6 +39,14 @@ async function processYt(videos, json, index) {
     if (!id) {
       throw new Error(`Can't find video id in ${JSON.stringify(item)}`);
     }
+    if (snippet.title == "Private video") {
+      console.warn(`Skipping private video ${id}`);
+      return; // Skip
+    }
+    if (!snippet.thumbnails) {
+      console.log(snippet);
+      throw new Error(`Incomplete meta data for ${id}`);
+    }
     const yt = {
       id: id,
       url: "https://youtube.com/watch/" + encodeURIComponent(id),
