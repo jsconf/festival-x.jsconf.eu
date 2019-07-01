@@ -51,19 +51,24 @@ async function processYt(videos, json, index) {
     if (!info) {
       throw new Error(`Can't find info for video ${JSON.stringify(item)}`);
     }
+    const age = (Date.now() - Date.parse(snippet.publishedAt)) / 1000 / 3600;
     const yt = {
       id: id,
       url: "https://youtube.com/watch/" + encodeURIComponent(id),
       title: snippet.title,
       poster: snippet.thumbnails.maxres.url,
       index: index++,
-      schema: getSchema(id, snippet, info)
+      schema: getSchema(id, snippet, info),
+      viewsPerHour: Number(info.statistics.viewCount) / age
     };
     const desc = snippet.description;
-    const url = desc.match(/https\:\/\/2019\.jsconf\.eu(\/\S+\.html)/m);
-    if (url) {
-      yt.websiteUrl = url[1];
-      videos[url[1]] = yt;
+    let urls = desc.match(/https\:\/\/2019\.jsconf\.eu(\/\S+\.html)/gm);
+    if (urls) {
+      urls = urls.map(u => u.substr("https://2019.jsconf.eu".length));
+      yt.websiteUrl = urls[0];
+      for (let url of urls) {
+        videos[url] = yt;
+      }
     }
   });
   return index;
@@ -105,6 +110,6 @@ function getSchema(id, snippet, info) {
       }
     },
     embedUrl: "https://www.youtube.com/embed/" + encodeURIComponent(id),
-    interactionCount: info.statistics.viewCount
+    interactionCount: Number(info.statistics.viewCount)
   };
 }
