@@ -52,13 +52,19 @@ async function processYt(videos, json, index) {
       throw new Error(`Can't find info for video ${JSON.stringify(item)}`);
     }
     const age = (Date.now() - Date.parse(snippet.publishedAt)) / 1000 / 3600;
+    const thumb = snippet.thumbnails.maxres || snippet.thumbnails.default;
+    if (!thumb) {
+      console.log(snippet.thumbnails);
+      throw new Error(`Incomplete thumbnail data for ${id}`);
+    }
+
     const yt = {
       id: id,
       url: "https://youtube.com/watch/" + encodeURIComponent(id),
       title: snippet.title,
-      poster: snippet.thumbnails.maxres.url,
+      poster: thumb.url,
       index: index++,
-      schema: getSchema(id, snippet, info),
+      schema: getSchema(id, snippet, info, thumb),
       viewsPerHour: Number(info.statistics.viewCount) / age
     };
     const desc = snippet.description;
@@ -90,14 +96,14 @@ async function getVideoInfo(items) {
   return json.items;
 }
 
-function getSchema(id, snippet, info) {
+function getSchema(id, snippet, info, thumb) {
   return {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     name: snippet.title,
     duration: info.contentDetails.duration,
     description: snippet.description,
-    thumbnailUrl: snippet.thumbnails.maxres.url,
+    thumbnailUrl: thumb.url,
     uploadDate: snippet.publishedAt,
     publisher: {
       "@type": "Organization",
