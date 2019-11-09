@@ -12,7 +12,16 @@ data:
   reviewed: true
   id: 13a_AWKL_cwCp5YDrmlt9--HIm9LjoHNpvY1OfYwgqIk
   name: Saturday Evening Social Event
-  image: {}
+  image:
+    filename: image-1d880043.jpg
+    filename_500: image-1d880043-500.jpg
+    filename_1000: image-1d880043-1000.jpg
+    filename_square_1000: image-1d880043-1000-square.jpg
+    filename_square_500: image-1d880043-500-square.jpg
+    filename_square_200: image-1d880043-200-square.jpg
+    width: 1920
+    height: 1280
+    originalType: jpg
 yt: {}
 
 ----
