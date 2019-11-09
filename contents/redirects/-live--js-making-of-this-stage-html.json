@@ -1,0 +1,5 @@
+{
+  "template": "pages/redirect.html.njk",
+  "filename": "/live--js/making-of-this-stage.html",
+  "redirectUrl": "/live-js/making-of-this-stage.html"
+}

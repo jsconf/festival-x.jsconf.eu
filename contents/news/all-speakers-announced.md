@@ -1,0 +1,99 @@
+----
+
+# THIS FILE WAS GENERATED AUTOMATICALLY.
+# CHANGES MADE HERE WILL BE OVERWRITTEN.
+
+template: pages/tweet-stream.html.njk
+title: All Speakers Announced
+filename: /news/all-speakers-announced/index.html
+archive: true
+date: 2019-03-05T00:00:00.000Z
+tweets:
+  - '1094891696335343617'
+  - '1094891698419830789'
+  - '1094891701498531841'
+  - '1094891703939596289'
+  - '1094891706774941702'
+  - '1094891708863660032'
+  - '1095030780047314945'
+  - '1095237094010687488'
+  - '1095237096527282177'
+  - '1095237098750259200'
+  - '1095237101006790657'
+  - '1095237103233974272'
+  - '1095595993163329538'
+  - '1095597923520401409'
+  - '1095597926452219904'
+  - '1095597929103048705'
+  - '1095597931502161920'
+  - '1095597934173859840'
+  - '1095957592671731712'
+  - '1095957597654519808'
+  - '1095958235272671232'
+  - '1095958237747253248'
+  - '1097406982057873409'
+  - '1097411001086029824'
+  - '1097411003627786240'
+  - '1097411006169534465'
+  - '1097411008325472256'
+  - '1097411012238721024'
+  - '1097411014767927296'
+  - '1097769144387293184'
+  - '1097769146434109443'
+  - '1097769149428891648'
+  - '1097769151962189824'
+  - '1097769154088718337'
+  - '1098134032150339584'
+  - '1098136607314591745'
+  - '1098136609223004162'
+  - '1098136611450171392'
+  - '1098136614444896256'
+  - '1098136617414545409'
+  - '1098498532942729216'
+  - '1098498535161585665'
+  - '1098498538496057344'
+  - '1098498542669307904'
+  - '1098498545248858112'
+  - '1099941890248589313'
+  - '1099945350914285568'
+  - '1099945355024703489'
+  - '1099945357620981761'
+  - '1099945360183750657'
+  - '1099945362834575360'
+  - '1100316605253341184'
+  - '1100316608633978881'
+  - '1100316611117006848'
+  - '1100316614908674048'
+  - '1100471882342649856'
+data:
+  published: true
+  reviewed: true
+  id: 1Xw85TX0jYyCeP_tkF8eCABtatAx8yZDJh9FO7cTMHhU
+  name: All Speakers Announced!
+  image:
+    filename: all-speakers-announced-029573b9.jpg
+    filename_500: all-speakers-announced-029573b9-500.jpg
+    filename_1000: all-speakers-announced-029573b9-1000.jpg
+    filename_square_1000: all-speakers-announced-029573b9-1000-square.jpg
+    filename_square_500: all-speakers-announced-029573b9-500-square.jpg
+    filename_square_200: all-speakers-announced-029573b9-200-square.jpg
+    width: 1920
+    height: 1280
+    originalType: jpg
+yt: {}
+
+----
+
+
+We are super excited that we’ve announced all[1] speakers of JSConf EU 2019!
+For the full list, checkout our [speakers page](/speakers/) or our epic Twitter
+announcement thread below!
+
+[1] Alright, we’ll have some surprises still, but almost all :)
+
+
+
+
+
+
+

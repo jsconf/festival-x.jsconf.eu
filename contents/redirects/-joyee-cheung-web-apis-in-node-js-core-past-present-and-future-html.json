@@ -1,0 +1,5 @@
+{
+  "template": "pages/redirect.html.njk",
+  "filename": "/joyee-cheung/web-apis-in-node-js-core-past-present-and-future.html",
+  "redirectUrl": "/joyee-cheung/web-apis-in-nodejs-core-past-present-and-future.html"
+}

@@ -16,7 +16,7 @@
     <img
         loading="lazy"
         decoding="async"
-        src="{{ contents.images.placeholder['speaker-placeholder-' + (data.firstname.codePointAt(0) % 6) + '.jpg'].url }}"
+        src="{{ contents.images.placeholder['speaker-placeholder-' + ((data.firstname or "x").codePointAt(0) % 6) + '.jpg'].url }}"
     alt="Photo of a bear used as a placeholder because of a missing image.">
   </figure>
 {% endif %}

@@ -1,0 +1,1941 @@
+{
+  "pageId": "scheduleJson",
+  "template": "pages/json.html.njk",
+  "filename": ":file.json",
+  "actualJson": {
+    "info": {
+      "currentDay": 2,
+      "checksum": "1a695a65690afa8e9041fd03fabe4af8376e2996"
+    },
+    "schedule": {
+      "1": {
+        "8.15": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "8.15",
+            "duration": 60,
+            "number": null,
+            "who": "all",
+            "what": "Breakfast; Wi-Fi: jscssconfeu/jscssconfeu",
+            "dateTime": "2019-06-01 8:15 GMT+0200",
+            "id": "all-breakfast--wi-fi--jscssconfeu-jscssconfeu"
+          }
+        ],
+        "9.15": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "9.15",
+            "duration": 30,
+            "number": 0,
+            "who": "Curators",
+            "what": "Opening JSConf EU 2019",
+            "dateTime": "2019-06-01 9:15 GMT+0200",
+            "id": "curators-opening-jsconf-eu-2019"
+          }
+        ],
+        "9.45": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "9.45",
+            "duration": 45,
+            "number": 1,
+            "who": "Laurie Voss",
+            "what": "JavaScript: Who, What, Where, Why and Next",
+            "dateTime": "2019-06-01 9:45 GMT+0200",
+            "id": "laurie-voss-javascript--who--what--where--why-and-next"
+          }
+        ],
+        "10.30": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "10.30",
+            "duration": 30,
+            "number": 2,
+            "who": "Jessica Jordan",
+            "what": "Crafting Comics for Literally Everyone",
+            "dateTime": "2019-06-01 10:30 GMT+0200",
+            "id": "jessica-jordan-crafting-comics-for-literally-everyone"
+          }
+        ],
+        "11.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "11.00",
+            "duration": 30,
+            "number": null,
+            "who": "all",
+            "what": "Break",
+            "dateTime": "2019-06-01 11:00 GMT+0200",
+            "id": "all-break"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "11.00",
+            "what": "Stories of Gratitude",
+            "detail": "Recharge with some inspiration during the break at the Community Lounge, where you'll hear several 5-minute stories of gratitude that highlight amazing people, their efforts, and the impact they've had on our community members. \n\n**Our session begins 5 minutes after the break starts**, so you have some time to grab a quick refreshment or take a short pause after the previous session.",
+            "dateTime": "2019-06-01 11:00 GMT+0200",
+            "id": "undefined-stories-of-gratitude"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "BIPoCiT Space",
+            "trackId": "bipocit",
+            "startTime": "11.00",
+            "who": "Hasan Özdemir",
+            "what": "Building Substratum for an Inclusive Tech Community",
+            "dateTime": "2019-06-01 11:00 GMT+0200",
+            "id": "hasan--zdemir-building-substratum-for-an-inclusive-tech-community"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Sponsor Booth",
+            "trackId": "sponsor",
+            "startTime": "11.00",
+            "what": "Mozilla WebThings Workshop",
+            "detail": "[Details and registration](https://2019.jsconf.eu/sponsors/mozilla-webthings-workshop.html)",
+            "dateTime": "2019-06-01 11:00 GMT+0200",
+            "id": "undefined-mozilla-webthings-workshop"
+          }
+        ],
+        "11.30": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "11.30",
+            "duration": 30,
+            "number": 3,
+            "who": "Jason Williams",
+            "what": "Let’s build a JavaScript Engine",
+            "dateTime": "2019-06-01 11:30 GMT+0200",
+            "id": "jason-williams-let-s-build-a-javascript-engine"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "11.30",
+            "duration": 30,
+            "number": 19,
+            "who": "Martin Sonnenholzer",
+            "what": "Animations — Learning from Cartoons",
+            "dateTime": "2019-06-01 11:30 GMT+0200",
+            "id": "martin-sonnenholzer-animations---learning-from-cartoons"
+          }
+        ],
+        "12.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "12.00",
+            "duration": 30,
+            "number": 4,
+            "who": "Tara Z. Manicsic",
+            "what": "ES2019 Features: What Even Are They?",
+            "dateTime": "2019-06-01 12:00 GMT+0200",
+            "id": "tara-z--manicsic-es2019-features--what-even-are-they-"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "12.00",
+            "duration": 30,
+            "number": 20,
+            "who": "Paulo Lopes",
+            "what": "10 Things I Learned While Writing the Fastest JavaScript Server Runtime In the World",
+            "dateTime": "2019-06-01 12:00 GMT+0200",
+            "id": "paulo-lopes-10-things-i-learned-while-writing-the-fastest-javascript-server-runtime-in-the-world"
+          }
+        ],
+        "12.30": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "12.30",
+            "duration": 30,
+            "number": 5,
+            "who": "Garann Means",
+            "what": "What happened to my JavaScript phone?",
+            "dateTime": "2019-06-01 12:30 GMT+0200",
+            "id": "garann-means-what-happened-to-my-javascript-phone-"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "12.30",
+            "duration": 30,
+            "number": 21,
+            "who": "Constanza Yáñez Calderón",
+            "what": "About Life, Robots and Cats!",
+            "dateTime": "2019-06-01 12:30 GMT+0200",
+            "id": "constanza-y--ez-calder-n-about-life--robots-and-cats-"
+          }
+        ],
+        "13.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "13.00",
+            "duration": 60,
+            "number": null,
+            "who": "all",
+            "what": "Lunch",
+            "dateTime": "2019-06-01 13:00 GMT+0200",
+            "id": "all-lunch"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "13.00",
+            "what": "Stories of Gratitude",
+            "detail": "Recharge with some inspiration during the break at the Community Lounge, where you'll hear several 5-minute stories of gratitude that highlight amazing people, their efforts, and the impact they've had on our community members. \n\n**Our session begins 5 minutes after the break starts**, so you have some time to grab a quick refreshment or take a short pause after the previous session. **We'll finish up halfway through the lunch break** so you'll still have plenty of time to eat the delicious catered meal.",
+            "dateTime": "2019-06-01 13:00 GMT+0200",
+            "id": "undefined-stories-of-gratitude"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "live:js Stage",
+            "trackId": "livejs",
+            "startTime": "13.00",
+            "what": "Meet & Greet / LiveJS Jaaam / Rumyra & halfbyte",
+            "detail": "Welcome to { Live : JS } A collective of audio and visual artists who build live experiences, shows and installations. Why JS? Because that's the main technology we use: JavaScript.",
+            "dateTime": "2019-06-01 13:00 GMT+0200",
+            "id": "undefined-meet---greet---livejs-jaaam---rumyra---halfbyte"
+          }
+        ],
+        "14.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "14.00",
+            "duration": 30,
+            "number": 6,
+            "who": "TC39 Committee",
+            "what": "Panel / AMA",
+            "dateTime": "2019-06-01 14:00 GMT+0200",
+            "id": "tc39-committee-panel---ama"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "14.00",
+            "duration": 30,
+            "number": 22,
+            "who": "Sher Minn Chong",
+            "what": "Recreating Retro Computer Art with JS!",
+            "dateTime": "2019-06-01 14:00 GMT+0200",
+            "id": "sher-minn-chong-recreating-retro-computer-art-with-js-"
+          }
+        ],
+        "14.30": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "14.30",
+            "duration": 30,
+            "number": 7,
+            "who": "Roshan Gautam",
+            "what": "You Should Start a Tech Community, Too",
+            "dateTime": "2019-06-01 14:30 GMT+0200",
+            "id": "roshan-gautam-you-should-start-a-tech-community--too"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "14.30",
+            "duration": 30,
+            "number": 23,
+            "who": "Nat Alison",
+            "what": "Polyhedra, I Choose You! Letting Your Passions Take Form",
+            "dateTime": "2019-06-01 14:30 GMT+0200",
+            "id": "nat-alison-polyhedra--i-choose-you--letting-your-passions-take-form"
+          }
+        ],
+        "15.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "15.00",
+            "duration": 30,
+            "number": 8,
+            "who": "Michael Mifsud",
+            "what": "GraphQL Towards a Universal Query Language",
+            "dateTime": "2019-06-01 15:00 GMT+0200",
+            "id": "michael-mifsud-graphql-towards-a-universal-query-language"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "15.00",
+            "duration": 30,
+            "number": 24,
+            "who": "Stefan Judis",
+            "what": "HTTP headers for the responsible developer",
+            "dateTime": "2019-06-01 15:00 GMT+0200",
+            "id": "stefan-judis-http-headers-for-the-responsible-developer"
+          }
+        ],
+        "15.30": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "15.30",
+            "duration": 30,
+            "number": null,
+            "who": "all",
+            "what": "Break",
+            "dateTime": "2019-06-01 15:30 GMT+0200",
+            "id": "all-break"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "15.30",
+            "what": "Stories of Gratitude",
+            "detail": "Recharge with some inspiration during the break at the Community Lounge, where you'll hear several 5-minute stories of gratitude that highlight amazing people, their efforts, and the impact they've had on our community members. \n\n**Our session begins 5 minutes after the break starts**, so you have some time to grab a quick refreshment or take a short pause after the previous session.",
+            "dateTime": "2019-06-01 15:30 GMT+0200",
+            "id": "undefined-stories-of-gratitude"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "BIPoCiT Space",
+            "trackId": "bipocit",
+            "startTime": "15.30",
+            "who": "Tatiana Mac",
+            "what": "The Technical Debt for Us",
+            "dateTime": "2019-06-01 15:30 GMT+0200",
+            "id": "tatiana-mac-the-technical-debt-for-us"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "live:js Stage",
+            "trackId": "livejs",
+            "startTime": "15.30",
+            "what": "Performance / Asja Baidakova & 2xAA",
+            "detail": "Welcome to { Live : JS } A collective of audio and visual artists who build live experiences, shows and installations. Why JS? Because that's the main technology we use: JavaScript.",
+            "dateTime": "2019-06-01 15:30 GMT+0200",
+            "id": "undefined-performance---asja-baidakova---2xaa"
+          }
+        ],
+        "16.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "16.00",
+            "duration": 30,
+            "number": 9,
+            "who": "Jason Straughan",
+            "what": "Teaching Kids to Code by a 13 year-old",
+            "dateTime": "2019-06-01 16:00 GMT+0200",
+            "id": "jason-straughan-teaching-kids-to-code-by-a-13-year-old"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "16.00",
+            "duration": 30,
+            "number": 25,
+            "who": "Shwetank Dixit",
+            "what": "Block, Unblock, Block! : How Ad Blockers are Being Circumvented, and How they are Fighting Back",
+            "dateTime": "2019-06-01 16:00 GMT+0200",
+            "id": "shwetank-dixit-block--unblock--block----how-ad-blockers-are-being-circumvented--and-how-they-are-fighting-back"
+          }
+        ],
+        "16.30": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "16.30",
+            "duration": 30,
+            "number": 10,
+            "who": "Aditya Mukerjee",
+            "what": "করো: Translating Code to Other (Human) Languages, and Back Again",
+            "dateTime": "2019-06-01 16:30 GMT+0200",
+            "id": "aditya-mukerjee------translating-code-to-other--human--languages--and-back-again"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "16.30",
+            "duration": 30,
+            "number": 26,
+            "who": "Amanda Sopkin",
+            "what": "What JS Developers can Learn from Medieval Coats of Arms about Accessibility",
+            "dateTime": "2019-06-01 16:30 GMT+0200",
+            "id": "amanda-sopkin-what-js-developers-can-learn-from-medieval-coats-of-arms-about-accessibility"
+          }
+        ],
+        "17.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "17.00",
+            "duration": 30,
+            "number": 11,
+            "who": "Allison McMillan",
+            "what": "BDD: Baby Driven Development",
+            "dateTime": "2019-06-01 17:00 GMT+0200",
+            "id": "allison-mcmillan-bdd--baby-driven-development"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "17.00",
+            "duration": 30,
+            "number": 27,
+            "who": "Ziran Sun",
+            "what": "Buildin an End-to-End IoT System Using JavaScript with “GDPR Awareness”",
+            "dateTime": "2019-06-01 17:00 GMT+0200",
+            "id": "ziran-sun-buildin-an-end-to-end-iot-system-using-javascript-with--gdpr-awareness-"
+          }
+        ],
+        "17.30": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "17.30",
+            "duration": 15,
+            "number": null,
+            "who": "all",
+            "what": "Break",
+            "dateTime": "2019-06-01 17:30 GMT+0200",
+            "id": "all-break"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "17.30",
+            "what": "Open Source Open Session",
+            "detail": "Open Source maintainers, enthusiasts, beginners, and everyone in between are invited to the Community Lounge for a casual hang out session to talk about projects and contributions.",
+            "dateTime": "2019-06-01 17:30 GMT+0200",
+            "id": "undefined-open-source-open-session"
+          }
+        ],
+        "17.45": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "17.45",
+            "duration": 30,
+            "number": 12,
+            "who": "Kat Marchán",
+            "what": "tink: A Next Generation Package Manager",
+            "dateTime": "2019-06-01 17:45 GMT+0200",
+            "id": "kat-march-n-tink--a-next-generation-package-manager"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "17.45",
+            "duration": 30,
+            "number": 28,
+            "who": "Marley Rafson",
+            "what": "The Case for Augmented Reality on the Web",
+            "dateTime": "2019-06-01 17:45 GMT+0200",
+            "id": "marley-rafson-the-case-for-augmented-reality-on-the-web"
+          }
+        ],
+        "18.15": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "18.15",
+            "duration": 30,
+            "number": 13,
+            "who": "Maël Nison",
+            "what": "Yarn - 2019 and beyond",
+            "dateTime": "2019-06-01 18:15 GMT+0200",
+            "id": "ma-l-nison-yarn---2019-and-beyond"
+          },
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "18.15",
+            "duration": 30,
+            "number": 29,
+            "who": "Manu Martinez-Almeida",
+            "what": "Stencil: a Built-Time Approach to the Web",
+            "dateTime": "2019-06-01 18:15 GMT+0200",
+            "id": "manu-martinez-almeida-stencil--a-built-time-approach-to-the-web"
+          }
+        ],
+        "18.45": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "18.45",
+            "duration": 30,
+            "number": 14,
+            "who": "C J Silverio",
+            "what": "The Economics of Open Source",
+            "dateTime": "2019-06-01 18:45 GMT+0200",
+            "id": "c-j-silverio-the-economics-of-open-source"
+          }
+        ],
+        "19.15": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "19.15",
+            "duration": 1,
+            "number": null,
+            "who": "Curators",
+            "what": "Closing Day 1",
+            "dateTime": "2019-06-01 19:15 GMT+0200",
+            "id": "curators-closing-day-1"
+          }
+        ],
+        "19.16": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "19.16",
+            "duration": 104,
+            "number": null,
+            "who": "all",
+            "what": "Dinner and expo time in the festival and sponsors area",
+            "dateTime": "2019-06-01 19:16 GMT+0200",
+            "id": "all-dinner-and-expo-time-in-the-festival-and-sponsors-area"
+          }
+        ],
+        "21.00": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "21.00",
+            "duration": 30,
+            "number": 15,
+            "who": "{ live : js }",
+            "what": "Making of this Stage",
+            "dateTime": "2019-06-01 21:00 GMT+0200",
+            "id": "--live---js---making-of-this-stage"
+          }
+        ],
+        "21.40": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "21.40",
+            "duration": 30,
+            "number": 16,
+            "who": "Vitalii Bobrov",
+            "what": "JavaScript, JavaScript…. Rocks You!",
+            "dateTime": "2019-06-01 21:40 GMT+0200",
+            "id": "vitalii-bobrov-javascript--javascript---rocks-you-"
+          }
+        ],
+        "22.20": [
+          {
+            "day": 1,
+            "date": "2019-06-01",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "22.20",
+            "duration": 30,
+            "number": 17,
+            "who": "jenn schiffer",
+            "what": "JavaScript Considered…Useful",
+            "dateTime": "2019-06-01 22:20 GMT+0200",
+            "id": "jenn-schiffer-javascript-considered-useful"
+          }
+        ]
+      },
+      "2": {
+        "9.00": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "9.00",
+            "duration": 60,
+            "number": null,
+            "who": "all",
+            "what": "Breakfast",
+            "dateTime": "2019-06-02 9:00 GMT+0200",
+            "id": "all-breakfast"
+          }
+        ],
+        "9.55": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "9.55",
+            "duration": 30,
+            "number": 0,
+            "who": "MCs",
+            "what": "Opening Day 2",
+            "dateTime": "2019-06-02 9:55 GMT+0200",
+            "id": "mcs-opening-day-2"
+          }
+        ],
+        "10.00": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "10.00",
+            "duration": 30,
+            "number": 1,
+            "who": "Nick Kreeger",
+            "what": "TensorFlow.js: Bringing Machine Learning to the Web and Beyond.",
+            "dateTime": "2019-06-02 10:00 GMT+0200",
+            "id": "nick-kreeger-tensorflow-js--bringing-machine-learning-to-the-web-and-beyond-"
+          }
+        ],
+        "10.30": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "10.30",
+            "duration": 30,
+            "number": 2,
+            "who": "Una Kravets",
+            "what": "CSS Houdini & The Future of Styling",
+            "dateTime": "2019-06-02 10:30 GMT+0200",
+            "id": "una-kravets-css-houdini---the-future-of-styling"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "10.30",
+            "duration": 30,
+            "number": 14,
+            "who": "Kevin Doran",
+            "what": "Offline-First Data: Getting Bigger",
+            "dateTime": "2019-06-02 10:30 GMT+0200",
+            "id": "kevin-doran-offline-first-data--getting-bigger"
+          }
+        ],
+        "11.00": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "11.00",
+            "duration": 30,
+            "number": 3,
+            "who": "Ashley Williams",
+            "what": "JavaScript’s Journey to the Edge",
+            "dateTime": "2019-06-02 11:00 GMT+0200",
+            "id": "ashley-williams-javascript-s-journey-to-the-edge"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "11.00",
+            "duration": 30,
+            "number": 15,
+            "who": "Bryan Hughes",
+            "what": "The Contentious Relationship Between the LGBTQ+ Community and Tech",
+            "dateTime": "2019-06-02 11:00 GMT+0200",
+            "id": "bryan-hughes-the-contentious-relationship-between-the-lgbtq--community-and-tech"
+          }
+        ],
+        "11.30": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "11.30",
+            "duration": 15,
+            "number": null,
+            "who": "all",
+            "what": "Break",
+            "dateTime": "2019-06-02 11:30 GMT+0200",
+            "id": "all-break"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "11.30",
+            "what": "OMG CLIMATE",
+            "detail": "OMG CLIMATE is series of free, open source, community run unconferences about tech and the climate crisis, run in London, Berlin and Bangalore. Co-organiser @mrchrisadams will share lessons learned so far running them, and what people in tech can do about climate change.\n\n**Our session begins 5 minutes after the break starts**, so you have some time to grab a quick refreshment or take a short pause after the previous session.",
+            "dateTime": "2019-06-02 11:30 GMT+0200",
+            "id": "undefined-omg-climate"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "BIPoCiT Space",
+            "trackId": "bipocit",
+            "startTime": "11.30",
+            "who": "Dorian Holmes",
+            "what": "Learning JavaScript in 2019",
+            "dateTime": "2019-06-02 11:30 GMT+0200",
+            "id": "dorian-holmes-learning-javascript-in-2019"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Sponsor Booth",
+            "trackId": "sponsor",
+            "startTime": "11.30",
+            "what": "Mozilla WebThings Workshop",
+            "detail": "[Details and registration](https://2019.jsconf.eu/sponsors/mozilla-webthings-workshop.html)",
+            "dateTime": "2019-06-02 11:30 GMT+0200",
+            "id": "undefined-mozilla-webthings-workshop"
+          }
+        ],
+        "11.45": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "11.45",
+            "duration": 30,
+            "number": 4,
+            "who": "Maxim Koretskyi",
+            "what": "A Sneak Peek into Super Optimized Code in JS Frameworks",
+            "dateTime": "2019-06-02 11:45 GMT+0200",
+            "id": "maxim-koretskyi-a-sneak-peek-into-super-optimized-code-in-js-frameworks"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "11.45",
+            "duration": 30,
+            "number": 16,
+            "who": "Johnny Austin",
+            "what": "Finding Your Abstraction Sweet Spot",
+            "dateTime": "2019-06-02 11:45 GMT+0200",
+            "id": "johnny-austin-finding-your-abstraction-sweet-spot"
+          }
+        ],
+        "12.15": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "12.15",
+            "duration": 30,
+            "number": 5,
+            "who": "Houssein Djirdeh",
+            "what": "Performance Empathy",
+            "dateTime": "2019-06-02 12:15 GMT+0200",
+            "id": "houssein-djirdeh-performance-empathy"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "12.15",
+            "duration": 30,
+            "number": 17,
+            "who": "Alexandra Sunderland",
+            "what": "Bringing Back Dial-Up: The Internet Over SMS",
+            "dateTime": "2019-06-02 12:15 GMT+0200",
+            "id": "alexandra-sunderland-bringing-back-dial-up--the-internet-over-sms"
+          }
+        ],
+        "12.45": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "12.45",
+            "duration": 30,
+            "number": 6,
+            "who": "Ella van Durpe",
+            "what": "Designing a Rich Text Data Structure for a Third of the Internet",
+            "dateTime": "2019-06-02 12:45 GMT+0200",
+            "id": "ella-van-durpe-designing-a-rich-text-data-structure-for-a-third-of-the-internet"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "12.45",
+            "duration": 30,
+            "number": 18,
+            "who": "Chidinma Kalu",
+            "what": "Why Can’t We All Just Get Along?",
+            "dateTime": "2019-06-02 12:45 GMT+0200",
+            "id": "chidinma-kalu-why-can-t-we-all-just-get-along-"
+          }
+        ],
+        "13.15": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "13.15",
+            "duration": 60,
+            "number": null,
+            "who": "all",
+            "what": "Lunch",
+            "dateTime": "2019-06-02 13:15 GMT+0200",
+            "id": "all-lunch"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "13.15",
+            "what": "Stories of Gratitude",
+            "detail": "Recharge with some inspiration during the break at the Community Lounge, where you'll hear several 5-minute stories of gratitude that highlight amazing people, their efforts, and the impact they've had on our community members. \n\n**Our session begins 5 minutes after the break starts**, so you have some time to grab a quick refreshment or take a short pause after the previous session. **We'll finish up halfway through the lunch break** so you'll still have plenty of time to eat the delicious catered meal.",
+            "dateTime": "2019-06-02 13:15 GMT+0200",
+            "id": "undefined-stories-of-gratitude"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "live:js Stage",
+            "trackId": "livejs",
+            "startTime": "13.15",
+            "what": "Meet & Greet / LiveJS Jaaam",
+            "detail": "Welcome to { Live : JS } A collective of audio and visual artists who build live experiences, shows and installations. Why JS? Because that's the main technology we use: JavaScript.",
+            "dateTime": "2019-06-02 13:15 GMT+0200",
+            "id": "undefined-meet---greet---livejs-jaaam"
+          }
+        ],
+        "14.15": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "14.15",
+            "duration": 30,
+            "number": 7,
+            "who": "Meya Stephen Kenigbolo",
+            "what": "Javascript is for Everyone!",
+            "dateTime": "2019-06-02 14:15 GMT+0200",
+            "id": "meya-stephen-kenigbolo-javascript-is-for-everyone-"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "14.15",
+            "duration": 30,
+            "number": 19,
+            "who": "Fedor Indutny",
+            "what": "llhttp — New HTTP 1.1 Parser for Node.js",
+            "dateTime": "2019-06-02 14:15 GMT+0200",
+            "id": "fedor-indutny-llhttp---new-http-1-1-parser-for-node-js"
+          }
+        ],
+        "14.45": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "14.45",
+            "duration": 30,
+            "number": 8,
+            "who": "Maximiliano Firtman",
+            "what": "The modern PWA Cheat Sheet",
+            "dateTime": "2019-06-02 14:45 GMT+0200",
+            "id": "maximiliano-firtman-the-modern-pwa-cheat-sheet"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "14.45",
+            "duration": 30,
+            "number": 20,
+            "who": "Joyee Cheung",
+            "what": "Web APIs in Node.js Core: Past, Present, and Future",
+            "dateTime": "2019-06-02 14:45 GMT+0200",
+            "id": "joyee-cheung-web-apis-in-node-js-core--past--present--and-future"
+          }
+        ],
+        "15.15": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "15.15",
+            "duration": 30,
+            "number": 9,
+            "who": "Max Bittker",
+            "what": "Simulating Sand: Building Interactivity With WebAssembly",
+            "dateTime": "2019-06-02 15:15 GMT+0200",
+            "id": "max-bittker-simulating-sand--building-interactivity-with-webassembly"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "15.15",
+            "duration": 30,
+            "number": 21,
+            "who": "Joe Sepi",
+            "what": "Promises API in Node.js Core: Where We Are and Where We’ll Get To",
+            "dateTime": "2019-06-02 15:15 GMT+0200",
+            "id": "joe-sepi-promises-api-in-node-js-core--where-we-are-and-where-we-ll-get-to"
+          }
+        ],
+        "15.45": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "15.45",
+            "duration": 30,
+            "number": null,
+            "who": "all",
+            "what": "Break",
+            "dateTime": "2019-06-02 15:45 GMT+0200",
+            "id": "all-break"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "15.45",
+            "what": "Stories of Gratitude",
+            "detail": "Recharge with some inspiration during the break at the Community Lounge, where you'll hear several 5-minute stories of gratitude that highlight amazing people, their efforts, and the impact they've had on our community members. \n\n**Our session begins 5 minutes after the break starts**, so you have some time to grab a quick refreshment or take a short pause after the previous session.",
+            "dateTime": "2019-06-02 15:45 GMT+0200",
+            "id": "undefined-stories-of-gratitude"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "BIPoCiT Space",
+            "trackId": "bipocit",
+            "startTime": "15.45",
+            "who": "Frances Coronel",
+            "what": "Being a Unicorn Working for Another Unicorn",
+            "dateTime": "2019-06-02 15:45 GMT+0200",
+            "id": "frances-coronel-being-a-unicorn-working-for-another-unicorn"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "live:js Stage",
+            "trackId": "livejs",
+            "startTime": "15.45",
+            "what": "Performance / NERDDISCO & DESTROY WITH SCIENCE",
+            "detail": "Welcome to { Live : JS } A collective of audio and visual artists who build live experiences, shows and installations. Why JS? Because that's the main technology we use: JavaScript.",
+            "dateTime": "2019-06-02 15:45 GMT+0200",
+            "id": "undefined-performance---nerddisco---destroy-with-science"
+          }
+        ],
+        "16.15": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "16.15",
+            "duration": 30,
+            "number": 10,
+            "who": "OpenJS Foundation",
+            "what": "Panel / AMA",
+            "dateTime": "2019-06-02 16:15 GMT+0200",
+            "id": "openjs-foundation-panel---ama"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "16.15",
+            "duration": 30,
+            "number": 22,
+            "who": "Stanimira Vlaeva",
+            "what": "Embedding V8 in the Real World",
+            "dateTime": "2019-06-02 16:15 GMT+0200",
+            "id": "stanimira-vlaeva-embedding-v8-in-the-real-world"
+          }
+        ],
+        "16.45": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "16.45",
+            "duration": 30,
+            "number": 11,
+            "who": "Leandro Ostera",
+            "what": "Building WebApps Like It's 1972 🧙‍♂️",
+            "dateTime": "2019-06-02 16:45 GMT+0200",
+            "id": "leandro-ostera-building-webapps-like-it-s-1972------"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Side Track",
+            "trackId": "sidetrack",
+            "startTime": "16.45",
+            "duration": 30,
+            "number": 23,
+            "who": "Pier Paolo Fumagalli",
+            "what": "Tales from the Toilet: how JavaScript Helps the Production of Tissue Papers",
+            "dateTime": "2019-06-02 16:45 GMT+0200",
+            "id": "pier-paolo-fumagalli-tales-from-the-toilet--how-javascript-helps-the-production-of-tissue-papers"
+          }
+        ],
+        "17.15": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "17.15",
+            "duration": 15,
+            "number": null,
+            "who": "all",
+            "what": "Break",
+            "dateTime": "2019-06-02 17:15 GMT+0200",
+            "id": "all-break"
+          },
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Community Lounge",
+            "trackId": "community",
+            "startTime": "17.15",
+            "what": "Open Source Open Session",
+            "detail": "Open Source maintainers, enthusiasts, beginners, those just curious, and everyone in between are invited to the Community Lounge for a casual hang out session to talk about projects and contributions.",
+            "dateTime": "2019-06-02 17:15 GMT+0200",
+            "id": "undefined-open-source-open-session"
+          }
+        ],
+        "17.30": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "17.30",
+            "duration": 30,
+            "number": 12,
+            "who": "Havi Hoffman",
+            "what": "In the land of the JavaScripters",
+            "dateTime": "2019-06-02 17:30 GMT+0200",
+            "id": "havi-hoffman-in-the-land-of-the-javascripters"
+          }
+        ],
+        "18.00": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "18.00",
+            "duration": 30,
+            "number": 13,
+            "who": "Henri Helvetica",
+            "what": "Shape Of The Web",
+            "dateTime": "2019-06-02 18:00 GMT+0200",
+            "id": "henri-helvetica-shape-of-the-web"
+          }
+        ],
+        "18.30": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "18.30",
+            "duration": 5,
+            "number": null,
+            "who": "Curators",
+            "what": "Closing Conference; Instructions for Party",
+            "dateTime": "2019-06-02 18:30 GMT+0200",
+            "id": "curators-closing-conference--instructions-for-party"
+          }
+        ],
+        "18.35": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "18.35",
+            "duration": 15,
+            "number": null,
+            "who": "all",
+            "what": "Group Foto",
+            "dateTime": "2019-06-02 18:35 GMT+0200",
+            "id": "all-group-foto"
+          }
+        ],
+        "19.00": [
+          {
+            "day": 2,
+            "date": "2019-06-02",
+            "track": "Back Track",
+            "trackId": "backtrack",
+            "startTime": "19.00",
+            "duration": null,
+            "number": null,
+            "who": "all",
+            "what": "Party Day 2 — by TBD",
+            "dateTime": "2019-06-02 19:00 GMT+0200",
+            "id": "all-party-day-2---by-tbd"
+          }
+        ]
+      }
+    },
+    "speakers": {
+      "all": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "19.00",
+        "duration": null,
+        "number": null,
+        "who": "all",
+        "what": "Party Day 2 — by TBD",
+        "dateTime": "2019-06-02 19:00 GMT+0200",
+        "id": "all-party-day-2---by-tbd"
+      },
+      "curators": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "18.30",
+        "duration": 5,
+        "number": null,
+        "who": "Curators",
+        "what": "Closing Conference; Instructions for Party",
+        "dateTime": "2019-06-02 18:30 GMT+0200",
+        "id": "curators-closing-conference--instructions-for-party"
+      },
+      "laurie voss": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "9.45",
+        "duration": 45,
+        "number": 1,
+        "who": "Laurie Voss",
+        "what": "JavaScript: Who, What, Where, Why and Next",
+        "dateTime": "2019-06-01 9:45 GMT+0200",
+        "id": "laurie-voss-javascript--who--what--where--why-and-next"
+      },
+      "jessica jordan": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "10.30",
+        "duration": 30,
+        "number": 2,
+        "who": "Jessica Jordan",
+        "what": "Crafting Comics for Literally Everyone",
+        "dateTime": "2019-06-01 10:30 GMT+0200",
+        "id": "jessica-jordan-crafting-comics-for-literally-everyone"
+      },
+      "hasan özdemir": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "BIPoCiT Space",
+        "trackId": "bipocit",
+        "startTime": "11.00",
+        "who": "Hasan Özdemir",
+        "what": "Building Substratum for an Inclusive Tech Community",
+        "dateTime": "2019-06-01 11:00 GMT+0200",
+        "id": "hasan--zdemir-building-substratum-for-an-inclusive-tech-community"
+      },
+      "jason williams": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "11.30",
+        "duration": 30,
+        "number": 3,
+        "who": "Jason Williams",
+        "what": "Let’s build a JavaScript Engine",
+        "dateTime": "2019-06-01 11:30 GMT+0200",
+        "id": "jason-williams-let-s-build-a-javascript-engine"
+      },
+      "martin sonnenholzer": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "11.30",
+        "duration": 30,
+        "number": 19,
+        "who": "Martin Sonnenholzer",
+        "what": "Animations — Learning from Cartoons",
+        "dateTime": "2019-06-01 11:30 GMT+0200",
+        "id": "martin-sonnenholzer-animations---learning-from-cartoons"
+      },
+      "tara z. manicsic": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "12.00",
+        "duration": 30,
+        "number": 4,
+        "who": "Tara Z. Manicsic",
+        "what": "ES2019 Features: What Even Are They?",
+        "dateTime": "2019-06-01 12:00 GMT+0200",
+        "id": "tara-z--manicsic-es2019-features--what-even-are-they-"
+      },
+      "paulo lopes": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "12.00",
+        "duration": 30,
+        "number": 20,
+        "who": "Paulo Lopes",
+        "what": "10 Things I Learned While Writing the Fastest JavaScript Server Runtime In the World",
+        "dateTime": "2019-06-01 12:00 GMT+0200",
+        "id": "paulo-lopes-10-things-i-learned-while-writing-the-fastest-javascript-server-runtime-in-the-world"
+      },
+      "garann means": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "12.30",
+        "duration": 30,
+        "number": 5,
+        "who": "Garann Means",
+        "what": "What happened to my JavaScript phone?",
+        "dateTime": "2019-06-01 12:30 GMT+0200",
+        "id": "garann-means-what-happened-to-my-javascript-phone-"
+      },
+      "constanza yáñez calderón": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "12.30",
+        "duration": 30,
+        "number": 21,
+        "who": "Constanza Yáñez Calderón",
+        "what": "About Life, Robots and Cats!",
+        "dateTime": "2019-06-01 12:30 GMT+0200",
+        "id": "constanza-y--ez-calder-n-about-life--robots-and-cats-"
+      },
+      "tc39 committee": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "14.00",
+        "duration": 30,
+        "number": 6,
+        "who": "TC39 Committee",
+        "what": "Panel / AMA",
+        "dateTime": "2019-06-01 14:00 GMT+0200",
+        "id": "tc39-committee-panel---ama"
+      },
+      "sher minn chong": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "14.00",
+        "duration": 30,
+        "number": 22,
+        "who": "Sher Minn Chong",
+        "what": "Recreating Retro Computer Art with JS!",
+        "dateTime": "2019-06-01 14:00 GMT+0200",
+        "id": "sher-minn-chong-recreating-retro-computer-art-with-js-"
+      },
+      "roshan gautam": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "14.30",
+        "duration": 30,
+        "number": 7,
+        "who": "Roshan Gautam",
+        "what": "You Should Start a Tech Community, Too",
+        "dateTime": "2019-06-01 14:30 GMT+0200",
+        "id": "roshan-gautam-you-should-start-a-tech-community--too"
+      },
+      "nat alison": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "14.30",
+        "duration": 30,
+        "number": 23,
+        "who": "Nat Alison",
+        "what": "Polyhedra, I Choose You! Letting Your Passions Take Form",
+        "dateTime": "2019-06-01 14:30 GMT+0200",
+        "id": "nat-alison-polyhedra--i-choose-you--letting-your-passions-take-form"
+      },
+      "michael mifsud": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "15.00",
+        "duration": 30,
+        "number": 8,
+        "who": "Michael Mifsud",
+        "what": "GraphQL Towards a Universal Query Language",
+        "dateTime": "2019-06-01 15:00 GMT+0200",
+        "id": "michael-mifsud-graphql-towards-a-universal-query-language"
+      },
+      "stefan judis": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "15.00",
+        "duration": 30,
+        "number": 24,
+        "who": "Stefan Judis",
+        "what": "HTTP headers for the responsible developer",
+        "dateTime": "2019-06-01 15:00 GMT+0200",
+        "id": "stefan-judis-http-headers-for-the-responsible-developer"
+      },
+      "tatiana mac": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "BIPoCiT Space",
+        "trackId": "bipocit",
+        "startTime": "15.30",
+        "who": "Tatiana Mac",
+        "what": "The Technical Debt for Us",
+        "dateTime": "2019-06-01 15:30 GMT+0200",
+        "id": "tatiana-mac-the-technical-debt-for-us"
+      },
+      "jason straughan": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "16.00",
+        "duration": 30,
+        "number": 9,
+        "who": "Jason Straughan",
+        "what": "Teaching Kids to Code by a 13 year-old",
+        "dateTime": "2019-06-01 16:00 GMT+0200",
+        "id": "jason-straughan-teaching-kids-to-code-by-a-13-year-old"
+      },
+      "shwetank dixit": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "16.00",
+        "duration": 30,
+        "number": 25,
+        "who": "Shwetank Dixit",
+        "what": "Block, Unblock, Block! : How Ad Blockers are Being Circumvented, and How they are Fighting Back",
+        "dateTime": "2019-06-01 16:00 GMT+0200",
+        "id": "shwetank-dixit-block--unblock--block----how-ad-blockers-are-being-circumvented--and-how-they-are-fighting-back"
+      },
+      "aditya mukerjee": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "16.30",
+        "duration": 30,
+        "number": 10,
+        "who": "Aditya Mukerjee",
+        "what": "করো: Translating Code to Other (Human) Languages, and Back Again",
+        "dateTime": "2019-06-01 16:30 GMT+0200",
+        "id": "aditya-mukerjee------translating-code-to-other--human--languages--and-back-again"
+      },
+      "amanda sopkin": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "16.30",
+        "duration": 30,
+        "number": 26,
+        "who": "Amanda Sopkin",
+        "what": "What JS Developers can Learn from Medieval Coats of Arms about Accessibility",
+        "dateTime": "2019-06-01 16:30 GMT+0200",
+        "id": "amanda-sopkin-what-js-developers-can-learn-from-medieval-coats-of-arms-about-accessibility"
+      },
+      "allison mcmillan": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "17.00",
+        "duration": 30,
+        "number": 11,
+        "who": "Allison McMillan",
+        "what": "BDD: Baby Driven Development",
+        "dateTime": "2019-06-01 17:00 GMT+0200",
+        "id": "allison-mcmillan-bdd--baby-driven-development"
+      },
+      "ziran sun": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "17.00",
+        "duration": 30,
+        "number": 27,
+        "who": "Ziran Sun",
+        "what": "Buildin an End-to-End IoT System Using JavaScript with “GDPR Awareness”",
+        "dateTime": "2019-06-01 17:00 GMT+0200",
+        "id": "ziran-sun-buildin-an-end-to-end-iot-system-using-javascript-with--gdpr-awareness-"
+      },
+      "kat marchán": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "17.45",
+        "duration": 30,
+        "number": 12,
+        "who": "Kat Marchán",
+        "what": "tink: A Next Generation Package Manager",
+        "dateTime": "2019-06-01 17:45 GMT+0200",
+        "id": "kat-march-n-tink--a-next-generation-package-manager"
+      },
+      "marley rafson": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "17.45",
+        "duration": 30,
+        "number": 28,
+        "who": "Marley Rafson",
+        "what": "The Case for Augmented Reality on the Web",
+        "dateTime": "2019-06-01 17:45 GMT+0200",
+        "id": "marley-rafson-the-case-for-augmented-reality-on-the-web"
+      },
+      "maël nison": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "18.15",
+        "duration": 30,
+        "number": 13,
+        "who": "Maël Nison",
+        "what": "Yarn - 2019 and beyond",
+        "dateTime": "2019-06-01 18:15 GMT+0200",
+        "id": "ma-l-nison-yarn---2019-and-beyond"
+      },
+      "manu martinez-almeida": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "18.15",
+        "duration": 30,
+        "number": 29,
+        "who": "Manu Martinez-Almeida",
+        "what": "Stencil: a Built-Time Approach to the Web",
+        "dateTime": "2019-06-01 18:15 GMT+0200",
+        "id": "manu-martinez-almeida-stencil--a-built-time-approach-to-the-web"
+      },
+      "c j silverio": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "18.45",
+        "duration": 30,
+        "number": 14,
+        "who": "C J Silverio",
+        "what": "The Economics of Open Source",
+        "dateTime": "2019-06-01 18:45 GMT+0200",
+        "id": "c-j-silverio-the-economics-of-open-source"
+      },
+      "{ live : js }": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "21.00",
+        "duration": 30,
+        "number": 15,
+        "who": "{ live : js }",
+        "what": "Making of this Stage",
+        "dateTime": "2019-06-01 21:00 GMT+0200",
+        "id": "--live---js---making-of-this-stage"
+      },
+      "vitalii bobrov": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "21.40",
+        "duration": 30,
+        "number": 16,
+        "who": "Vitalii Bobrov",
+        "what": "JavaScript, JavaScript…. Rocks You!",
+        "dateTime": "2019-06-01 21:40 GMT+0200",
+        "id": "vitalii-bobrov-javascript--javascript---rocks-you-"
+      },
+      "jenn schiffer": {
+        "day": 1,
+        "date": "2019-06-01",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "22.20",
+        "duration": 30,
+        "number": 17,
+        "who": "jenn schiffer",
+        "what": "JavaScript Considered…Useful",
+        "dateTime": "2019-06-01 22:20 GMT+0200",
+        "id": "jenn-schiffer-javascript-considered-useful"
+      },
+      "mcs": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "9.55",
+        "duration": 30,
+        "number": 0,
+        "who": "MCs",
+        "what": "Opening Day 2",
+        "dateTime": "2019-06-02 9:55 GMT+0200",
+        "id": "mcs-opening-day-2"
+      },
+      "nick kreeger": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "10.00",
+        "duration": 30,
+        "number": 1,
+        "who": "Nick Kreeger",
+        "what": "TensorFlow.js: Bringing Machine Learning to the Web and Beyond.",
+        "dateTime": "2019-06-02 10:00 GMT+0200",
+        "id": "nick-kreeger-tensorflow-js--bringing-machine-learning-to-the-web-and-beyond-"
+      },
+      "una kravets": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "10.30",
+        "duration": 30,
+        "number": 2,
+        "who": "Una Kravets",
+        "what": "CSS Houdini & The Future of Styling",
+        "dateTime": "2019-06-02 10:30 GMT+0200",
+        "id": "una-kravets-css-houdini---the-future-of-styling"
+      },
+      "kevin doran": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "10.30",
+        "duration": 30,
+        "number": 14,
+        "who": "Kevin Doran",
+        "what": "Offline-First Data: Getting Bigger",
+        "dateTime": "2019-06-02 10:30 GMT+0200",
+        "id": "kevin-doran-offline-first-data--getting-bigger"
+      },
+      "ashley williams": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "11.00",
+        "duration": 30,
+        "number": 3,
+        "who": "Ashley Williams",
+        "what": "JavaScript’s Journey to the Edge",
+        "dateTime": "2019-06-02 11:00 GMT+0200",
+        "id": "ashley-williams-javascript-s-journey-to-the-edge"
+      },
+      "bryan hughes": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "11.00",
+        "duration": 30,
+        "number": 15,
+        "who": "Bryan Hughes",
+        "what": "The Contentious Relationship Between the LGBTQ+ Community and Tech",
+        "dateTime": "2019-06-02 11:00 GMT+0200",
+        "id": "bryan-hughes-the-contentious-relationship-between-the-lgbtq--community-and-tech"
+      },
+      "dorian holmes": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "BIPoCiT Space",
+        "trackId": "bipocit",
+        "startTime": "11.30",
+        "who": "Dorian Holmes",
+        "what": "Learning JavaScript in 2019",
+        "dateTime": "2019-06-02 11:30 GMT+0200",
+        "id": "dorian-holmes-learning-javascript-in-2019"
+      },
+      "maxim koretskyi": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "11.45",
+        "duration": 30,
+        "number": 4,
+        "who": "Maxim Koretskyi",
+        "what": "A Sneak Peek into Super Optimized Code in JS Frameworks",
+        "dateTime": "2019-06-02 11:45 GMT+0200",
+        "id": "maxim-koretskyi-a-sneak-peek-into-super-optimized-code-in-js-frameworks"
+      },
+      "johnny austin": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "11.45",
+        "duration": 30,
+        "number": 16,
+        "who": "Johnny Austin",
+        "what": "Finding Your Abstraction Sweet Spot",
+        "dateTime": "2019-06-02 11:45 GMT+0200",
+        "id": "johnny-austin-finding-your-abstraction-sweet-spot"
+      },
+      "houssein djirdeh": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "12.15",
+        "duration": 30,
+        "number": 5,
+        "who": "Houssein Djirdeh",
+        "what": "Performance Empathy",
+        "dateTime": "2019-06-02 12:15 GMT+0200",
+        "id": "houssein-djirdeh-performance-empathy"
+      },
+      "alexandra sunderland": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "12.15",
+        "duration": 30,
+        "number": 17,
+        "who": "Alexandra Sunderland",
+        "what": "Bringing Back Dial-Up: The Internet Over SMS",
+        "dateTime": "2019-06-02 12:15 GMT+0200",
+        "id": "alexandra-sunderland-bringing-back-dial-up--the-internet-over-sms"
+      },
+      "ella van durpe": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "12.45",
+        "duration": 30,
+        "number": 6,
+        "who": "Ella van Durpe",
+        "what": "Designing a Rich Text Data Structure for a Third of the Internet",
+        "dateTime": "2019-06-02 12:45 GMT+0200",
+        "id": "ella-van-durpe-designing-a-rich-text-data-structure-for-a-third-of-the-internet"
+      },
+      "chidinma kalu": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "12.45",
+        "duration": 30,
+        "number": 18,
+        "who": "Chidinma Kalu",
+        "what": "Why Can’t We All Just Get Along?",
+        "dateTime": "2019-06-02 12:45 GMT+0200",
+        "id": "chidinma-kalu-why-can-t-we-all-just-get-along-"
+      },
+      "meya stephen kenigbolo": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "14.15",
+        "duration": 30,
+        "number": 7,
+        "who": "Meya Stephen Kenigbolo",
+        "what": "Javascript is for Everyone!",
+        "dateTime": "2019-06-02 14:15 GMT+0200",
+        "id": "meya-stephen-kenigbolo-javascript-is-for-everyone-"
+      },
+      "fedor indutny": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "14.15",
+        "duration": 30,
+        "number": 19,
+        "who": "Fedor Indutny",
+        "what": "llhttp — New HTTP 1.1 Parser for Node.js",
+        "dateTime": "2019-06-02 14:15 GMT+0200",
+        "id": "fedor-indutny-llhttp---new-http-1-1-parser-for-node-js"
+      },
+      "maximiliano firtman": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "14.45",
+        "duration": 30,
+        "number": 8,
+        "who": "Maximiliano Firtman",
+        "what": "The modern PWA Cheat Sheet",
+        "dateTime": "2019-06-02 14:45 GMT+0200",
+        "id": "maximiliano-firtman-the-modern-pwa-cheat-sheet"
+      },
+      "joyee cheung": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "14.45",
+        "duration": 30,
+        "number": 20,
+        "who": "Joyee Cheung",
+        "what": "Web APIs in Node.js Core: Past, Present, and Future",
+        "dateTime": "2019-06-02 14:45 GMT+0200",
+        "id": "joyee-cheung-web-apis-in-node-js-core--past--present--and-future"
+      },
+      "max bittker": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "15.15",
+        "duration": 30,
+        "number": 9,
+        "who": "Max Bittker",
+        "what": "Simulating Sand: Building Interactivity With WebAssembly",
+        "dateTime": "2019-06-02 15:15 GMT+0200",
+        "id": "max-bittker-simulating-sand--building-interactivity-with-webassembly"
+      },
+      "joe sepi": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "15.15",
+        "duration": 30,
+        "number": 21,
+        "who": "Joe Sepi",
+        "what": "Promises API in Node.js Core: Where We Are and Where We’ll Get To",
+        "dateTime": "2019-06-02 15:15 GMT+0200",
+        "id": "joe-sepi-promises-api-in-node-js-core--where-we-are-and-where-we-ll-get-to"
+      },
+      "frances coronel": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "BIPoCiT Space",
+        "trackId": "bipocit",
+        "startTime": "15.45",
+        "who": "Frances Coronel",
+        "what": "Being a Unicorn Working for Another Unicorn",
+        "dateTime": "2019-06-02 15:45 GMT+0200",
+        "id": "frances-coronel-being-a-unicorn-working-for-another-unicorn"
+      },
+      "openjs foundation": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "16.15",
+        "duration": 30,
+        "number": 10,
+        "who": "OpenJS Foundation",
+        "what": "Panel / AMA",
+        "dateTime": "2019-06-02 16:15 GMT+0200",
+        "id": "openjs-foundation-panel---ama"
+      },
+      "stanimira vlaeva": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "16.15",
+        "duration": 30,
+        "number": 22,
+        "who": "Stanimira Vlaeva",
+        "what": "Embedding V8 in the Real World",
+        "dateTime": "2019-06-02 16:15 GMT+0200",
+        "id": "stanimira-vlaeva-embedding-v8-in-the-real-world"
+      },
+      "leandro ostera": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "16.45",
+        "duration": 30,
+        "number": 11,
+        "who": "Leandro Ostera",
+        "what": "Building WebApps Like It's 1972 🧙‍♂️",
+        "dateTime": "2019-06-02 16:45 GMT+0200",
+        "id": "leandro-ostera-building-webapps-like-it-s-1972------"
+      },
+      "pier paolo fumagalli": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Side Track",
+        "trackId": "sidetrack",
+        "startTime": "16.45",
+        "duration": 30,
+        "number": 23,
+        "who": "Pier Paolo Fumagalli",
+        "what": "Tales from the Toilet: how JavaScript Helps the Production of Tissue Papers",
+        "dateTime": "2019-06-02 16:45 GMT+0200",
+        "id": "pier-paolo-fumagalli-tales-from-the-toilet--how-javascript-helps-the-production-of-tissue-papers"
+      },
+      "havi hoffman": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "17.30",
+        "duration": 30,
+        "number": 12,
+        "who": "Havi Hoffman",
+        "what": "In the land of the JavaScripters",
+        "dateTime": "2019-06-02 17:30 GMT+0200",
+        "id": "havi-hoffman-in-the-land-of-the-javascripters"
+      },
+      "henri helvetica": {
+        "day": 2,
+        "date": "2019-06-02",
+        "track": "Back Track",
+        "trackId": "backtrack",
+        "startTime": "18.00",
+        "duration": 30,
+        "number": 13,
+        "who": "Henri Helvetica",
+        "what": "Shape Of The Web",
+        "dateTime": "2019-06-02 18:00 GMT+0200",
+        "id": "henri-helvetica-shape-of-the-web"
+      }
+    }
+  }
+}
