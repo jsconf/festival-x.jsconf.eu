@@ -1,0 +1,5 @@
+{
+  "template": "pages/redirect.html.njk",
+  "filename": "/news/the-jsconf--cssconf-eu-finances/index.html",
+  "redirectUrl": "/news/the-jsconf-cssconf-eu-finances/"
+}

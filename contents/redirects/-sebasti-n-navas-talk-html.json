@@ -1,0 +1,5 @@
+{
+  "template": "pages/redirect.html.njk",
+  "filename": "/sebasti-n-navas/talk.html",
+  "redirectUrl": "/sebastian-navas/talk.html"
+}
