@@ -6,7 +6,7 @@
 template: pages/news-item.html.njk
 title: An update on JSConf EU
 filename: /an-update/index.html
-date: 2019-05-06T00:00:00.000Z
+date: 2020-01-01T00:00:00.000Z
 nobuy: true
 data:
   published: true
