@@ -30,8 +30,8 @@ yt: {}
 ----
 
 
-*This is a guest post by JSConf EU Organiser [Malte
-Ubl](https://twitter.com/cramforce).*
+*This is a post by [JSConf EU Organiser Malte
+Ubl](https://www.industrialempathy.com/).*
 
 The clickbait headline got you here, so let's make this worth your while! I
 have no idea whether this is the fastest conference website in the world but I
