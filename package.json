@@ -50,7 +50,7 @@
     "tachyons": "^4.9.1",
     "typogr": "^0.6.8",
     "uglify-es": "^3.3.10",
-    "underscore": "^1.9.0",
+    "underscore": "^1.12.1",
     "unquote": "^1.1.1",
     "wintersmith": "^2.4.1",
     "wordwrap": "^1.0.0",
