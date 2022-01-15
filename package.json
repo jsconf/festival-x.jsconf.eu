@@ -22,7 +22,7 @@
     "image-type": "^3.0.0",
     "js-yaml": "^3.11.0",
     "json-stringify-safe": "^5.0.1",
-    "marked": "^0.3.19",
+    "marked": "^4.0.10",
     "mime": "^1.6.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.22.1",
