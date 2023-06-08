@@ -15,7 +15,7 @@
     "fs-extra": "^5.0.0",
     "get-port": "^3.2.0",
     "gm": "^1.23.1",
-    "googleapis": "^24.0.0",
+    "googleapis": "^39.1.0",
     "hoek": "^4.2.1",
     "html-minifier": "^3.5.15",
     "image-size": "^0.6.2",
